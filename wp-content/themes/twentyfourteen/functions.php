@@ -385,63 +385,6 @@ function twentyfourteen_list_authors() {
 endif;
 
 /**
- * Extend the default WordPress body classes.
- *
- * Adds body classes to denote:
- * 1. Single or multiple authors.
- * 2. Presence of header image except in Multisite signup and activate pages.
- * 3. Index views.
- * 4. Full-width content layout.
- * 5. Presence of footer widgets.
- * 6. Single views.
- * 7. Featured content layout.
- *
- * @since Twenty Fourteen 1.0
- *
- * @param array $classes A list of existing body class values.
- * @return array The filtered body class list.
- */
-function twentyfourteen_body_classes( $classes ) {
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
-
-	if ( get_header_image() ) {
-		$classes[] = 'header-image';
-	} elseif ( ! in_array( $GLOBALS['pagenow'], array( 'wp-activate.php', 'wp-signup.php' ) ) ) {
-		$classes[] = 'masthead-fixed';
-	}
-
-	if ( is_archive() || is_search() || is_home() ) {
-		$classes[] = 'list-view';
-	}
-
-	if ( ( ! is_active_sidebar( 'sidebar-2' ) )
-		|| is_page_template( 'page-templates/full-width.php' )
-		|| is_page_template( 'page-templates/contributors.php' )
-		|| is_attachment() ) {
-		$classes[] = 'full-width';
-	}
-
-	if ( is_active_sidebar( 'sidebar-3' ) ) {
-		$classes[] = 'footer-widgets';
-	}
-
-	if ( is_singular() && ! is_front_page() ) {
-		$classes[] = 'singular';
-	}
-
-	if ( is_front_page() && 'slider' == get_theme_mod( 'featured_content_layout' ) ) {
-		$classes[] = 'slider';
-	} elseif ( is_front_page() ) {
-		$classes[] = 'grid';
-	}
-
-	return $classes;
-}
-add_filter( 'body_class', 'twentyfourteen_body_classes' );
-
-/**
  * Extend the default WordPress post classes.
  *
  * Adds a post class to denote:

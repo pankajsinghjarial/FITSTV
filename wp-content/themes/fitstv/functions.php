@@ -166,155 +166,33 @@ add_action( 'widgets_init', 'fitstv_widgets_init' );
  */
 function fitstv_scripts() {
 
-	// Add Genericons font, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.3' );
+	// Add stylesheets.
+	wp_enqueue_style( 'fitstv-reset', get_template_directory_uri() . '/css/reset.css' );
+	wp_enqueue_style( 'fitstv-main', get_template_directory_uri() . '/css/main.css' );
+	wp_enqueue_style( 'fitstv-owl', get_template_directory_uri() . '/css/owl.carousel.css' );
+	wp_enqueue_style( 'fitstv-fonts', get_template_directory_uri() . '/css/fonts.css' );
+	wp_enqueue_style( 'fitstv-responsive', get_template_directory_uri() . '/css/responsive.css' );
 
-	// Load our main stylesheet.
-	wp_enqueue_style( 'twentyfourteen-style', get_stylesheet_uri() );
-
-	// Load the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'twentyfourteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentyfourteen-style' ), '20131205' );
-	wp_style_add_data( 'twentyfourteen-ie', 'conditional', 'lt IE 9' );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
-	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'twentyfourteen-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20130402' );
-	}
-
-	if ( is_active_sidebar( 'sidebar-3' ) ) {
-		wp_enqueue_script( 'jquery-masonry' );
-	}
-
-	if ( is_front_page() && 'slider' == get_theme_mod( 'featured_content_layout' ) ) {
-		wp_enqueue_script( 'twentyfourteen-slider', get_template_directory_uri() . '/js/slider.js', array( 'jquery' ), '20131205', true );
-		wp_localize_script( 'twentyfourteen-slider', 'featuredSliderDefaults', array(
-			'prevText' => __( 'Previous', 'fitstv' ),
-			'nextText' => __( 'Next', 'fitstv' )
-		) );
-	}
-
-	wp_enqueue_script( 'twentyfourteen-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150315', true );
+	// Add scripts.
+	wp_enqueue_script( 'fitstv-jquery-1.11.2.min', get_template_directory_uri() . '/js/jquery-1.11.2.min.js' );
+	wp_enqueue_script( 'fitstv-jquery.bxslider', get_template_directory_uri() . '/js/jquery.bxslider.js' );
+	wp_enqueue_script( 'fitstv-owl.carousel', get_template_directory_uri() . '/js/owl.carousel.js' );
+	wp_enqueue_script( 'fitstv-function', get_template_directory_uri() . '/js/function.js' );
+	wp_enqueue_script( 'fitstv-jwplayer', get_template_directory_uri() . '/jwplayer/jwplayer.js' );
 }
 add_action( 'wp_enqueue_scripts', 'fitstv_scripts' );
 
-
 /**
- * Extend the default WordPress body classes.
- *
- * Adds body classes to denote:
- * 1. Single or multiple authors.
- * 2. Presence of header image except in Multisite signup and activate pages.
- * 3. Index views.
- * 4. Full-width content layout.
- * 5. Presence of footer widgets.
- * 6. Single views.
- * 7. Featured content layout.
+ * Add global javascript variables.
  *
  * @since Fitstv 1.0
- *
- * @param array $classes A list of existing body class values.
- * @return array The filtered body class list.
  */
-function fitstv_body_classes( $classes ) {
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
-	}
-
-	if ( get_header_image() ) {
-		$classes[] = 'header-image';
-	} elseif ( ! in_array( $GLOBALS['pagenow'], array( 'wp-activate.php', 'wp-signup.php' ) ) ) {
-		$classes[] = 'masthead-fixed';
-	}
-
-	if ( is_archive() || is_search() || is_home() ) {
-		$classes[] = 'list-view';
-	}
-
-	if ( ( ! is_active_sidebar( 'sidebar-2' ) )
-		|| is_page_template( 'page-templates/full-width.php' )
-		|| is_page_template( 'page-templates/contributors.php' )
-		|| is_attachment() ) {
-		$classes[] = 'full-width';
-	}
-
-	if ( is_active_sidebar( 'sidebar-3' ) ) {
-		$classes[] = 'footer-widgets';
-	}
-
-	if ( is_singular() && ! is_front_page() ) {
-		$classes[] = 'singular';
-	}
-
-	if ( is_front_page() && 'slider' == get_theme_mod( 'featured_content_layout' ) ) {
-		$classes[] = 'slider';
-	} elseif ( is_front_page() ) {
-		$classes[] = 'grid';
-	}
-
-	return $classes;
+function fitstv_js_variables(){ ?>
+      <script type="text/javascript">
+        jwplayer.key="Z5/cz3knuJeTN6N9l/Xk1hp9CLjRip+tgIJSQA==";
+      </script><?php
 }
-add_filter( 'body_class', 'fitstv_body_classes' );
-
-/**
- * Extend the default WordPress post classes.
- *
- * Adds a post class to denote:
- * Non-password protected page with a post thumbnail.
- *
- * @since Fitstv 1.0
- *
- * @param array $classes A list of existing post class values.
- * @return array The filtered post class list.
- */
-function fitstv_post_classes( $classes ) {
-	if ( ! post_password_required() && ! is_attachment() && has_post_thumbnail() ) {
-		$classes[] = 'has-post-thumbnail';
-	}
-
-	return $classes;
-}
-add_filter( 'post_class', 'fitstv_post_classes' );
-
-/**
- * Create a nicely formatted and more specific title element text for output
- * in head of document, based on current view.
- *
- * @since Fitstv 1.0
- *
- * @global int $paged WordPress archive pagination page count.
- * @global int $page  WordPress paginated post page count.
- *
- * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
- * @return string The filtered title.
- */
-function fitstv_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() ) {
-		return $title;
-	}
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name', 'display' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ) {
-		$title = "$title $sep $site_description";
-	}
-
-	// Add a page number if necessary.
-	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'fitstv' ), max( $paged, $page ) );
-	}
-
-	return $title;
-}
-add_filter( 'wp_title', 'fitstv_wp_title', 10, 2 );
+add_action ( 'wp_head', 'fitstv_js_variables' );
 
 if ( ! function_exists( 'fitstv_paging_nav' ) ) :
 /**
