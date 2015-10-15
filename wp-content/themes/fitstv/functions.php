@@ -251,3 +251,31 @@ function fitstv_paging_nav() {
 	endif;
 }
 endif;
+
+/**
+ * Display video using JwPlayer.
+ *
+ * @since Fitstv 1.0
+ *
+ * $divId           DivID for Player
+ * $thumbnailPath   Thumbnail Path of video
+ * $videoPath       Video Path of video
+ * $width           Width of container
+ * $height          Height of container
+ * $title           Title of Video
+ * $description     Description of video
+ */
+function displayVideo($divId = "myPlayer",$thumbnailPath = '',$videoPath = '',$width = 1024, $height = 360,$title = '',$description = ''){ 
+    echo '<div id="'.$divId.'">Loading the player...</div>
+    <script type="text/javascript">
+    var playerInstance = jwplayer("'.$divId.'");
+    playerInstance.setup({
+        file: "'.$videoPath.'",
+        image: "'.$thumbnailPath.'",
+        width: '.$width.',
+        height: '.$height.',
+        title: '.$title.',
+        description: "'.$description.'"
+    });
+    </script>';
+}
