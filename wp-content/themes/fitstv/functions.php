@@ -174,7 +174,6 @@ function fitstv_scripts() {
 	wp_enqueue_style( 'fitstv-responsive', get_template_directory_uri() . '/css/responsive.css' );
 
 	// Add scripts.
-	/*<!--[if IE]><script src="assets/jscript/html5.js"></script><![endif]-->*/
 	wp_enqueue_script( 'fitstv-jquery-1.11.2.min', get_template_directory_uri() . '/js/jquery-1.11.2.min.js' );
 	wp_enqueue_script( 'fitstv-jquery.bxslider', get_template_directory_uri() . '/js/jquery.bxslider.js' );
 	wp_enqueue_script( 'fitstv-owl.carousel', get_template_directory_uri() . '/js/owl.carousel.js' );

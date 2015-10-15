@@ -14,6 +14,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
+    <!--[if IE]><script src="<?php echo get_template_directory_uri();?>/js/html5.js"></script><![endif]-->
 		<?php wp_head(); ?>
 	</head>
 
@@ -50,7 +51,7 @@
 		</div>
 	</div>
 
-	<section class="home full-w postionR">
+	<section class="<?php if(is_home()){echo 'home';}else{echo 'about';}?> full-w postionR">
 			<div class="inner-w">
 					<header>
 					  <div class="logo"><a href="index.html"><img src="<?php echo get_template_directory_uri();?>/images/fitse-logo.png" width="127" height="40" alt="FITSE"></a></div>
