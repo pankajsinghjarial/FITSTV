@@ -1,0 +1,21 @@
+<html>
+    <head>
+    <title>Test JwPlayer</title>
+    </head>
+<body>
+    <script src="jwplayer.js"></script>
+    <script>jwplayer.key="Z5/cz3knuJeTN6N9l/Xk1hp9CLjRip+tgIJSQA==";</script>
+    <div id="myElement">Loading the player...</div>
+    <script type="text/javascript">
+    var playerInstance = jwplayer("myElement");
+    playerInstance.setup({
+        file: "1116 - Beijing Auto Show.mp4",
+        image: "gym.jpg",
+        width: 1024,
+        height: 360,
+        title: 'Basic Video Embed',
+        description: 'A video with a basic title and description!'
+    });
+    </script>
+</body>
+</html>
