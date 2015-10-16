@@ -41,12 +41,7 @@
         
         <div class="footer_menu">
             <ul class="abc">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="episodes.html">Episodes</a></li>
-                <li><a href="video.html">Videos</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <?php wp_nav_menu( array( 'container' => '', 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ,'before' => '','after' => '','link_before' => '','link_after' => '','items_wrap' => '%3$s','depth' => 0,	'walker' => '') ); ?>
             </ul>
         </div>
         <div class="footer_bootam">

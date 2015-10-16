@@ -139,22 +139,22 @@ function fitstv_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Content Sidebar', 'fitstv' ),
-		'id'            => 'sidebar-2',
-		'description'   => __( 'Additional sidebar that appears on the right.', 'fitstv' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'name'          => __( 'News Page Top Area', 'fitstv' ),
+		'id'            => 'news-top',
+		'description'   => __( 'Top News will appear here.', 'fitstv' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footer Widget Area', 'fitstv' ),
-		'id'            => 'sidebar-3',
-		'description'   => __( 'Appears in the footer section of the site.', 'fitstv' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'name'          => __( 'Video Page Top Area', 'fitstv' ),
+		'id'            => 'video-top',
+		'description'   => __( 'Top Video will appear here.', 'fitstv' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
 	) );
 }
 add_action( 'widgets_init', 'fitstv_widgets_init' );
@@ -179,6 +179,10 @@ function fitstv_scripts() {
 	wp_enqueue_script( 'fitstv-owl.carousel', get_template_directory_uri() . '/js/owl.carousel.js' );
 	wp_enqueue_script( 'fitstv-function', get_template_directory_uri() . '/js/function.js' );
 	wp_enqueue_script( 'fitstv-jwplayer', get_template_directory_uri() . '/jwplayer/jwplayer.js' );
+	
+	if(is_page('videos') || is_page('episodes') || is_page('news')){
+		wp_enqueue_script( 'fitstv-jquery-ui', get_template_directory_uri() . '/js/jquery-ui.js' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'fitstv_scripts' );
 
@@ -278,4 +282,11 @@ function displayVideo($divId = "myPlayer",$thumbnailPath = '',$videoPath = '',$w
         description: "'.$description.'"
     });
     </script>';
+}
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+function special_nav_class($classes, $item){
+     if( in_array('current-menu-item', $classes) ){
+             $classes[] = 'active ';
+     }
+     return $classes;
 }
