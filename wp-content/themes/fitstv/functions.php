@@ -276,9 +276,9 @@ function displayVideo($divId = "myPlayer",$thumbnailPath = '',$videoPath = '',$w
     playerInstance.setup({
         file: "'.$videoPath.'",
         image: "'.$thumbnailPath.'",
-        width: '.$width.',
-        height: '.$height.',
-        title: '.$title.',
+        width: "'.$width.'",
+        height: "'.$height.'",
+        title: "'.$title.'",
         description: "'.$description.'"
     });
     </script>';

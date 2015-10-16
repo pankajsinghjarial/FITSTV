@@ -118,16 +118,29 @@ class Video_Top_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		$postId = $instance['topVideo'];
 		$post = get_post($postId);
+		$post_excerpt = $post->post_excerpt;//get_post_meta($postId);
+		$thumb = get_post_meta($postId,'wpcf-thumbnail',true);
+		$video_url = get_post_meta($postId,'wpcf-video',true);
+		
+		$title = get_the_title();
+		$description = get_the_title();
+		//print_r($title);  die;
+		//print_r($video_url);
+		 //die;
 		?>
 		<div class="breking_news">
 			<div class="newsLft">
-				<div class="breking_news_img">
-				<a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/episodes_videos_tv_03.png" width="394" height="222" alt="epp"></a> </div>
-			</div>
+				<div class="breking_news_img breaking_news_img_padding">
+				<?php  displayVideo('breking_news_img',$thumb, $video_url, 394 , 222, $title, $description);?>
+				</div>
+				</div>
+				<!--div class="breking_news_img">
+				<a href="javascript:void(0);"><img src="<?php echo $thumb?>" width="394" height="222" alt="epp"></a> </div>
+			</div-->
 			<div class="newsRht">
 				<div class="breking_news_data">
 					<span><?php echo date('M d, Y',strtotime($post->post_date));?></span>
-					<?php echo $post->post_content;?>
+					<?php echo $post_excerpt;?>
 					<h1><?php echo $post->post_title;?></h1>
 					<a class="spa" href="<?php echo get_permalink($postId);?>">Read more &gt;</a></p>
 					<h6 class="shere"><b>Share:</b><img src="<?php echo get_template_directory_uri();?>/images/share-links.png" width="234" height="20" alt="share"></h6>
