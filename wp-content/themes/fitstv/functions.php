@@ -57,6 +57,7 @@ function fitstv_setup() {
 	add_image_size( 'fitstv-large-thumb', 1351, 603, true );
 	add_image_size( 'fitstv-tv-thumb', 394, 222, true );
 	add_image_size( 'fitstv-medium', 746, 416, true );
+	add_image_size( 'fitstv-image', 287, 148, true );
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
@@ -329,3 +330,13 @@ function special_nav_class($classes, $item){
 
 	}
 
+	function getImage($imageUrl,$size='thumbnail'){
+		$imageId = getIDfromGUID($imageUrl);
+		$image = wp_get_attachment_image_src( $imageId, $size );
+		return $image = array_shift($image);
+	}
+
+	function getCatergoryID($taxonomy,$slug){
+		$term = get_term_by('slug',$slug,$taxonomy);
+		return $term->term_id;
+	}

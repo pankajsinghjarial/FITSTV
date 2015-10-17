@@ -20,7 +20,7 @@ get_header(); ?>
 	<div class="inner-w">
     
    		<h2>VIDEOS</h2>
-        <section class="sortColumn">
+        <!--<section class="sortColumn">
         <span>Sort By:</span>
         <select>
         <option>Date</option>
@@ -32,7 +32,7 @@ get_header(); ?>
     	<div class="searchBar">
             <input type="text" placeholder="Search Bar">
             <button><img width="40" height="40" alt="Search" src="<?php echo get_template_directory_uri();?>/images/searchbtn.png"></button>
-        </div>
+        </div>-->
         
         <div class="sortTabber full-w">
           <ul>
@@ -40,7 +40,7 @@ get_header(); ?>
             <li class="cl2"><a href="#tabs-2"><span>On Demand</span> </a></li>
             <li class="cl8"><a href="#tabs-3"><span>News</span> </a></li>
             <li class="cl9"><a href="#tabs-4"><span>Reviews</span> </a></li>
-            <li class="cl5"><a href="#tabs-5"><span>Wordouts</span> </a></li>
+            <li class="cl5"><a href="#tabs-5"><span>Workouts</span> </a></li>
           </ul>
 			<?php 
 
@@ -75,18 +75,29 @@ get_header(); ?>
             <section class="tabColumnsR cateG">
             <ul>
 				<?php
-				$args = array( 'posts_per_page' => 6, 'post_type' => 'video' );
+				$args = array( 
+						'posts_per_page' => 6, 
+						'post_type' => 'video',
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'videotype',
+								'field' => 'category_nicename',
+								'terms' => getCatergoryID('videotype','featured'),
+							)
+						)
+					);
 				$lastposts = get_posts( $args );
+				if(count($lastposts)){
 				foreach ( $lastposts as $post ) :
 				  setup_postdata( $post );?>
 					<li class="item">
 						<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
-							<img src="<?php echo get_post_meta($post->ID,'wpcf-thumbnail',true);?>" width="306" height="212" alt="new01">
+							<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true));?>" width="306" height="212" alt="new01">
 							<figure class="icnPlay">
 								<img src="<?php echo get_template_directory_uri();?>/images/transPlay.png" width="69" height="69" alt="Play">
 							</figure>
 						<?php else: ?>
-							<img src="<?php echo get_post_meta($post->ID,'wpcf-image',true);?>" width="306" height="212" alt="new01">
+							<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true));?>" width="306" height="212" alt="new01">
 						<?php endif; ?>
 						<h4>Cross Fit Workouts</h4>
 						<section class="blackTrans">
@@ -96,7 +107,13 @@ get_header(); ?>
 						</section>
 					</li>
 				<?php endforeach; 
-				wp_reset_postdata(); ?>
+					wp_reset_postdata();
+				}else{
+				?>
+					<li><center><strong>OOPS!! No Post found under this category.</strong></center></li>
+				<?php
+				}
+				?>
             </ul>
             <div class="clear"></div>
             <div class="loadMore"><img width="110" height="30" alt="load more" src="<?php echo get_template_directory_uri();?>/images/load-more.png"></div>
@@ -104,243 +121,227 @@ get_header(); ?>
           </div>
           <div id="tabs-2">
           	<ul>
-            	<li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-            <section>Episode #89 - The Fitse Video 
-            <span>After an amazing run that...</span>
-            </section>
-            <div class="news_ret">
-                <ul>
-                    <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                    <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                    <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                    <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                    <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                </ul>
-            </div>
-            </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                </ul> 
+				<?php
+				$args = array( 
+						'posts_per_page' => 6, 
+						'post_type' => 'video',
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'videotype',
+								'field' => 'category_nicename',
+								'terms' => getCatergoryID('videotype','on-demand'),
+							)
+						)
+					);
+				$lastposts = get_posts( $args );
+				if(count($lastposts)){
+				foreach ( $lastposts as $post ) :
+				  setup_postdata( $post );?>
+					<li class="tabSlide">
+							<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
+								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image');?>" width="306" height="212" alt="new01">
+								<figure class="icnPlay">
+									<img src="<?php echo get_template_directory_uri();?>/images/transPlay.png" width="69" height="69" alt="Play">
+								</figure>
+							<?php else: ?>
+								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image');?>" width="306" height="212" alt="new01">
+							<?php endif; ?>
+					<section><?php the_title(); ?> -  
+					<span><?php echo (strlen($post->post_excerpt)>25)?substr($post->post_excerpt,0,25).'...':$post->post_excerpt;?></span>
+					</section>
+					<div class="news_ret">
+						<ul>
+							<?php 
+								$rating = get_post_meta($post->ID,'wpcf-rating',true);
+								for($i=1;$i<=5;$i++){
+									if($i<=$rating){ ?>
+										<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
+									<?php }else{ ?>
+										<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
+									<?php
+									}
+								}
+							?>							
+						</ul>
+					</div>
+					</li>
+				<?php endforeach; 
+					wp_reset_postdata();
+				}else{
+				?>
+					<li><center><strong>OOPS!! No Post found under this category.</strong></center></li>
+				<?php
+				}
+				?>
+             </ul> 
           </div>
           <div id="tabs-3">
-          <ul>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                </ul> 
+            <ul>
+				<?php
+				$args = array( 
+						'posts_per_page' => 6, 
+						'post_type' => 'video',
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'videotype',
+								'field' => 'category_nicename',
+								'terms' => getCatergoryID('videotype','news'),
+							)
+						)
+					);
+				$lastposts = get_posts( $args );
+				if(count($lastposts)){
+				foreach ( $lastposts as $post ) :
+				  setup_postdata( $post );?>
+					<li class="tabSlide">
+							<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
+								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image');?>" width="306" height="212" alt="new01">
+								<figure class="icnPlay">
+									<img src="<?php echo get_template_directory_uri();?>/images/transPlay.png" width="69" height="69" alt="Play">
+								</figure>
+							<?php else: ?>
+								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image');?>" width="306" height="212" alt="new01">
+							<?php endif; ?>
+					<section><?php the_title(); ?> -  
+					<span><?php echo (strlen($post->post_excerpt)>25)?substr($post->post_excerpt,0,25).'...':$post->post_excerpt;?></span>
+					</section>
+					<div class="news_ret">
+						<ul>
+							<?php 
+								$rating = get_post_meta($post->ID,'wpcf-rating',true);
+								for($i=1;$i<=5;$i++){
+									if($i<=$rating){ ?>
+										<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
+									<?php }else{ ?>
+										<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
+									<?php
+									}
+								}
+							?>							
+						</ul>
+					</div>
+					</li>
+				<?php endforeach; 
+					wp_reset_postdata();
+				}else{
+				?>
+					<li><center><strong>OOPS!! No Post found under this category.</strong></center></li>
+				<?php
+				}
+				?>
+            </ul> 
           </div>
           <div id="tabs-4">
-          <ul>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                </ul> 
+			<ul>
+				<?php
+				$args = array( 
+						'posts_per_page' => 6, 
+						'post_type' => 'video',
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'videotype',
+								'field' => 'category_nicename',
+								'terms' => getCatergoryID('videotype','reviews'),
+							)
+						)
+					);
+				$lastposts = get_posts( $args );
+				if(count($lastposts)){
+				foreach ( $lastposts as $post ) :
+				  setup_postdata( $post );?>
+					<li class="tabSlide">
+							<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
+								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image');?>" width="306" height="212" alt="new01">
+								<figure class="icnPlay">
+									<img src="<?php echo get_template_directory_uri();?>/images/transPlay.png" width="69" height="69" alt="Play">
+								</figure>
+							<?php else: ?>
+								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image');?>" width="306" height="212" alt="new01">
+							<?php endif; ?>
+					<section><?php the_title(); ?> -  
+					<span><?php echo (strlen($post->post_excerpt)>25)?substr($post->post_excerpt,0,25).'...':$post->post_excerpt;?></span>
+					</section>
+					<div class="news_ret">
+						<ul>
+							<?php 
+								$rating = get_post_meta($post->ID,'wpcf-rating',true);
+								for($i=1;$i<=5;$i++){
+									if($i<=$rating){ ?>
+										<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
+									<?php }else{ ?>
+										<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
+									<?php
+									}
+								}
+							?>							
+						</ul>
+					</div>
+					</li>
+				<?php endforeach; 
+					wp_reset_postdata();
+				}else{
+				?>
+					<li><center><strong>OOPS!! No Post found under this category.</strong></center></li>
+				<?php
+				}
+				?>
+			</ul> 
           </div>
           <div id="tabs-5">
-          <ul>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                </ul> 
+			<ul>
+				<?php
+				$args = array( 
+						'posts_per_page' => 6, 
+						'post_type' => 'video',
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'videotype',
+								'field' => 'category_nicename',
+								'terms' => getCatergoryID('videotype','workouts'),
+							)
+						)
+					);
+				$lastposts = get_posts( $args );
+				if(count($lastposts)){
+				foreach ( $lastposts as $post ) :
+				  setup_postdata( $post );?>
+					<li class="tabSlide">
+							<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
+								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image');?>" width="306" height="212" alt="new01">
+								<figure class="icnPlay">
+									<img src="<?php echo get_template_directory_uri();?>/images/transPlay.png" width="69" height="69" alt="Play">
+								</figure>
+							<?php else: ?>
+								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image');?>" width="306" height="212" alt="new01">
+							<?php endif; ?>
+					<section><?php the_title(); ?> -  
+					<span><?php echo (strlen($post->post_excerpt)>25)?substr($post->post_excerpt,0,25).'...':$post->post_excerpt;?></span>
+					</section>
+					<div class="news_ret">
+						<ul>
+							<?php 
+								$rating = get_post_meta($post->ID,'wpcf-rating',true);
+								for($i=1;$i<=5;$i++){
+									if($i<=$rating){ ?>
+										<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
+									<?php }else{ ?>
+										<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
+									<?php
+									}
+								}
+							?>							
+						</ul>
+					</div>
+					</li>
+				<?php endforeach; 
+					wp_reset_postdata();
+				}else{
+				?>
+					<li><center><strong>OOPS!! No Post found under this category.</strong></center></li>
+				<?php
+				}
+				?>
+			</ul> 
           </div>
           
           
