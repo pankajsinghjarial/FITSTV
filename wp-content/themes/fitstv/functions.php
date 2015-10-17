@@ -388,6 +388,7 @@ function special_nav_class($classes, $item){
 		$limit = $_REQUEST['limit'];
 		$taxonomy = $_REQUEST['taxonomy'];
 		$term = $_REQUEST['term'];
+		$tab = $_REQUEST['tab'];
 		$offset = $limit*($page);
 		$args = array( 
 			'posts_per_page' => $limit,
@@ -402,6 +403,11 @@ function special_nav_class($classes, $item){
 			)
 		);
 		$lastposts = get_posts( $args );
+		unset($args['posts_per_page']);
+		unset($args['offset']);
+		$the_query = new WP_Query( $args );
+		$totalPosts = $the_query->found_posts;
+		$totalPages = ceil($totalPosts/$limit);
 		$response = array();
 		foreach($lastposts as $post){
 			$data = array();
@@ -411,18 +417,19 @@ function special_nav_class($classes, $item){
 			$data['attachment_type'] = get_post_meta($post->ID,'wpcf-attachment-type',true);
 			if($data['attachment_type'] == 1){
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-thumbnail',true));
-				if($term != 'featured')
+				if($tab != 'videos')
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image');
 			}else{
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-image',true));
-				if($term != 'featured')
+				if($tab != 'videos')
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image');
 			}
 			$data['rating'] = get_post_meta($post->ID,'wpcf-rating',true);
 			$data['excerpt'] = (strlen($post->post_excerpt)>20)?substr($post->post_excerpt,0,20).'...':$post->post_excerpt;
 			$data['link'] = get_permalink($post->ID);
-			$response[] = $data;
+			$response['data'][] = $data;
 		}
+		$response['count'] = $totalPages;
 		echo json_encode($response);
 		die;
 	}

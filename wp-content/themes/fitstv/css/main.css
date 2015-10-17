@@ -269,7 +269,7 @@ header nav li.twitter{ background-position: -123px 0;}
     .form-col input, .form-col textarea{ width:94%; float:left; border:1px solid #c2c2c2; height:42px; margin:10px 0 20px; padding:0 3%;
     	font-size:15px; color:#333333;}
     .form-col textarea{ height:132px; padding:5px 3%;}
-    .contactChain button, .videoFrom button, .aboutAdd a{ width:134px; padding:6px 0; font-family: 'open_sansbold'; font-size:24px; background:#56c650; color:#fff; text-align:center;
+    .contactChain button,.contactChain .wpcf7-submit, .videoFrom button, .aboutAdd a{ width:134px; padding:6px 0; font-family: 'open_sansbold'; font-size:24px; background:#56c650; color:#fff; text-align:center;
     	margin-bottom:60px;}
     
     .contactMap{ width:516px; float:right;}
@@ -366,8 +366,8 @@ header nav li.twitter{ background-position: -123px 0;}
     .sortTabber .ui-state-default.cl8 span{ padding-left:33px;}
     .sortTabber .ui-state-default.cl9 span{ padding-left:33px;}
     
-.tabSlide{ width:275px; height:199px; float:left;margin: 20px 16px 0 0;}
-.tabSlide:nth-child(4n){margin: 20px 0 0 0;}
+.tabSlide{ width:275px; height:199px; float:left;margin: 20px 12px 0 0;}
+/*.tabSlide:nth-child(4n){margin: 20px 0 0 0;}*/
 .tabSlide img{ float:left; width:100%; float:left;}    
 
 .loadMore{ margin:60px auto auto; width:110px;}    
@@ -503,3 +503,5 @@ header nav li.twitter{ background-position: -123px 0;}
 .sTweets{ margin:28px auto 72px; width:100%; display:block; text-align: center; }
 .socialAreaSlider {border-bottom:1px solid #414141;}
 
+ul.categories li.active{font-weight:bold;}
+.displayNone{ display:none; }
