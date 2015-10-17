@@ -268,7 +268,7 @@ header nav li.twitter{ background-position: -123px 0;}
     .form-col input, .form-col textarea{ width:94%; float:left; border:1px solid #c2c2c2; height:42px; margin:10px 0 20px; padding:0 3%;
     	font-size:15px; color:#333333;}
     .form-col textarea{ height:132px; padding:5px 3%;}
-    .contactChain button, .videoFrom button, .aboutAdd a{ width:134px; padding:6px 0; font-family: 'open_sansbold'; font-size:24px; background:#56c650; color:#fff; text-align:center;
+    .contactChain button, .videoFrom button, .aboutAdd a,.contactChain .wpcf7-submit{ width:134px; padding:6px 0; font-family: 'open_sansbold'; font-size:24px; background:#56c650; color:#fff; text-align:center;
     	margin-bottom:60px;}
     
     .contactMap{ width:516px; float:right;}
@@ -409,6 +409,7 @@ header nav li.twitter{ background-position: -123px 0;}
 .newsRht{ width:630px; float:left; margin:0 0 0 18px;}  
 .breking_news { display: inline-block; margin: 20px 0; width: 100%; }
 .breking_news_img { background: url(../images/episodes_videos_tv_02.png) no-repeat 0 0; height: 300px; margin: 0 auto; padding: 5px 0; width: auto; }
+.breaking_news_img_padding{padding: 13px 14px;}
 .breking_news_img img {float: left; margin: 8px 0 0 15px;}
 .breking_news_data span { color: #727272; font-size: 14px; padding: 18px 0 0;display: block;}
 .breking_news_data > h1 { color: #56c650; font-size: 33px; font-weight: bold; margin: 5px 0; }
@@ -477,7 +478,7 @@ header nav li.twitter{ background-position: -123px 0;}
 .socialColumn:first-child{ margin:0 0 60px 0;}
 
 
-
+span.wpcf7-not-valid-tip{float:left;}
 
 
 

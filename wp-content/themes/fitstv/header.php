@@ -51,19 +51,14 @@
 		</div>
 	</div>
 
-	<section class="<?php if(is_home()){echo 'home';}else{echo 'about';}?> full-w postionR">
+	<section class="<?php if(is_home() || is_front_page() || is_page('home')){echo 'home';}else{echo 'about';}?> full-w postionR">
 			<div class="inner-w">
 					<header>
-					  <div class="logo"><a href="index.html"><img src="<?php echo get_template_directory_uri();?>/images/fitse-logo.png" width="127" height="40" alt="FITSE"></a></div>
+					  <div class="logo"><a href="<?php echo site_url();?>"><img src="<?php echo get_template_directory_uri();?>/images/fitse-logo.png" width="127" height="40" alt="FITSE"></a></div>
 					  <div class="menu"><img src="<?php echo get_template_directory_uri();?>/images/menu.png" width="42" height="33" alt="menu"></div>
 					  <nav>
 						<ul>
-							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="episodes.html">Episodes</a></li>
-							<li><a href="video.html">Videos</a></li>
-							<li><a href="news.html">News</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<?php wp_nav_menu( array( 'container' => '', 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ,'before' => '','after' => '','link_before' => '','link_after' => '','items_wrap' => '%3$s','depth' => 0,	'walker' => '') ); ?>
 							<li class="searchIcn">
 							<div id="sb-search" class="sb-search">
 							<form class="searchbox">
@@ -83,5 +78,5 @@
 					</header>
 				</div>
 			<div class="clear"></div>
-            <?php if(is_home()){ get_template_part('home-header','additional'); } ?>
+            <?php if(is_home() || is_front_page() || is_page('home')){ get_template_part('home-header','additional'); } ?>
 	</section>
