@@ -37,7 +37,11 @@
         </ul>
     <!-- /homeSlider --></div>    
 </div>
-<div class="bxMoveSlider full-w">
+<?php if ( is_active_sidebar( 'home-episodes' ) ) {
+				dynamic_sidebar( 'home-episodes' ); 
+			  }
+		?>
+<!--div class="bxMoveSlider full-w">
     <ul id="owl-demo">
         <li class="item"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="slide01">
         <div class="moveTrans">
@@ -136,12 +140,9 @@
         </div>
         </li>
     </ul>
-</div>
-<div class="new_data">
-    <marquee>
-           <p><a>Breaking News</a><span>After an amazing run that spanned more than half a decade, Gary Vaynerchuk</span><a>ALert</a>
-           <span> After an amazing run that spanned more than half a decade, Gary Vaynerchuk today announces his 
-           retirement from producing video content.</span>
-        </p>
-    </marquee>
-</div>
+</div-->
+
+<?php if ( is_active_sidebar( 'breaking-news-alert' ) ) {
+				dynamic_sidebar( 'breaking-news-alert' ); 
+	  }
+?>

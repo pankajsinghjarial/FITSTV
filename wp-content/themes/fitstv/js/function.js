@@ -115,7 +115,7 @@ $('.thumbSlider').bxSlider({
  portSlideIn*******************/  
   var owl = $("#owl-demo");
 
-  owl.owlCarousel({
+  owl.owlCarousel({ 
 
   items : 5, //10 items above 1000px browser width
   itemsDesktop : [1000,5], //5 items between 1000px and 901px

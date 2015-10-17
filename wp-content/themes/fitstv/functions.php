@@ -159,6 +159,42 @@ function fitstv_widgets_init() {
 		'before_title'  => '',
 		'after_title'   => '',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Episodes on Home page', 'fitstv' ),
+		'id'            => 'home-episodes',
+		'description'   => __( 'Episodes on Home page', 'fitstv' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'News Sidebar on Home page', 'fitstv' ),
+		'id'            => 'home-side-news',
+		'description'   => __( 'News Sidebar Home page', 'fitstv' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'About the CEO', 'fitstv' ),
+		'id'            => 'home-about-ceo',
+		'description'   => __( 'About the CEO', 'fitstv' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Breaking news and Alert widget' ),
+		'id'            => 'breaking-news-alert',
+		'description'   => __( 'Breaking news and Alert widget', 'fitstv' ),
+		'before_widget' => '<div class="new_data"><marquee><p>',
+		'after_widget'  => '</p></marquee></div>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
 }
 add_action( 'widgets_init', 'fitstv_widgets_init');
 
