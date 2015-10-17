@@ -290,3 +290,40 @@ function special_nav_class($classes, $item){
      }
      return $classes;
 }
+
+/*
+ * FUNCTION : GetAttachmentAttributesByUrl()
+ * function Get attributes of attachment of any custom post type
+ * params : Value of the option (url), Attribute Name 
+ * If Attribute name is not given then returns the attachment post.
+ * 
+ * */
+
+	function GetAttachmentAttributesByUrl($value_url=NULL, $attribute_name=NULL)
+	{
+		If(($value_url != NULL))
+		{
+				$postID = getIDfromGUID($value_url);
+				$post = get_post($postID);
+				$post_content = $post->post_content;
+				$post_title = $post->post_title;
+				if($attribute_name == 'description'){
+					return $post_content;
+				}else if($attribute_name == 'title'){
+					return $post_title;
+				}else{
+					return $post; 
+				}
+		}else{
+			$error = 'Error : Please give the correct parameters';
+				return $error;
+		}
+			
+	}
+	
+	function getIDfromGUID( $guid ){
+		global $wpdb;
+		return $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE guid=%s", $guid ) );
+
+	}
+

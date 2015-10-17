@@ -35,13 +35,13 @@ class News_Top_Widget extends WP_Widget {
 		$post_excerpt = $post->post_excerpt;//get_post_meta($postId);
 		$thumb = get_post_meta($postId,'wpcf-thumbnail',true);
 		$video_url = get_post_meta($postId,'wpcf-video',true);
-		$title = get_the_title();
-		$description = get_the_title();
+		$video_title = GetAttachmentAttributesByUrl($video_url,'title');
+		$video_description = GetAttachmentAttributesByUrl($video_url,'description');
 		?>
 		<div class="breking_news">
 			<div class="newsLft">
 				<div class="breking_news_img breaking_news_img_padding">
-				<?php  displayVideo('breking_news_img',$thumb, $video_url, 394 , 222, $title, $description);?>
+				<?php  displayVideo('breking_news_img',$thumb, $video_url, 394 , 222, $video_title, $video_description);?>
 				</div>
 				
 			</div>
@@ -128,17 +128,14 @@ class Video_Top_Widget extends WP_Widget {
 		$post_excerpt = $post->post_excerpt;//get_post_meta($postId);
 		$thumb = get_post_meta($postId,'wpcf-thumbnail',true);
 		$video_url = get_post_meta($postId,'wpcf-video',true);
+		$video_title = GetAttachmentAttributesByUrl($video_url,'title');
+		$video_description = GetAttachmentAttributesByUrl($video_url,'description');
 		
-		$title = get_the_title();
-		$description = get_the_title();
-		//print_r($title);  die;
-		//print_r($video_url);
-		 //die;
 		?>
 		<div class="breking_news">
 			<div class="newsLft">
 				<div class="breking_news_img breaking_news_img_padding">
-				<?php  displayVideo('breking_news_img',$thumb, $video_url, 394 , 222, $title, $description);?>
+				<?php  displayVideo('breking_news_img',$thumb, $video_url, 394 , 222, $video_title, $video_description);?>
 				</div>
 				</div>
 				
