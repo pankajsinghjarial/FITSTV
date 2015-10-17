@@ -48,7 +48,7 @@ class News_Top_Widget extends WP_Widget {
 			<div class="newsRht">
 				<div class="breking_news_data">
 					<span><?php echo date('M d, Y',strtotime($post->post_date));?></span>
-					<?php echo $post->post_content;?>
+					<?php echo $post_excerpt;?>
 					<h1><?php echo $post->post_title;?></h1>
 					<a class="spa" href="<?php echo get_permalink($postId);?>">Read more &gt;</a></p>
 					<h6 class="shere"><b>Share:</b><img src="<?php echo get_template_directory_uri();?>/images/share-links.png" width="234" height="20" alt="share"></h6>

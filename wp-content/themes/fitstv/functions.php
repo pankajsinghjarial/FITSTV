@@ -180,7 +180,7 @@ function fitstv_scripts() {
 	wp_enqueue_script( 'fitstv-function', get_template_directory_uri() . '/js/function.js' );
 	wp_enqueue_script( 'fitstv-jwplayer', get_template_directory_uri() . '/jwplayer/jwplayer.js' );
 	
-	if(is_page('videos') || is_page('episodes') || is_page('news')){
+	if(is_page('videos') || is_page('episodes') || is_page('news-index')){
 		wp_enqueue_script( 'fitstv-jquery-ui', get_template_directory_uri() . '/js/jquery-ui.js' );
 	}
 }
