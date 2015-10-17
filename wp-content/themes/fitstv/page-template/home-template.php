@@ -269,68 +269,41 @@ get_header(); ?>
         	<div class="about_data">
                     	<div class="about_title">
                         	<h3>About Fitse The Host</h3>
+                        	<?php $the_slug =  get_post('mike-hansen-ceo-fitse-tv');
+									$args = array(
+									  'name'        => $the_slug,
+									  'post_type'   => 'post',
+									  'post_status' => 'publish',
+									  'numberposts' => 1
+									);
+									$my_posts = get_posts($args);
+									if( $my_posts ) :
+									  $title =  $my_posts[0]->post_title;
+									  $excerpt = $my_posts[0]->post_excerpt;
+									  $PostId = $my_posts[0]->ID;
+									  $thumb = get_the_post_thumbnail ( $PostId , array(139,97));
+									 // print_r($thumb); die;
+									endif;
+									
+                        	?>
                         </div>
                         <div class="about_contant">
-                        	<div class="ab_left"><img src="<?php echo get_template_directory_uri();?>/images/profile.jpg" alt="Profile" width="97" height="139"></div>
-                            <div class="ab_right"><h2>Mike Hansen CEO, Fitse TV</h2>
-                             <p>After an amazing run that spanned more than half a decade, Gary scale.<a href="#">Read More<span><img src="<?php echo get_template_directory_uri();?>/images/arrow.png" width="10" height="10" alt="Arrow"></span></a></p>
+                        	<div class="ab_left"><?php echo $thumb;?></div>
+                            <div class="ab_right"><h2><?php echo $title;?></h2>
+                             <p><?php echo $excerpt;?><a href="<?php echo get_permalink($PostId);?>">Read More<span><img src="<?php echo get_template_directory_uri();?>/images/arrow.png" width="10" height="10" alt="Arrow"></span></a></p>
                             </div>
                             
                         </div>
                        
                     </div>
-            <div class="recent_news">
-                    	<div class="recent_news_title">
-                        	<h3>Recent News</h3>
-                        </div>
-                        <div class="recent_news_contant">
-                        	<ul>
-                            	<li>
-                               	  <div class="rece_data">
-                                    	<div class="rece_left"><img src="<?php echo get_template_directory_uri();?>/images/img9.jpg" width="54" height="48" alt="pic1"></div>
-                                    <div class="rece_right">
-                                        	<h4>PM Told To Atone And Apologise Over Slavery</h4>
-                                      </div>
-                                      <p>After an amazing run that  spanned more.<a href="#">Read More<span><img src="<?php echo get_template_directory_uri();?>/images/arrow.png" width="10" height="10" alt="Arrow"></span></a></p>
-                                    </div>
-                                </li>
-                                <li>
-                                	<div class="rece_data">
-                                    	<div class="rece_left"><img src="<?php echo get_template_directory_uri();?>/images/img9.jpg" width="54" height="48" alt="pic1"></div>
-                                        <div class="rece_right">
-                                        	<h4>PM Told To Atone And Apologise Over Slavery</h4>
-                                        </div>
-                                        <p>After an amazing run that  spanned more.<a href="#">Read More<span><img src="<?php echo get_template_directory_uri();?>/images/arrow.png" width="10" height="10" alt="Arrow"></span></a></p>
-                                    </div>
-                                </li>
-                                <li>
-                                	<div class="rece_data">
-                                    	<div class="rece_left"><img src="<?php echo get_template_directory_uri();?>/images/img9.jpg" width="54" height="48" alt="pic1"></div>
-                                        <div class="rece_right">
-                                        	<h4>PM Told To Atone And Apologise Over Slavery</h4>
-                                        </div>
-                                        <p>After an amazing run that  spanned more.<a href="#">Read More<span><img src="<?php echo get_template_directory_uri();?>/images/arrow.png" width="10" height="10" alt="Arrow"></span></a></p>
-                                    </div>
-                                </li>
-                                <li>
-                                	<div class="rece_data">
-                                    	<div class="rece_left"><img src="<?php echo get_template_directory_uri();?>/images/img9.jpg" width="54" height="48" alt="pic1"></div>
-                                        <div class="rece_right">
-                                        	<h4>PM Told To Atone And Apologise Over Slavery</h4>
-                                        </div>
-                                        <p>After an amazing run that  spanned more.<a href="#">Read More<span><img src="<?php echo get_template_directory_uri();?>/images/arrow.png" width="10" height="10" alt="Arrow"></span></a></p>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="view_data">
-                            	<a href="#">View All<span class="big"><img src="<?php echo get_template_directory_uri();?>/images/arrow.png" width="10" height="10" alt="Arrow"></span></a>
-                            </div>
-                        </div>
-                    </div>
+            <?php if ( is_active_sidebar( 'home-side-news' ) ) {
+				dynamic_sidebar( 'home-side-news' ); 
+			  }
+		?>
+
         <!-- /videoRight --></div>
     </div>
 </section>
 
 <?php
-get_sidebar();
 get_footer();
