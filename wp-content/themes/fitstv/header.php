@@ -31,22 +31,7 @@
 			</div>
 		  <div class="pop_con">
 				<p>After an amazing run that his retirement from producing.</p>
-				<form>
-				  <div class="form-group">
-					<input type="email" class="form-control" id="" placeholder="Enter Your E-mail Address">
-				  </div>
-				  <div class="form-group">
-					<input type="password" class="form-control" id="" placeholder="Zip Code">
-				  </div>
-				  <div class="form-group">
-					<input type="password" class="form-control" id="" placeholder="Birthday">
-				  </div>
-				  <div class="form-group">
-					<input type="password" class="form-control" id="" placeholder="Gender">
-				  </div>
-				  
-				  <button type="submit" class="btn btn-default">SUBMIT</button>
-				</form>
+				<?php echo do_shortcode('[contact-form-7 id="66" title="Contact Form Subscription"]');?>
 			</div>         
 		</div>
 	</div>

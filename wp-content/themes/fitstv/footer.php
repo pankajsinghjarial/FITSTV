@@ -10,6 +10,7 @@
  */
 ?>
 
+
 <div class="footer_top">
 	<div class="inner-w">
     <div class="news_letter">
@@ -27,22 +28,56 @@
     <div class="footer_bg">
     <div class="inner-w">
     	
-        <div class="socialArea full-w">
-        	<section class="socialColumn">
-       	    	<img src="<?php echo get_template_directory_uri();?>/images/tweets-outr.jpg" width="370" height="356" alt="Tweets">
-            </section>
-            <section class="socialColumn">
-    	    	<img src="<?php echo get_template_directory_uri();?>/images/insta-outr.jpg" width="370" height="356" alt="Instagram">
-            </section>
-            <section class="socialColumn">
-    	    	<img src="<?php echo get_template_directory_uri();?>/images/fb-outr.jpg" width="370" height="356" alt="Facebook">
-            </section>
+        <div class="socialAreaSlider full-w">
+        	<h3><img src="<?php echo get_template_directory_uri();?>/images/s-twitter.png" width="30" height="21" alt="Twitter"> Tweets</h3>
+        	<ul class="socialAreaSliderIn">
+            	<li>    
+                <figcaption>
+                <figure><img src="<?php echo get_template_directory_uri();?>/images/social01.jpg" width="90" height="90" alt="social"></figure>
+                <span>
+                <strong>Fitse TV</strong><br>
+				@fitsetv
+                </span>
+                </figcaption>
+                <div class="clear"></div>
+				<em>16 Nov</em>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh  dolor sit amet, consectetuer adipiscing elit, 
+                	<a href="javascript:void(0);">#euismod</a></p>
+                </li>
+                <li>
+                <figcaption>
+                <figure><img src="<?php echo get_template_directory_uri();?>/images/social01.jpg" width="90" height="90" alt="social"></figure>
+                <span>
+                <strong>Fitse TV</strong><br>
+				@fitsetv
+                </span>
+                </figcaption>
+                <div class="clear"></div>
+				<em>16 Nov</em>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh  dolor sit amet, consectetuer adipiscing elit, 
+                	<a href="javascript:void(0);">#euismod</a></p>
+                </li>
+                <li>
+                <figcaption>
+                <figure><img src="<?php echo get_template_directory_uri();?>/images/social01.jpg" width="90" height="90" alt="social"></figure>
+                <span>
+                <strong>Fitse TV</strong><br>
+				@fitsetv
+                </span>
+                </figcaption>
+                <div class="clear"></div>
+				<em>16 Nov</em>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh  dolor sit amet, consectetuer adipiscing elit, 
+                	<a href="javascript:void(0);">#euismod</a></p>
+                </li>
+            </ul>
+            <div class="clear"></div>
+            <figure class="sTweets"><img src="<?php echo get_template_directory_uri();?>/images/tweets-img.png" width="298" height="20" alt="tweets"></figure>
         </div>
         
         <div class="footer_menu">
-            <ul class="abc">
-                <?php wp_nav_menu( array( 'container' => '', 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ,'before' => '','after' => '','link_before' => '','link_after' => '','items_wrap' => '%3$s','depth' => 0,	'walker' => '') ); ?>
-            </ul>
+            
+            <?php wp_nav_menu( array( 'container' => '', 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ,'before' => '','after' => '','link_before' => '','link_after' => '','items_wrap' => '%3$s','depth' => 0,	'walker' => '') ); ?>
         </div>
         <div class="footer_bootam">
             <ul>
@@ -56,6 +91,7 @@
         </div>
     </div>
     </div>
+    
 </footer>
 
 </html>

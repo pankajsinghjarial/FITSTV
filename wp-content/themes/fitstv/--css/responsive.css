@@ -90,7 +90,7 @@
 		Ipad - Portrait 
 ******************************/
 @media only screen and (min-width:768px) and (max-width:1023px){
-    .slide01, .slide03, .slide03{background-size:auto 396px;}
+    .slide01, .slide03, .slide03{background-size:100% 396px;}
     .homeSlider li{ height: 396px;}
     .homeOutr{height: 337px;}
     header nav{ margin: 18px 0 0;}
@@ -160,21 +160,18 @@
 		Iphone & Android - Mobiles 
 ******************************/
 @media only screen and (min-width:320px) and (max-width:767px){
-.bxsliderbasic .slider_contant{ display:none;}
-.boxCol h3{ font-size:34px;}
 header nav{display: none;}
-.popup_data{ display: block; position: relative; right: auto; top: 30px;}	
-.homeOutr{height: 281px;}
+.popup_data{display: none;}	
+.homeOutr{height: 191px;}
 .homeSlider h1{ font-size: 26px;padding: 120px 0 0;line-height: 26px;}
-.homeSlider li{height: 340px;}
-.tvSlider .slider_contant{margin: auto 3% 20px; width: 94%;}
+.homeSlider li{height: 250px;}
+.slider_contant{display: none;}
 .playIcn > img { height: auto; width: 50px;}
 .homeSlider .bx-default-pager{bottom: 10px; left: 50%; margin-left: -28px;width: 65px;}
 .owl-carousel .owl-item{width: 320px;}
 .bxMoveSlider.full-w{height: 164px;}
 .videoLeft{margin: 20px 0 0; width: 100%;}
-.home-videos h2{font-size: 34px;}
-.ab_right > h2 { font-size: 20px;}
+.home-videos h2{font-size: 20px;}
 .home-videos .rightCol{float: left; margin-top: 12px; width: 100%;}
 .searchBar{height: 42px;background: rgba(0, 0, 0, 0) url("../images/inpsearch-icn.png") no-repeat scroll 10px 11px / 20px 20px; margin: 20px 1% 0; width: 98%;}
 
@@ -196,19 +193,17 @@ header nav{display: none;}
 
 	/*About*/
 	.aboutTxt{ top: 12px;}
-    .aboutBanner h1{line-height: 21px;  font-size: 24px; padding-top:30px;}
-    .aboutBanner p{ margin: 20px 10%;  width: 80%;}
-    .aboutBanner figure img{height: auto;  width: auto;}
+    .aboutBanner h1{line-height: 21px;  font-size: 24px;}
+    .aboutBanner p{ display:none;}
     .aboutAdd h2{font-size: 24px; line-height: 27px;}
     .mrgTop45 { margin-top: 25px;}
     .aboutAdd span{padding: 15px 0 0;}
     .aboutAdd p{padding: 10px 0 0;}
     
     
-    
     .aboutAdd{ width:100%;}
     .aboutAddImg{width: 285px;float: none; margin: 20px auto auto; display: table;}
-    .aboutAddImg.floatLeft.thumbSliderOut { margin: auto auto 20px; width:285px;}
+    .aboutAddImg.floatLeft.thumbSliderOut { margin: auto auto 20px; width:100%;}
     .aboutAddImg figure{  width: 100%;height: 186px; background-size:100% auto;}
     .aboutAddImg.floatRight figure img{height: 152px; margin: 10px 0 0 11px; width: 93%;}
     .aboutAddImg a { left: 104px; top: 50px;width: 23%;}
@@ -276,10 +271,7 @@ header nav{display: none;}
     .footer_menu li, .footer_bootam li{margin: 5px 0;}
 	
       .slide01, .slide02, .slide03{ background-size:cover;}
-      .slide01{ background-image: url(../images/01m.jpg);}
-      .slide02{ background-image: url(../images/02m.jpg);}
-      .slide03{ background-image: url(../images/03m.jpg);}
-      .blackTrans h3{font-size: 12px; font-weight: normal; line-height: 16px;}
+      .blackTrans h3{font-size: 12px;}  
       .blackTrans span, .moveTrans a, .moveTrans h4{ display:none;}
       .bxMoveSlider.full-w{ height:auto;}
       .blackTrans{bottom: -1px;}
@@ -292,13 +284,12 @@ header nav{display: none;}
       .socialIcns{ border:none;}
       header nav li.socialIcns{ margin: 10px 7px 0 0;}
       .facebook.socialIcns { margin: 10px 7px 0 0;}
-      header nav li.searchIcn{right: 44px; top: -34px; border:none;}  
+      header nav li.searchIcn{right: 44px; top: -34px; border:none;}
       
+      
+    .tvSlider .slider_contant{ width:100%;}
     .videoDetails section b{ margin: 0 5px 10px 0; width: 100%;}
-    .videoSlider.boxCol h3{font-size: 30px;margin-bottom: 16px;}
-    .slider_contant h2 a{ font-size: 20px; line-height: 30px;}
-    .slider_contant ul{margin-bottom: 20px;}
-    .tvSlider .slider_contant p{font-size: 14px;}
+    .videoSlider.boxCol h3{font-size: 30px;}
     .videoFrom{padding: 0 2%; width: 96%;}
     .contactChain button{margin-bottom: 0;}
 
@@ -324,7 +315,7 @@ header nav{display: none;}
     
     /*Video--Details*/
     .tvSlider{width: 100%; background:none;}
-	.tvSliderIn {width: 96%;margin: 28px 2% 10px; height: auto;}
+	.tvSliderIn {width: 96%;margin: 28px 2%; height: auto;}
     .bxsliderTv img { height: auto; width: 100%;}
     .bxsliderTv li a{width: 65px;  height: 65px;margin: -35px 0 0 -35px;}
     .tvSliderIn .bx-controls-direction .bx-prev{left:0;}
@@ -338,15 +329,4 @@ header nav{display: none;}
     .socialColumn{margin: 0 0 20px;  width: 100%;}
 	.socialColumn:first-child { margin: 0 0 20px;}
     
-    .aboutBanner figure{height: 227px; width:100%; float:left; background:url(../images/about-bg-m.jpg) no-repeat center top; background-size:cover;}
-	.aboutBanner figure img{ display:none;}  
-    
-    .contactBanner figure{height: 227px; width:100%; float:left; background:url(../images/contact-bg-m.jpg) no-repeat center top; background-size:cover;}
-	.contactBanner figure img{ display:none;}   
-	
-    .home-videos .rightCol a{ font-size:13px;padding: 8px 6px;}    
-    
-    .my_modal{left: 50%; margin-left: -127px; position: fixed; right: auto; top: 10%; z-index: 99999;}
-    .popup_data a{right: 0;  top: 32px;}
-    
-     }
+    }

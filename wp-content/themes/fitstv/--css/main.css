@@ -188,7 +188,7 @@ header nav li.twitter{ background-position: -123px 0;}
 			Footer
 **************************************/
 .footer_bg { background-color: #252525; float: left; padding: 40px 0; width: 100%; }
-.footer_menu, .footer_bootam { display: inline-block; text-align: center; width: 100%; margin-top: 29px; }
+.footer_menu, .footer_bootam { display: inline-block; text-align: center; width: 100%; margin-top: 6px; }
 .footer_bootam { margin-top: 15px; }
 .footer_menu a { color: #fff; padding: 0 10px; font-size: 14px; }
 .footer_bootam a { color: #fff; padding: 0 2px; }
@@ -203,7 +203,7 @@ header nav li.twitter{ background-position: -123px 0;}
 /*************************************
 			Side Popup
 **************************************/
-.popup_data a{ background: transparent none repeat scroll 0 0; width: 76px; position: absolute; top:4px; right: 15px; z-index: 9999; float: right;}
+.popup_data a{ background: transparent none repeat scroll 0 0; width: 76px; position: absolute; top:4px; right: 15px; z-index: 99999; float: right;}
 
 .popup_info{ background:#fff; width:224px; position:absolute; right:0; top:150px; padding:20px 15px}
 .popup_info .modal-dialog { margin: 0; position: absolute; right: 0; top: 100px; width: 280px; }
@@ -222,9 +222,8 @@ header nav li.twitter{ background-position: -123px 0;}
 
 .form-group{ float:left; width:100%;}
 .form-group input{ border:1px solid #c2c2c2; width:90%; padding:0 5%; height:37px; line-height:40px; margin:0 0 5px 0;}
-.form-group select{ border:1px solid #c2c2c2; width:90%; padding:0 5%; height:37px; line-height:40px; margin:0 0 5px 0;}
 
-.my_modal{ display:none; position: fixed; right: 0; top: 20%; z-index: 999; box-shadow: 0 2px 4px 3px #ccc;}
+.my_modal{ display:none; position: fixed; right: 0; top: 20%; z-index: 999;}
 
 .askAQtnPop{display: none; z-index: 999;}
 .popup_info.askAQtnPop{width:400px; position: fixed; left:50%; top:20%; padding:20px 15px; margin-left:-200px;}
@@ -269,7 +268,7 @@ header nav li.twitter{ background-position: -123px 0;}
     .form-col input, .form-col textarea{ width:94%; float:left; border:1px solid #c2c2c2; height:42px; margin:10px 0 20px; padding:0 3%;
     	font-size:15px; color:#333333;}
     .form-col textarea{ height:132px; padding:5px 3%;}
-    .contactChain button, .videoFrom button, .aboutAdd a{ width:134px; padding:6px 0; font-family: 'open_sansbold'; font-size:24px; background:#56c650; color:#fff; text-align:center;
+    .contactChain button, .videoFrom button, .aboutAdd a,.contactChain .wpcf7-submit{ width:134px; padding:6px 0; font-family: 'open_sansbold'; font-size:24px; background:#56c650; color:#fff; text-align:center;
     	margin-bottom:60px;}
     
     .contactMap{ width:516px; float:right;}
@@ -475,31 +474,13 @@ header nav li.twitter{ background-position: -123px 0;}
 
 .bx-caption { background: rgba(0, 0, 0, 0.6) none repeat scroll 0 0; bottom: 0; color: #fff; padding: 5px 2%; position: absolute; width: 96%;}
 
-.home .searchbox-open .searchbox-icon { background-color: #999;} 
+.socialColumn{ float:left; margin:0 0 60px 20px;}
+.socialColumn:first-child{ margin:0 0 60px 0;}
 
-.contactBanner figure img{ display:block;}
-.aboutBanner figure img{ display:block;}
 
-.socialAreaSlider li{ width:100%; float:left; text-align:center;}
-.socialAreaSlider h3{ font-size:24px; color:#ffffff; font-family: 'open_sansbold'; text-align:center;}
-.socialAreaSlider figcaption { margin: 28px auto 16px; width: 240px;display: inline-block;}
-.socialAreaSlider figcaption figure { float: left; margin: 0 0 0 70px;}
-.socialAreaSlider span { color: #fff; float: left; font-size: 15px; padding: 25px 0 0 7px;}
-.socialAreaSlider figcaption figure img{ border-radius:50%; border:4px solid #fff; width:90px; height:90px;}
-.socialAreaSlider em { color: #7e7e7e; float: left; font-size: 12px; width: 100%; font-style:normal;}
-.socialAreaSlider p { color: #fff; float: left; font-size: 13px; width: 100%; padding:10px 0 0;}
-.socialAreaSlider p a{ color:#0084b4;}
-.socialAreaSlider .bx-has-controls-direction{margin: 30px auto auto;  width: 45px;position: relative;}
-.socialAreaSlider .bx-pager-item { float: left;margin:2px 5px 0 0;}
-.socialAreaSlider .bx-pager .bx-pager-link{ width:10px; height:10px; border-radius:10px; background:#676767; text-indent:-5555px; 
-	display: inline-block;}
-.socialAreaSlider .bx-pager .bx-pager-item:first-child{ margin-left:0;}    
-.socialAreaSlider .bx-pager .bx-pager-link.active{ background:#fff;}
-.socialAreaSlider .bx-controls-direction a{ width:8px; height:14px; text-indent:-55555px; background:url(../images/social-arrows.png) no-repeat 0 0;
-	position: absolute;position: absolute;}
-.socialAreaSlider .bx-controls-direction a.bx-prev{ background-position: left top; left: -19px;}
-.socialAreaSlider .bx-controls-direction a.bx-next{ background-position:right top; right: -15px;}
+span.wpcf7-not-valid-tip{float:left;}
 
-.sTweets{ margin:28px auto 72px; width:100%; display:block; text-align: center; }
-.socialAreaSlider {border-bottom:1px solid #414141;}
+
+
+
 
