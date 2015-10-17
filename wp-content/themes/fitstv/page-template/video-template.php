@@ -75,15 +75,19 @@ get_header(); ?>
             <section class="tabColumnsR cateG">
             <ul>
 				<?php
-				$args = array( 'posts_per_page' => 6, 'post_type' => 'video' ,'category_name' => 'Featured');
+				$args = array( 'posts_per_page' => 6, 'post_type' => 'video' );
 				$lastposts = get_posts( $args );
 				foreach ( $lastposts as $post ) :
 				  setup_postdata( $post );?>
 					<li class="item">
-						<img src="<?php echo get_post_meta($post->ID,'wpcf-thumbnail',true);?>" width="306" height="212" alt="new01">
-						<figure class="icnPlay">
-							<img src="<?php echo get_template_directory_uri();?>/images/transPlay.png" width="69" height="69" alt="Play">
-						</figure>
+						<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
+							<img src="<?php echo get_post_meta($post->ID,'wpcf-thumbnail',true);?>" width="306" height="212" alt="new01">
+							<figure class="icnPlay">
+								<img src="<?php echo get_template_directory_uri();?>/images/transPlay.png" width="69" height="69" alt="Play">
+							</figure>
+						<?php else: ?>
+							<img src="<?php echo get_post_meta($post->ID,'wpcf-image',true);?>" width="306" height="212" alt="new01">
+						<?php endif; ?>
 						<h4>Cross Fit Workouts</h4>
 						<section class="blackTrans">
 						<span><?php echo date('M d, Y',strtotime($post->post_date));?></span>

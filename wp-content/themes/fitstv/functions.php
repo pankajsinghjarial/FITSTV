@@ -53,8 +53,10 @@ function fitstv_setup() {
 
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 672, 372, true );
-	add_image_size( 'fitstv-full-width', 1038, 576, true );
+	set_post_thumbnail_size( 306, 212, true );
+	add_image_size( 'fitstv-large-thumb', 1351, 603, true );
+	add_image_size( 'fitstv-tv-thumb', 394, 222, true );
+	add_image_size( 'fitstv-medium', 746, 416, true );
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
