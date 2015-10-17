@@ -186,6 +186,9 @@ function fitstv_scripts() {
 	if(is_page('videos') || is_page('episodes') || is_page('news-index')){
 		wp_enqueue_script( 'fitstv-jquery-ui', get_template_directory_uri() . '/js/jquery-ui.js' );
 	}
+	if(is_page('videos')){
+		wp_enqueue_script( 'fitstv-video-listing', get_template_directory_uri() . '/js/video-listing.js' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'fitstv_scripts' );
 
@@ -197,6 +200,8 @@ add_action( 'wp_enqueue_scripts', 'fitstv_scripts' );
 function fitstv_js_variables(){ ?>
       <script type="text/javascript">
         jwplayer.key="Z5/cz3knuJeTN6N9l/Xk1hp9CLjRip+tgIJSQA==";
+        var templateUrl = "<?php echo get_template_directory_uri();?>";
+        var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
       </script><?php
 }
 add_action ( 'wp_head', 'fitstv_js_variables' );
@@ -340,3 +345,50 @@ function special_nav_class($classes, $item){
 		$term = get_term_by('slug',$slug,$taxonomy);
 		return $term->term_id;
 	}
+
+	function loadMorePost(){
+		$postType = $_REQUEST['type'];
+		$page = $_REQUEST['page'];
+		$limit = $_REQUEST['limit'];
+		$taxonomy = $_REQUEST['taxonomy'];
+		$term = $_REQUEST['term'];
+		$offset = $limit*($page);
+		$args = array( 
+			'posts_per_page' => $limit,
+			'offset' => $offset,
+			'post_type' => $postType,
+			'tax_query' => array(
+				array(
+					'taxonomy' => $taxonomy,
+					'field' => 'slug',
+					'terms' => $term,
+				)
+			)
+		);
+		$lastposts = get_posts( $args );
+		$response = array();
+		foreach($lastposts as $post){
+			$data = array();
+			$data['id'] = $post->ID;
+			$data['title'] = $post->post_title;
+			$data['date'] = date('M d, Y',strtotime($post->post_date));
+			$data['attachment_type'] = get_post_meta($post->ID,'wpcf-attachment-type',true);
+			if($data['attachment_type'] == 1){
+				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-thumbnail',true));
+				if($term != 'featured')
+				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image');
+			}else{
+				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-image',true));
+				if($term != 'featured')
+				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image');
+			}
+			$data['rating'] = get_post_meta($post->ID,'wpcf-rating',true);
+			$data['excerpt'] = (strlen($post->post_excerpt)>20)?substr($post->post_excerpt,0,20).'...':$post->post_excerpt;
+			$data['link'] = get_permalink($post->ID);
+			$response[] = $data;
+		}
+		echo json_encode($response);
+		die;
+	}
+add_action('wp_ajax_loadMorePost', 'loadMorePost');
+add_action('wp_ajax_nopriv_loadMorePost', 'loadMorePost');
