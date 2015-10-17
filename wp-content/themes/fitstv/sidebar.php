@@ -9,3 +9,6 @@
 if ( is_active_sidebar( 'video-top' ) ) {
  dynamic_sidebar( 'video-top' ); 
 }
+if ( is_active_sidebar( 'news-top' ) ) {
+ dynamic_sidebar( 'news-top' ); 
+}

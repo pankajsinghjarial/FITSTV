@@ -9,7 +9,10 @@
 get_header(); ?>
 <div class="full-w newsHead">
 	<div class="inner-w">
-		<?php get_sidebar('video-top');?>
+		<?php if ( is_active_sidebar( 'video-top' ) ) {
+				dynamic_sidebar( 'video-top' ); 
+			  }
+		?>
 	</div>    
 </div>
 

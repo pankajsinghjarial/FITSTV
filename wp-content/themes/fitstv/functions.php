@@ -157,7 +157,7 @@ function fitstv_widgets_init() {
 		'after_title'   => '',
 	) );
 }
-add_action( 'widgets_init', 'fitstv_widgets_init' );
+add_action( 'widgets_init', 'fitstv_widgets_init');
 
 /**
  * Enqueue scripts and styles for the front end.

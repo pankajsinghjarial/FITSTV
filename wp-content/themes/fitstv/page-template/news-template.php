@@ -9,26 +9,12 @@
 
 get_header(); ?>
 <div class="full-w newsHead">
-<div class="inner-w">
-	<div class="breking_news">
-        <div class="newsLft">
-            <div class="breking_news_img">
-            <a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/episodes_videos_tv_03.png" width="394" height="222" alt="epp"></a> </div>
-        </div>
-        <div class="newsRht">
-            <div class="breking_news_data">
-                <span>August 23, 2011</span>
-                <h1>Breaking News: Russian Jets 'Bombing</h1>
-                <p>After an amazing run that spanned more than half a decade, Gary Vaynerchuk today announces his 
-retirement from producing video content. After an amazing run that spanned more than half a decade, 
-Gary Vaynerchuk today announces his retirement from producing video content.</p>
-                <p>After an amazing run that spanned more than half a decade, Gary Vaynerchuk today announces his 
-retirement from producing video content.<a class="spa" href="#">Read more &gt;</a></p>
-                <h6 class="shere"><b>Share:</b><img src="<?php echo get_template_directory_uri();?>/images/share-links.png" width="234" height="20" alt="share"></h6>
-            </div>
-        </div>
-    </div>
-</div>    
+	<div class="inner-w">
+		<?php if ( is_active_sidebar( 'news-top' ) ) {
+				dynamic_sidebar( 'news-top' ); 
+			  }
+		?>
+	</div>    
 </div>
 
 
