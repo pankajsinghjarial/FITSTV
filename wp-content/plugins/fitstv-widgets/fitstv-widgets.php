@@ -215,38 +215,47 @@ class Home_Episode_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		$postIds = $instance['homeEpisodes'];
-
-		echo '<div class="bxMoveSlider full-w"><ul id="owl-demo">';
-		foreach($postIds as $postId){
-			
-			$post = get_post($postId);
-			$post_excerpt = $post->post_excerpt;//get_post_meta($postId);
-			$Episode_title = $post->post_title;
-			$Episode_created = $post->post_date;
-			$thumb = get_post_meta($postId,'wpcf-thumbnail',true);
-			$video_url = get_post_meta($postId,'wpcf-video',true);
-			$video_title = GetAttachmentAttributesByUrl($video_url,'title');
-			$video_description = GetAttachmentAttributesByUrl($video_url,'description');
-		
-		?>	
-			<li class="item">
-				<?php  //displayVideo('',$thumb, $video_url, 288 , 148, $video_title, $video_description);?>
-				<img src="<?php echo $thumb;?>" width="288" height="148" alt="slide04">
-				<div class="moveTrans">
-				<h4>Cross Fit Workouts</h4>
-					<a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/play-small.png" width="47" height="47" alt="Play"></a>
-					<div class="clear"></div>
-          <section class="blackTrans">
-            <span><?php echo date('F d, Y',strtotime($Episode_created));?></span>
-            <h3><?php echo $Episode_title ?></h3>
-            <span><?php echo (strlen($post->post_excerpt)>20)?substr($post->post_excerpt,0,20).'...':$post->post_excerpt;?></span>
-          </section>  
-        </div>
-        </li>
-	<?php		
+		if(count($postIds))
+		{
+					echo '<div class="bxMoveSlider full-w"><ul id="owl-demo">';
+					
+					foreach($postIds as $postId){
+						
+						$post = get_post($postId);
+						$post_excerpt = $post->post_excerpt;//get_post_meta($postId);
+						$Episode_title = $post->post_title;
+						$Episode_created = $post->post_date;
+						if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1){
+				
+							$thumb = get_post_meta($postId,'wpcf-thumbnail',true);
+						}else{
+							$thumb = get_post_meta($postId,'wpcf-image',true);
+						}
+						$video_url = get_post_meta($postId,'wpcf-video',true);
+						$video_title = GetAttachmentAttributesByUrl($video_url,'title');
+						$video_description = GetAttachmentAttributesByUrl($video_url,'description');
+						$thumb = getImage($thumb, 'fitstv-image');
+					?>	
+						<li class="item">
+							<?php  //displayVideo('',$thumb, $video_url, 288 , 148, $video_title, $video_description);?>
+							<img src="<?php echo $thumb;?>" width="288" height="148" alt="slide04">
+							<div class="moveTrans">
+							<h4>Cross Fit Workouts</h4>
+								<a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/play-small.png" width="47" height="47" alt="Play"></a>
+								<div class="clear"></div>
+					  <section class="blackTrans">
+						<span><?php echo date('F d, Y',strtotime($Episode_created));?></span>
+						<h3><?php echo $Episode_title ?></h3>
+						<span><?php echo (strlen($post->post_excerpt)>20)?substr($post->post_excerpt,0,20).'...':$post->post_excerpt;?></span>
+					  </section>  
+					</div>
+					</li>
+				<?php		
+					}
+				
+				echo "</ul></div>";
 		}
-		
-		echo "</ul></div>";
+
 	}
 
 	/**
@@ -399,7 +408,10 @@ class Home_Slider_Main_Widget extends WP_Widget {
                 </li>
 			<?php 
 		}
-                
+         	
+	echo '</ul>
+            </div>    
+        </div>';       
 	}
 
 	/**
@@ -608,7 +620,7 @@ class Episode_Slider_Widget extends WP_Widget {
 			$video_url = get_post_meta($postId,'wpcf-video',true);
 			$video_title = GetAttachmentAttributesByUrl($video_url,'title');
 			$video_description = GetAttachmentAttributesByUrl($video_url,'description');
-		
+			
 		?>	
 			<li>
 				<?php 
@@ -721,7 +733,7 @@ class Home_Slider_News_Widget extends WP_Widget {
 			}else{
 					$thumb = get_post_meta($postId,'wpcf-image',true);
 			}
-			
+			$thumb = getImage($thumb, 'fitstv-main-thumb');
 			//$video_url = get_post_meta($postId,'wpcf-video',true);
 			//$video_title = GetAttachmentAttributesByUrl($video_url,'title');
 			//$video_description = GetAttachmentAttributesByUrl($video_url,'description');
@@ -754,7 +766,7 @@ class Home_Slider_News_Widget extends WP_Widget {
 		
 		echo '</ul>
                     </div>
-                    </li>';
+                    </div>';
           
 	}
 
@@ -844,7 +856,7 @@ class Home_Slider_Reviews_Widget extends WP_Widget {
 			}else{
 					$thumb = get_post_meta($postId,'wpcf-image',true);
 			}
-			
+			$thumb = getImage($thumb, 'fitstv-main-thumb');
 			//$video_url = get_post_meta($postId,'wpcf-video',true);
 			//$video_title = GetAttachmentAttributesByUrl($video_url,'title');
 			//$video_description = GetAttachmentAttributesByUrl($video_url,'description');
@@ -891,7 +903,7 @@ class Home_Slider_Reviews_Widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$homeSliderNews = ! empty( $instance['homeSliderReviews'] ) ? $instance['homeSliderReviews'] :array();
+		$homeSliderReviews = ! empty( $instance['homeSliderReviews'] ) ? $instance['homeSliderReviews'] :array();
 		?>
 		<p>
 		<label for="<?php echo $this->get_field_id( 'homeSliderReviews' ); ?>"><?php _e( 'Select Episodes:' ); ?></label> 
@@ -936,7 +948,7 @@ class Home_Slider_Workouts_Widget extends WP_Widget {
 	 */
 	function __construct() {
 		parent::__construct(
-			'Home_Slider_Workoutss_Widget', // Base ID
+			'Home_Slider_Workouts_Widget', // Base ID
 			__( 'Home Slider Workouts Widget', 'text_domain' ), // Name
 			array( 'description' => __( 'Choose Slider Workouts to display on home page', 'text_domain' ), ) // Args
 		);
@@ -969,7 +981,7 @@ class Home_Slider_Workouts_Widget extends WP_Widget {
 			}else{
 					$thumb = get_post_meta($postId,'wpcf-image',true);
 			}
-			
+			$thumb = getImage($thumb, 'fitstv-main-thumb');
 			//$video_url = get_post_meta($postId,'wpcf-video',true);
 			//$video_title = GetAttachmentAttributesByUrl($video_url,'title');
 			//$video_description = GetAttachmentAttributesByUrl($video_url,'description');

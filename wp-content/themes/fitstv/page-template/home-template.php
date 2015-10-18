@@ -32,16 +32,16 @@ get_header(); ?>
                 <button><img src="<?php echo get_template_directory_uri();?>/images/searchbtn.png" width="40" height="40" alt="Search"></button>
             </div>
         	
-            <?php if ( is_active_sidebar( 'home-side-news' ) ) {
+            <?php if ( is_active_sidebar( 'home-slider-news' ) ) {
 				dynamic_sidebar( 'home-slider-news' ); 
 			  }
 		?>
-		<?php if ( is_active_sidebar( 'home-side-news' ) ) {
+		<?php if ( is_active_sidebar( 'home-slider-reviews' ) ) {
 				dynamic_sidebar( 'home-slider-reviews' ); 
 			  }
 		?>
-		<?php if ( is_active_sidebar( 'home-side-news' ) ) {
-				dynamic_sidebar( 'home-side-workouts' ); 
+		<?php if ( is_active_sidebar( 'home-slider-workout' ) ) {
+				dynamic_sidebar( 'home-slider-workout' ); 
 			  }
 		?>
 		<!-- /videoLeft --></div>
