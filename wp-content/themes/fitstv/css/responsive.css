@@ -21,7 +21,7 @@
     .contactChain .contactForm{ width:48%;}
     .newsRht{width: 53%;}
     /*.cateG.tabColumnsR { width: 70%;}*/
-    .tabColumnsR.cateG .item:nth-child(3n){ margin: 0 12px 17px 0;}
+    /*.tabColumnsR.cateG .item:nth-child(3n){ margin: 0 12px 17px 0;}*/
     .tabColumnsR.cateG .item { width: 31%;}
     /*.homeOutr{height: 644px;}
     .homeSlider li{height: 703px;}*/

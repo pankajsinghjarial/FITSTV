@@ -444,6 +444,10 @@ function special_nav_class($classes, $item){
 		$taxonomy = $_REQUEST['taxonomy'];
 		$term = $_REQUEST['term'];
 		$tab = $_REQUEST['tab'];
+		$search = false;
+		if(isset($_REQUEST['search'])){
+			$search = $_REQUEST['search'];
+		}
 		$offset = $limit*($page);
 		$args = array( 
 			'posts_per_page' => $limit,
@@ -457,6 +461,15 @@ function special_nav_class($classes, $item){
 				)
 			)
 		);
+		if($search){
+			$args['meta_query'] = array(
+			   array(
+				   'key' => 'wpcf-attachment-type',
+				   'value' => $search,
+				   'compare' => '=',
+			   )
+		   );
+		}
 		$lastposts = get_posts( $args );
 		unset($args['posts_per_page']);
 		unset($args['offset']);
@@ -472,16 +485,20 @@ function special_nav_class($classes, $item){
 			$data['attachment_type'] = get_post_meta($post->ID,'wpcf-attachment-type',true);
 			if($data['attachment_type'] == 1){
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-thumbnail',true));
-				if(($tab != 'videos' && $postType == 'video') || ($tab != 'featured' && $postType == 'news'))
+				if(($tab != 'videos' && $postType == 'video') || $postType == 'news' && $tab != 'sub-category')
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image');
 				
 			}else{
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-image',true));
-				if($tab != 'videos' && $postType == 'video')
+				if(($tab != 'videos' && $postType == 'video') || $postType == 'news' && $tab != 'sub-category')
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image');
 			}
 			$data['rating'] = get_post_meta($post->ID,'wpcf-rating',true);
-			$data['excerpt'] = (strlen($post->post_excerpt)>20)?substr($post->post_excerpt,0,20).'...':$post->post_excerpt;
+			$wordLimit = 20;
+			if($postType == 'news' && $tab == 'sub-category'){
+				$wordLimit = 45;
+			}
+			$data['excerpt'] = (strlen($post->post_excerpt)>$wordLimit)?substr($post->post_excerpt,0,$wordLimit).'...':$post->post_excerpt;
 			$data['link'] = get_permalink($post->ID);
 			$response['data'][] = $data;
 		}

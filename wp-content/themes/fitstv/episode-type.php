@@ -3,7 +3,7 @@ function displayTerm($term){ ?>
 	<ul class="tabColumnsR cateG epsid <?php echo $term;?>-data">
 		<?php
 		$args = array( 
-				'posts_per_page' => 8, 
+				'posts_per_page' => 6, 
 				'post_type' => 'episode',
 				'tax_query' => array(
 					array(
@@ -18,7 +18,7 @@ function displayTerm($term){ ?>
 			unset($args['posts_per_page']);
 			$the_query = new WP_Query( $args );
 			$totalPosts = $the_query->found_posts;
-			$limit = 8;
+			$limit = 6;
 			$page = 1;
 			$totalPage = ceil($totalPosts/$limit);
 			?>

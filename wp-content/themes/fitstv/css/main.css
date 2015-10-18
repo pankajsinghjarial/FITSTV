@@ -448,7 +448,7 @@ header nav li.twitter{ background-position: -123px 0;}
 .news_slider_info{ float:left; width:100%; }
 .news_img > img { height: auto; width: 100%;}
 .news_around_text > h6 { color: #333333; font-size: 18px;font-family: 'open_sansbold'; margin: 5px 0;line-height: 22px;}
-.news_slider_info .newsLi{ float:left; width:24%;position:relative; margin:0 15px 0 0;}
+.news_slider_info .newsLi{ float:left; width:24%;position:relative; margin:0 10px 0 0;}
 .news_slider_info .newsLi:last-child{margin:0;}
 
 .gymsAround{padding: 20px 0 15px;}
