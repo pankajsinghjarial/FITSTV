@@ -472,8 +472,9 @@ function special_nav_class($classes, $item){
 			$data['attachment_type'] = get_post_meta($post->ID,'wpcf-attachment-type',true);
 			if($data['attachment_type'] == 1){
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-thumbnail',true));
-				if($tab != 'videos' && $postType == 'video')
+				if(($tab != 'videos' && $postType == 'video') || ($tab != 'featured' && $postType == 'news'))
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image');
+				
 			}else{
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-image',true));
 				if($tab != 'videos' && $postType == 'video')

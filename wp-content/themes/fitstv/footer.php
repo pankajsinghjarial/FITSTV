@@ -17,8 +17,7 @@
       <label>Subscribe to Our Monthly Newsletter</label>
         <div class="input-group">
             <span><img src="<?php echo get_template_directory_uri();?>/images/masseges.jpg" width="29" height="24" alt="messages"></span>
-            <input type="text" class="form-control input-lg" placeholder="Enter your email adress here">
-           <button type="button" class="btn btn-primary">SUBSCRIBE</button>
+            <?php echo do_shortcode('[contact-form-7 id="89" title="Subscribe Form Footer"]');?>
       </div>
     </div>
     </div>

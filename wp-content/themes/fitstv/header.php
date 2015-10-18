@@ -59,7 +59,6 @@ if (wResize < 767) {
 			</div>         
 		</div>
 	</div>
-
 	<section class="<?php if(is_home() || is_front_page() || is_page('home')){echo 'home';}else{echo 'about';}?> full-w postionR">
 			<div class="inner-w">
 					<header>
