@@ -16,6 +16,30 @@
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
     <!--[if IE]><script src="<?php echo get_template_directory_uri();?>/js/html5.js"></script><![endif]-->
 		<?php wp_head(); ?>
+	<script>
+$(document).ready(function(){
+var wResize = $(window).width();
+if (wResize < 767) {
+	$(function(){
+	var overlay = $('<div id="overlay"></div>');
+	overlay.show();
+	overlay.appendTo(document.body);
+	$('.my_modal').show();
+	$('.close').click(function(){
+	$('.my_modal').hide();
+	overlay.appendTo(document.body).remove();
+	return false;
+	});
+	
+	$('.x').click(function(){
+	$('.my_modal').hide();
+	overlay.appendTo(document.body).remove();
+	return false;
+	});
+	});
+}
+});
+</script>
 	</head>
 
 	<body>

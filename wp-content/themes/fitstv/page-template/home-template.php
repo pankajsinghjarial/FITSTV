@@ -32,238 +32,19 @@ get_header(); ?>
                 <button><img src="<?php echo get_template_directory_uri();?>/images/searchbtn.png" width="40" height="40" alt="Search"></button>
             </div>
         	
-            <div class="boxCol full-w mrgTop20">
-                <h3>News</h3>
-                <div class="mrgTop20 full-w">
-                    <ul class="basicSlidersAuto">
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-							<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-							<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-							<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-							<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-							<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="boxCol full-w mrgTop20">
-                <h3>Reviews</h3>
-                <div class="mrgTop20 full-w">
-                    <ul class="basicSliders">
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-							<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-							<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-							<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-							<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-							<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="boxCol full-w mrgTop20">
-                <h3>Workout</h3>
-                <div class="mrgTop20 full-w">
-                    <ul class="basicSliders">
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-							<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-							<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-							<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-							<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-							<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-      <!-- /videoLeft --></div>
+            <?php if ( is_active_sidebar( 'home-side-news' ) ) {
+				dynamic_sidebar( 'home-slider-news' ); 
+			  }
+		?>
+		<?php if ( is_active_sidebar( 'home-side-news' ) ) {
+				dynamic_sidebar( 'home-slider-reviews' ); 
+			  }
+		?>
+		<?php if ( is_active_sidebar( 'home-side-news' ) ) {
+				dynamic_sidebar( 'home-side-workouts' ); 
+			  }
+		?>
+		<!-- /videoLeft --></div>
         
         <div class="videoRight">
         	<div class="about_data">
@@ -300,6 +81,7 @@ get_header(); ?>
 				dynamic_sidebar( 'home-side-news' ); 
 			  }
 		?>
+		
 
         <!-- /videoRight --></div>
     </div>
