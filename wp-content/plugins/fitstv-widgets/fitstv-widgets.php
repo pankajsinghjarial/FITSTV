@@ -352,7 +352,7 @@ class Home_Slider_Main_Widget extends WP_Widget {
 		?>	
 		
         <li class="slide01">
-                    <video width="100%" height="600" src="<?php $video_url;?>" type="<?php echo $video_mime_type;?>" 
+                    <video width="100%" height="600" src="<?php echo $video_url;?>" type="<?php echo $video_mime_type;?>" 
                         id="player1" poster="<?php echo $thumb;?>" 
                         controls="controls" preload="none">
                     </video>
@@ -395,7 +395,7 @@ class Home_Slider_Main_Widget extends WP_Widget {
 			
 			?>
 			<li class="slide01">
-                    <video width="100%" height="430" src="<?php $video_url;?>" type="<?php echo $video_mime_type;?>" 
+                    <video width="100%" height="430" src="<?php echo $video_url;?>" type="<?php echo $video_mime_type;?>" 
                         id="player1" poster="<?php echo $thumb;?>" 
                         controls="controls" preload="none">
                     </video>
@@ -524,7 +524,7 @@ class Home_Side_News_Widget extends WP_Widget {
 		
 		echo '</ul>
                  <div class="view_data">
-                       	<a href="#">View All<span class="big"><img src="<?php echo get_template_directory_uri();?>/images/arrow.png" width="10" height="10" alt="Arrow"></span></a>
+                       	<a href="#">View All<span class="big"><img src="'.get_template_directory_uri().'/images/arrow.png" width="10" height="10" alt="Arrow"></span></a>
                  </div>
                </div>
           </div>';
@@ -733,7 +733,7 @@ class Home_Slider_News_Widget extends WP_Widget {
 			}else{
 					$thumb = get_post_meta($postId,'wpcf-image',true);
 			}
-			$thumb = getImage($thumb, 'fitstv-main-thumb');
+			$thumb = getImage($thumb, 'thumbnail');
 			//$video_url = get_post_meta($postId,'wpcf-video',true);
 			//$video_title = GetAttachmentAttributesByUrl($video_url,'title');
 			//$video_description = GetAttachmentAttributesByUrl($video_url,'description');
@@ -856,7 +856,7 @@ class Home_Slider_Reviews_Widget extends WP_Widget {
 			}else{
 					$thumb = get_post_meta($postId,'wpcf-image',true);
 			}
-			$thumb = getImage($thumb, 'fitstv-main-thumb');
+			$thumb = getImage($thumb, 'thumbnail');
 			//$video_url = get_post_meta($postId,'wpcf-video',true);
 			//$video_title = GetAttachmentAttributesByUrl($video_url,'title');
 			//$video_description = GetAttachmentAttributesByUrl($video_url,'description');
@@ -981,7 +981,7 @@ class Home_Slider_Workouts_Widget extends WP_Widget {
 			}else{
 					$thumb = get_post_meta($postId,'wpcf-image',true);
 			}
-			$thumb = getImage($thumb, 'fitstv-main-thumb');
+			$thumb = getImage($thumb, 'thumbnail');
 			//$video_url = get_post_meta($postId,'wpcf-video',true);
 			//$video_title = GetAttachmentAttributesByUrl($video_url,'title');
 			//$video_description = GetAttachmentAttributesByUrl($video_url,'description');

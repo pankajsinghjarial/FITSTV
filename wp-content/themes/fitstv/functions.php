@@ -56,7 +56,7 @@ function fitstv_setup() {
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 306, 212, true );
-	add_image_size( 'fitstv-large-thumb', 1351, 603, true );
+	add_image_size( 'fitstv-large-thumb', 1440, 603, true );
 	add_image_size( 'fitstv-tv-thumb', 394, 222, true );
 	add_image_size( 'fitstv-medium', 746, 416, true );
 	add_image_size( 'fitstv-image', 287, 148, true );
