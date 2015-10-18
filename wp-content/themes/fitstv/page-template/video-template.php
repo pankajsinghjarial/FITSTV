@@ -103,12 +103,12 @@ get_header(); ?>
 					  setup_postdata( $post );?>
 						<li class="item">
 							<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
-								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true));?>" width="306" height="212" alt="new01">
+								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true));?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
 								<figure class="icnPlay">
 									<img src="<?php echo get_template_directory_uri();?>/images/transPlay.png" width="69" height="69" alt="Play">
 								</figure>
 							<?php else: ?>
-								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true));?>" width="306" height="212" alt="new01">
+								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true));?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
 							<?php endif; ?>
 							<h4>Cross Fit Workouts</h4>
 							<section class="blackTrans">
@@ -161,12 +161,12 @@ get_header(); ?>
 					  setup_postdata( $post );?>
 						<li class="tabSlide">
 								<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
-									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image');?>" width="306" height="212" alt="new01">
+									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image');?>" width="306" height="212" alt="<?php echo $post->post_title;?>">
 									<figure class="icnPlay">
 										<img src="<?php echo get_template_directory_uri();?>/images/transPlay.png" width="69" height="69" alt="Play">
 									</figure>
 								<?php else: ?>
-									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image');?>" width="306" height="212" alt="new01">
+									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image');?>" width="306" height="212" alt="<?php echo $post->post_title;?>">
 								<?php endif; ?>
 						<section><?php the_title(); ?> -  
 						<span><?php echo (strlen($post->post_excerpt)>25)?substr($post->post_excerpt,0,25).'...':$post->post_excerpt;?></span>

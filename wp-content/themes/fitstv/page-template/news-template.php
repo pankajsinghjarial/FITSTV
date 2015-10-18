@@ -7,7 +7,8 @@
  * @since Fitstv 1.0
  */
 
-get_header(); ?>
+get_header();
+get_template_part('news','subcategories');?>
 <div class="full-w newsHead">
 	<div class="inner-w">
 		<?php if ( is_active_sidebar( 'news-top' ) ) {
@@ -47,950 +48,118 @@ get_header(); ?>
             <li class="cl7" data-type="activities"><a href="#tabs-7"><span>Activities</span> </a></li>
           </ul>
           <div id="tabs-1">
-          	<h3>Top Stories</h3>
-            	<section class="tabColumnsL">
-                	<div class="tabSlide">
-                        <img src="<?php echo get_template_directory_uri();?>/images/newsLarge.jpg" width="499" height="442" alt="news">
-                        <section class="blackTrans">
-                            <span>August 23, 2011</span>
-                            <h3>Breaking News: Russian Jets 'Bombing</h3>
-                            <p>After an amazing run that spanned more than half a decade, 
-        Gary Vaynerchuk today announces his... <a href="javascript:void(0);">Read More</a></p>
-                          </section>
-                        <div class="news_ret">
-                            <ul>
-                                <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                                <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                                <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                                <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                                <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                            </ul>
-                        </div>        	
-                    </div>
-                </section>
-                <section class="tabColumnsR">
-                <ul>
-    			<li class="item">
-                <img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="306" height="212" alt="new01">
-                <section class="blackTrans">
-               	  <span>August 23, 2011</span>
-                  <h3>Breaking News: Russian Jets</h3>
-                  <span>After an amazing run...<a href="javascript:void(0);">Read More</a></span>
-                </section> 
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div> 
-	            </li>
-                <li class="item">
-                <img src="<?php echo get_template_directory_uri();?>/images/news02.jpg" width="306" height="212" alt="new02">
-                <section class="blackTrans">
-               	  <span>August 23, 2011</span>
-                  <h3>Breaking News: Russian Jets</h3>
-                  <span>After an amazing run...<a href="javascript:void(0);">Read More</a></span>
-                </section>  
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-	            </li>
-                <li class="item">
-                <img src="<?php echo get_template_directory_uri();?>/images/news03.jpg" width="306" height="212" alt="new03">
-                <section class="blackTrans">
-               	  <span>August 23, 2011</span>
-                  <h3>Breaking News: Russian Jets</h3>
-                  <span>After an amazing run...<a href="javascript:void(0);">Read More</a></span>
-                </section> 
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div> 
-	            </li>
-                <li class="item">
-                <img src="<?php echo get_template_directory_uri();?>/images/news04.jpg" width="306" height="212" alt="new04">
-                <section class="blackTrans">
-               	  <span>August 23, 2011</span>
-                  <h3>Breaking News: Russian Jets</h3>
-                  <span>After an amazing run...<a href="javascript:void(0);">Read More</a></span>
-                </section> 
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div> 
-	            </li>
-                </ul>
-                </section>
-                   
-            
+          	<?php
+				$args = array( 
+					'offset'=>0,
+					'posts_per_page' => 1, 
+					'post_type' => 'news',
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'news-category',
+							'field' => 'slug',
+							'terms' => 'featured',
+						)
+					)
+				);
+				$lastposts = get_posts( $args );
+				if(count($lastposts)){ ?>
+					<h3>Top Stories</h3>
+					<?php foreach ( $lastposts as $key=>$post ) :?>
+						<?php if(!$key){ ?>
+							<section class="tabColumnsL">
+								<div class="tabSlide">
+									<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
+										<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-main-thumb');?>" width="499" height="442" alt="<?php echo $post->post_title; ?>">
+									<?php else: ?>
+										<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-main-thumb');?>" width="499" height="442" alt="<?php echo $post->post_title; ?>">
+									<?php endif; ?>
+									<section class="blackTrans">
+										<span><?php echo date('M d, Y',strtotime($post->post_date));?></span>
+										<h3><?php the_title(); ?></h3>
+										<p><?php echo (strlen($post->post_excerpt)>80)?substr($post->post_excerpt,0,80).'...':$post->post_excerpt;?> <a href="<?php the_permalink(); ?>">Read More</a></p>
+									</section>
+									<div class="news_ret">
+										<ul>
+											<?php 
+												$rating = get_post_meta($post->ID,'wpcf-rating',true);
+												for($i=1;$i<=5;$i++){
+													if($i<=$rating){ ?>
+														<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
+													<?php }else{ ?>
+														<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
+													<?php
+													}
+												}
+											?>
+										</ul>
+									</div>        	
+								</div>
+							</section>
+						<?php }?>
+					<?php endforeach; wp_reset_postdata();?>
+				<?php } ?>
+				<?php
+					$args['offset']=1;
+					$args['posts_per_page']=4;
+					$lastposts = get_posts( $args );
+					if(count($lastposts)){ ?>
+					<section class="tabColumnsR">
+						<ul>
+							<?php foreach ( $lastposts as $key=>$post ) :?>
+								<li class="item">
+									<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
+										<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-medium');?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
+									<?php else: ?>
+										<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-medium');?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
+									<?php endif; ?>
+									<section class="blackTrans">
+										<span><?php echo date('M d, Y',strtotime($post->post_date));?></span>
+										<h3><?php the_title(); ?></h3>
+										<span><?php echo (strlen($post->post_excerpt)>20)?substr($post->post_excerpt,0,20).'...':$post->post_excerpt;?> <a href="<?php the_permalink(); ?>">Read More</a></span>
+									</section>
+									<div class="news_ret">
+										<ul>
+											<?php 
+												$rating = get_post_meta($post->ID,'wpcf-rating',true);
+												for($i=1;$i<=5;$i++){
+													if($i<=$rating){ ?>
+														<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
+													<?php }else{ ?>
+														<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
+													<?php
+													}
+												}
+											?>
+										</ul>
+									</div> 
+								</li>
+							<?php endforeach; wp_reset_postdata();?>
+						</ul>
+					</section>
+				<?php } ?>
+			<?php subCategory('featured'); ?>
           </div>
           <div id="tabs-2">
-          	<ul>
-            	<li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-            <section>Episode #89 - The Fitse Video 
-            <span>After an amazing run that...</span>
-            </section>
-            <div class="news_ret">
-                <ul>
-                    <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                    <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                    <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                    <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                    <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                </ul>
-            </div>
-            </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                </ul> 
-          </div>
+			<?php showCategory('on-demand'); ?>          
+		  </div>
           <div id="tabs-3">
-          <ul>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                </ul> 
-          </div>
+			<?php showCategory('gyms'); ?>
+		  </div>
           <div id="tabs-4">
-          <ul>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                </ul> 
+			  <?php showCategory('classes'); ?>
           </div>
           <div id="tabs-5">
-          <ul>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                </ul> 
+			  <?php showCategory('instructors'); ?>
           </div>
           <div id="tabs-6">
-          <ul>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                </ul> 
+			  <?php showCategory('studio'); ?>
           </div>
           <div id="tabs-7">
-          <ul>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                <li class="tabSlide"><img src="<?php echo get_template_directory_uri();?>/images/bxmove01.jpg" width="288" height="148" alt="news01">
-                <section>Episode #89 - The Fitse Video 
-                <span>After an amazing run that...</span>
-                </section>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                        <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                    </ul>
-                </div>
-                </li>
-                </ul> 
+			  <?php showCategory('activities'); ?>
           </div>
           <div class="clear"></div>   
           
         </div>
-        
-        
-        <div class="full-w">
-        	<div class="full-w gymsAround">
-            	<h2>News From The Gyms Around</h2>
-                <section class="sortColumn">
-                    <span>Sort By:</span>
-                    <select>
-                    <option>Date</option>
-                    <option>Test 1</option>
-                    <option>Test 2</option>
-                    <option>Test 3</option>
-                    </select>
-                </section>
-            </div>
-            <div class="news_slider_info">
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news03.jpg" width="306" height="212" alt="news"> 
-                <a><img src="<?php echo get_template_directory_uri();?>/images/green-play.png" width="69" height="69" alt="Play"></a>
-                </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="306" height="212" alt="news"> </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news02.jpg" width="306" height="212" alt="news"> 
-                <a><img src="<?php echo get_template_directory_uri();?>/images/green-play.png" width="69" height="69" alt="Play"></a>
-                </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news04.jpg" width="306" height="212" alt="news"> </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-            </div>
-            
-            <div class="full-w gymsAround">
-            	<h2>News From The Instructors Around</h2>
-                <section class="sortColumn">
-                    <span>Sort By:</span>
-                    <select>
-                    <option>Date</option>
-                    <option>Test 1</option>
-                    <option>Test 2</option>
-                    <option>Test 3</option>
-                    </select>
-                </section>
-            </div>
-            <div class="news_slider_info">
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news03.jpg" width="306" height="212" alt="news"> </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="306" height="212" alt="news"> </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news02.jpg" width="306" height="212" alt="news"> </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news04.jpg" width="306" height="212" alt="news"> </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-            </div>
-            
-            <div class="full-w gymsAround">
-            	<h2>News From The Studios Around</h2>
-                <section class="sortColumn">
-                    <span>Sort By:</span>
-                    <select>
-                    <option>Date</option>
-                    <option>Test 1</option>
-                    <option>Test 2</option>
-                    <option>Test 3</option>
-                    </select>
-                </section>
-            </div>
-            <div class="news_slider_info">
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news03.jpg" width="306" height="212" alt="news"> </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="306" height="212" alt="news"> </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news02.jpg" width="306" height="212" alt="news"> </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news04.jpg" width="306" height="212" alt="news"> </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-            </div>
-            
-            <div class="full-w gymsAround">
-            	<h2>Activites</h2>
-                <section class="sortColumn">
-                    <span>Sort By:</span>
-                    <select>
-                    <option>Date</option>
-                    <option>Test 1</option>
-                    <option>Test 2</option>
-                    <option>Test 3</option>
-                    </select>
-                </section>
-            </div>
-            <div class="news_slider_info">
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news03.jpg" width="306" height="212" alt="news"> </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="306" height="212" alt="news"> </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news02.jpg" width="306" height="212" alt="news"> </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-                <div class="newsLi">
-                <div class="news_img">
-                <img src="<?php echo get_template_directory_uri();?>/images/news04.jpg" width="306" height="212" alt="news"> </div>
-                <div class="news_ret">
-                    <ul>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star-active.png"></a></li>
-                        <li><a href="javascript:void(0);"><img width="16" height="16" alt="Star" src="<?php echo get_template_directory_uri();?>/images/star.png"></a></li>
-                    </ul>
-                </div>
-                <div class="news_around_text">
-                    <h6>Breaking News: <br>
-                    Russian Jets 'Bombing</h6>
-                    <p>After an amazing run that spanned 
-                    more than half a decade, 
-                    Gary Vaynerchuk today 
-                    announces his. <a class="spa" href="#">Read more &gt;</a></p>
-                </div>
-                </div>
-            </div>
-            
-            <div class="boxCol full-w videoSlider mrgTop20">
-                <div class="full-w">
-                <h3>Highlights </h3>
-                <a class="viewMore" href="javascript:void(0);">View All</a>
-                </div>
-                <div class="mrgTop20 full-w">
-                    <ul class="basicSliders2">
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    <li class="slide"><img src="<?php echo get_template_directory_uri();?>/images/news01.jpg" width="201" height="149" alt="news01">
-                    <section>Episode #89 - The Fitse Video 
-                    <span>After an amazing run that...</span>
-                    </section>
-                    <div class="news_ret">
-                        <ul>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-                            <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-                        </ul>
-                    </div>
-                    </li>
-                    </ul>
-                </div>
-            </div>
-            
-        </div>                 
     </div>
 </div>
 

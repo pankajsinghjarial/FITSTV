@@ -58,6 +58,7 @@ function fitstv_setup() {
 	add_image_size( 'fitstv-tv-thumb', 394, 222, true );
 	add_image_size( 'fitstv-medium', 746, 416, true );
 	add_image_size( 'fitstv-image', 287, 148, true );
+	add_image_size( 'fitstv-main-thumb', 499, 442, true );
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
