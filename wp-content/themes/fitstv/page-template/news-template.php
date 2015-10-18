@@ -22,7 +22,7 @@ get_header(); ?>
 	<div class="inner-w">
     
    		<h2>NEWS</h2>
-        <section class="sortColumn">
+        <!--<section class="sortColumn">
         <span>Sort By:</span>
         <select>
         <option>Date</option>
@@ -34,17 +34,17 @@ get_header(); ?>
     	<div class="searchBar">
             <input type="text" placeholder="Search Bar">
             <button><img width="40" height="40" alt="Search" src="<?php echo get_template_directory_uri();?>/images/searchbtn.png"></button>
-        </div>
+        </div>-->
         
         <div class="sortTabber full-w">
           <ul>
-            <li class="cl1"><a href="#tabs-1"><span>Featured</span> </a></li>
-            <li class="cl2"><a href="#tabs-2"><span>On Demand</span> </a></li>
-            <li class="cl3"><a href="#tabs-3"><span>Gyms</span> </a></li>
-            <li class="cl4"><a href="#tabs-4"><span>Classes</span> </a></li>
-            <li class="cl5"><a href="#tabs-5"><span>Instructors</span> </a></li>
-            <li class="cl6"><a href="#tabs-6"><span>Studio</span> </a></li>
-            <li class="cl7"><a href="#tabs-7"><span>Activities</span> </a></li>
+            <li class="cl1" data-type="featured"><a href="#tabs-1"><span>Featured</span> </a></li>
+            <li class="cl2" data-type="on-demand"><a href="#tabs-2"><span>On Demand</span> </a></li>
+            <li class="cl3" data-type="gyms"><a href="#tabs-3"><span>Gyms</span> </a></li>
+            <li class="cl4" data-type="classes"><a href="#tabs-4"><span>Classes</span> </a></li>
+            <li class="cl5" data-type="instructors"><a href="#tabs-5"><span>Instructors</span> </a></li>
+            <li class="cl6" data-type="studio"><a href="#tabs-6"><span>Studio</span> </a></li>
+            <li class="cl7" data-type="activities"><a href="#tabs-7"><span>Activities</span> </a></li>
           </ul>
           <div id="tabs-1">
           	<h3>Top Stories</h3>
