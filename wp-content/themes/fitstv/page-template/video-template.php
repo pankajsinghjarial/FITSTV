@@ -134,7 +134,7 @@ get_header(); ?>
           	<ul class="on-demand-data">
 				<?php
 				$args = array( 
-						'posts_per_page' => 4, 
+						'posts_per_page' => 8, 
 						'post_type' => 'video',
 						'tax_query' => array(
 							array(
@@ -149,7 +149,7 @@ get_header(); ?>
 					unset($args['posts_per_page']);
 					$the_query = new WP_Query( $args );
 					$totalPosts = $the_query->found_posts;
-					$limit = 4;
+					$limit = 8;
 					$page = 1;
 					$totalPage = ceil($totalPosts/$limit);
 					?>
@@ -203,7 +203,7 @@ get_header(); ?>
             <ul class="news-data">
 				<?php
 				$args = array( 
-						'posts_per_page' => 4, 
+						'posts_per_page' => 8, 
 						'post_type' => 'video',
 						'tax_query' => array(
 							array(
@@ -218,7 +218,7 @@ get_header(); ?>
 					unset($args['posts_per_page']);
 					$the_query = new WP_Query( $args );
 					$totalPosts = $the_query->found_posts;
-					$limit = 4;
+					$limit = 8;
 					$page = 1;
 					$totalPage = ceil($totalPosts/$limit);
 					?>
@@ -272,7 +272,7 @@ get_header(); ?>
 			<ul class="reviews-data">
 				<?php
 				$args = array( 
-						'posts_per_page' => 4, 
+						'posts_per_page' => 8, 
 						'post_type' => 'video',
 						'tax_query' => array(
 							array(
@@ -287,7 +287,7 @@ get_header(); ?>
 					unset($args['posts_per_page']);
 					$the_query = new WP_Query( $args );
 					$totalPosts = $the_query->found_posts;
-					$limit = 4;
+					$limit = 8;
 					$page = 1;
 					$totalPage = ceil($totalPosts/$limit);
 					?>
@@ -341,7 +341,7 @@ get_header(); ?>
 			<ul class="workouts-data">
 				<?php
 				$args = array( 
-						'posts_per_page' => 4, 
+						'posts_per_page' => 8, 
 						'post_type' => 'video',
 						'tax_query' => array(
 							array(
@@ -356,7 +356,7 @@ get_header(); ?>
 					unset($args['posts_per_page']);
 					$the_query = new WP_Query( $args );
 					$totalPosts = $the_query->found_posts;
-					$limit = 4;
+					$limit = 8;
 					$page = 1;
 					$totalPage = ceil($totalPosts/$limit);
 					?>

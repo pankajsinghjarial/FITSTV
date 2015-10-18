@@ -456,7 +456,7 @@ header nav li.twitter{ background-position: -123px 0;}
 .sideNav li a{ color:#333333; background:url(../images/b-arrow.png) no-repeat left 5px; padding-left: 12px; line-height:24px;}
 
 .cateG.tabColumnsR{width: 852px;}
-.tabColumnsR.cateG .item {margin: 0 12px 17px 0;height: auto;}
+.tabColumnsR.cateG .item {margin: 0 9px 17px 0;height: auto;}
 /*.tabColumnsR.cateG .item:nth-child(2n) { margin: 0 12px 17px 0;}
 .tabColumnsR.cateG .item:nth-child(3n) {margin: 0 0 17px;}*/
 .tabColumnsR.cateG .item{width: 275px;}
