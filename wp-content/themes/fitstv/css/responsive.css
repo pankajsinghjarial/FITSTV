@@ -1,3 +1,31 @@
+/*****************************
+		Common CSS 
+******************************/
+@media only screen and (min-width:1367px) and (max-width:1920px){
+	.inner-w { margin: auto 5%; width: auto;}
+    .videoLeft{width: 78%;}
+    .videoRight{ width: 18%;}
+    .aboutAdd{width: 70%;}
+    .contactChain .contactForm{ width:60%;}
+    .epsid.tabColumnsR.cateG .item:nth-child(4n){margin: 20px 16px 17px 0;}
+    .newsRht{width: 65%;}
+    .cateG.tabColumnsR { width: 79%;}
+    .tabColumnsR.cateG .item:nth-child(3n){ margin: 0 12px 17px 0;}
+    .icnPlay{left: 50%; margin: -34px 0 0 -34px; position: absolute; top: 50%;}
+    .tabColumnsR.cateG .item{ width: 30%;}
+    .homeOutr{height: 744px;}
+    .homeSlider li{height: 803px;}
+}
+@media only screen and (min-width:1151px) and (max-width:1660px){
+    .aboutAdd{width: 58%;}
+    .contactChain .contactForm{ width:48%;}
+    .newsRht{width: 53%;}
+    /*.cateG.tabColumnsR { width: 70%;}*/
+    .tabColumnsR.cateG .item:nth-child(3n){ margin: 0 12px 17px 0;}
+    .tabColumnsR.cateG .item { width: 31%;}
+    /*.homeOutr{height: 644px;}
+    .homeSlider li{height: 703px;}*/
+}
 
 /*****************************
 		Common CSS 
@@ -34,11 +62,10 @@
     .news_img img { height: auto; width: 100%;}
     .news_around_text > h6{font-size: 16px;}
     
-    .aboutAdd{width: 60%;}
+    .aboutAdd{width: 53%;}
     .aboutAdd h2{ font-size: 29px;}
     
-    .aboutAddImg{width: 285px;}
-    .aboutAddImg figure{  width: 100%;height: 250px; background-size:100% auto;}
+    
     .aboutAddImg.floatRight figure img{height: 152px; margin: 10px 0 0 11px; width: 93%;}
     .aboutAddImg a { left: 104px; top: 50px;}
     .aboutAdd span{   padding: 20px 0 0}
@@ -57,7 +84,7 @@
     
     .news_letter label{margin: 0;}
     
-    .slide01, .slide02, .slide03{background-size:100% 434px;}
+    /*.slide01, .slide02, .slide03{background-size:100% 434px;}*/
     .homeSlider li{ height: 434px;}
     .homeOutr{height: 375px;}
     .homeSlider h1{ padding: 145px 0 0;font-size: 36px;}
@@ -90,7 +117,10 @@
 		Ipad - Portrait 
 ******************************/
 @media only screen and (min-width:768px) and (max-width:1023px){
-    .slide01, .slide03, .slide03{background-size:auto 396px;}
+     .aboutAdd{width: 100%;}
+     .aboutAddImg.floatRight { display: block; float: none; margin: 25px auto auto; width: 425px;}
+     .thumbSliderOut { float: none; margin: auto; width: 382px;}
+    /*.slide01, .slide03, .slide03{background-size:auto 396px;}*/
     .homeSlider li{ height: 396px;}
     .homeOutr{height: 337px;}
     header nav{ margin: 18px 0 0;}
@@ -160,13 +190,23 @@
 		Iphone & Android - Mobiles 
 ******************************/
 @media only screen and (min-width:320px) and (max-width:767px){
+.desk{ display: none;} 
+.mob{ display: block;}
+.mobView{ display: block;}
+
+.searchbox-open { width: 59%;}    
+.bxMoveSlider{ display:none;} 
+.my_modal_open{ display:none;}
+.mobView .my_modal_open{ display: block;}
+.headSearchIcn { display: block;}
+header .searchIcn { position: absolute; right: 60px; top: 21px;}
 .bxsliderbasic .slider_contant{ display:none;}
 .boxCol h3{ font-size:34px;}
 header nav{display: none;}
 .popup_data{ display: block; position: relative; right: auto; top: 30px;}	
-.homeOutr{height: 281px;}
-.homeSlider h1{ font-size: 26px;padding: 120px 0 0;line-height: 26px;}
-.homeSlider li{height: 340px;}
+.homeOutr{height:371px;}
+.homeSlider h1{ font-size: 26px;padding: 160px 0 0;line-height: 26px;}
+.homeSlider li{height: 430px;}
 .tvSlider .slider_contant{margin: auto 3% 20px; width: 94%;}
 .playIcn > img { height: auto; width: 50px;}
 .homeSlider .bx-default-pager{bottom: 10px; left: 50%; margin-left: -28px;width: 65px;}
@@ -209,10 +249,11 @@ header nav{display: none;}
     .aboutAdd{ width:100%;}
     .aboutAddImg{width: 285px;float: none; margin: 20px auto auto; display: table;}
     .aboutAddImg.floatLeft.thumbSliderOut { margin: auto auto 20px; width:285px;}
-    .aboutAddImg figure{  width: 100%;height: 186px; background-size:100% auto;}
+    .aboutAddImg figure{  width: 100%;height: 186px; background:none;}
+    .aboutAddImg.floatRight figure video{height: auto; margin: 0; width: 100%;}
     .aboutAddImg.floatRight figure img{height: 152px; margin: 10px 0 0 11px; width: 93%;}
     .aboutAddImg a { left: 104px; top: 50px;width: 23%;}
-    .thumbSliderOut #bx-pager > a{margin: 10px 2% 0 0;  float: left;}
+    .thumbSliderOut #bx-pager > a{margin: 10px 2% 0 0;  float: left; width: 18%;}
     .thumbSliderOut #bx-pager img {height: auto; width: 100%;}
     .aboutAdd span{   padding: 20px 0}
     .aboutAdd p{padding: 0 0 20px;}
@@ -275,10 +316,10 @@ header nav{display: none;}
     .footer_bg{ padding: 20px 0;}
     .footer_menu li, .footer_bootam li{margin: 5px 0;}
 	
-      .slide01, .slide02, .slide03{ background-size:cover;}
-      .slide01{ background-image: url(../images/01m.jpg);}
+      /*.slide01, .slide02, .slide03{ background-size:cover;}*/
+      /*.slide01{ background-image: url(../images/01m.jpg);}
       .slide02{ background-image: url(../images/02m.jpg);}
-      .slide03{ background-image: url(../images/03m.jpg);}
+      .slide03{ background-image: url(../images/03m.jpg);}*/
       .blackTrans h3{font-size: 12px; font-weight: normal; line-height: 16px;}
       .blackTrans span, .moveTrans a, .moveTrans h4{ display:none;}
       .bxMoveSlider.full-w{ height:auto;}
@@ -292,7 +333,7 @@ header nav{display: none;}
       .socialIcns{ border:none;}
       header nav li.socialIcns{ margin: 10px 7px 0 0;}
       .facebook.socialIcns { margin: 10px 7px 0 0;}
-      header nav li.searchIcn{right: 44px; top: -34px; border:none;}  
+      header nav li.searchIcn{right: 44px; top: -34px; border:none; display:none;}  
       
     .videoDetails section b{ margin: 0 5px 10px 0; width: 100%;}
     .videoSlider.boxCol h3{font-size: 30px;margin-bottom: 16px;}
@@ -313,7 +354,7 @@ header nav{display: none;}
     .newsLft { float: none; margin: auto; width: 308px;}
    
     .thumbSlider li{ float:left; width:100%;}
-    .thumbSlider img { height: auto; width: 100%;float: left;}
+    .thumbSlider img { height: auto; width: 100%; max-width: 285px;float: left;}
     
     
     .popup_info.askAQtnPop{width: 80%;margin: 0 5%;left: auto; padding: 20px 5%;}
@@ -349,4 +390,8 @@ header nav{display: none;}
     .my_modal{left: 50%; margin-left: -127px; position: fixed; right: auto; top: 10%; z-index: 99999;}
     .popup_data a{right: 0;  top: 32px;}
     
+    .breking_news_img{height: auto; background:none;}
+    .breking_news_img video{ margin: 8px 0 0; width: 100%;height: auto;}
+    
+     
      }

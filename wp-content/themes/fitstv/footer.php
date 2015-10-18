@@ -74,7 +74,10 @@
             <div class="clear"></div>
             <figure class="sTweets"><img src="<?php echo get_template_directory_uri();?>/images/tweets-img.png" width="298" height="20" alt="tweets"></figure>
         </div>
-        
+        <?php if ( is_active_sidebar( 'footer-twitter-slides' ) ) {
+				//dynamic_sidebar( 'footer-twitter-slides' ); 
+			  }
+		?>
         <div class="footer_menu">
             
             <?php wp_nav_menu( array( 'container' => '', 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ,'before' => '','after' => '','link_before' => '','link_after' => '','items_wrap' => '%3$s','depth' => 0,	'walker' => '') ); ?>

@@ -178,9 +178,54 @@ function fitstv_widgets_init() {
 		'after_title'   => '',
 	) );
 	register_sidebar( array(
+		'name'          => __( 'News Slider Crousel on Home page', 'fitstv' ),
+		'id'            => 'home-slider-news',
+		'description'   => __( 'News Slider Crousel Home page', 'fitstv' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Reviews Slider Crousel on Home page', 'fitstv' ),
+		'id'            => 'home-slider-reviews',
+		'description'   => __( 'News Reviews Home page', 'fitstv' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Workout Slider Crousel on Home page', 'fitstv' ),
+		'id'            => 'home-slider-workout',
+		'description'   => __( 'News Workout Home page', 'fitstv' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Main Slider on Home page', 'fitstv' ),
+		'id'            => 'home-slider-homepage',
+		'description'   => __( 'Main Slider on Home page', 'fitstv' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	register_sidebar( array(
 		'name'          => __( 'About the CEO', 'fitstv' ),
 		'id'            => 'home-about-ceo',
 		'description'   => __( 'About the CEO', 'fitstv' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer twitter Slider', 'fitstv' ),
+		'id'            => 'footer-twitter-slides',
+		'description'   => __( 'Footer twitter Slider', 'fitstv' ),
 		'before_widget' => '',
 		'after_widget'  => '',
 		'before_title'  => '',
@@ -354,10 +399,13 @@ function special_nav_class($classes, $item){
 				$post = get_post($postID);
 				$post_content = $post->post_content;
 				$post_title = $post->post_title;
+				$mime_type = $post->post_mime_type;
 				if($attribute_name == 'description'){
 					return $post_content;
 				}else if($attribute_name == 'title'){
 					return $post_title;
+				}else if($attribute_name == 'mime-type'){
+					return $mime_type; 
 				}else{
 					return $post; 
 				}

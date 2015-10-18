@@ -1,0 +1,38 @@
+# Copyright (C) 2015 WP Twitter Feeds
+# This file is distributed under the same license as the WP Twitter Feeds package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Twitter Feeds 1.4.8\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-twitter-feeds\n"
+"POT-Creation-Date: 2015-10-12 14:50:59+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: controller/twitter_widget.class.php:325 slider.php:142
+#: twitter_widget.class.php:323 views/slider.php:152
+msgid "%1$s%2$s"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WP Twitter Feeds"
+msgstr ""
+
+#. #-#-#-#-#  tmp-wp-twitter-feeds.pot (WP Twitter Feeds 1.4.8)  #-#-#-#-#
+#. Plugin URI of the plugin/theme
+#. #-#-#-#-#  tmp-wp-twitter-feeds.pot (WP Twitter Feeds 1.4.8)  #-#-#-#-#
+#. Author URI of the plugin/theme
+msgid "http://www.vivacityinfotech.net/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Displays latest tweets from your Twitter account using Twitter oAuth API 1.1."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Vivacity Infotech Pvt. Ltd."
+msgstr ""

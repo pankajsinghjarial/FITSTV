@@ -34,3 +34,7 @@ h1, h2, h3, h4, h5, h6{ font-weight:normal;}
 .mrgTop20{ margin-top:20px;}
 .mrgTop45{ margin-top:45px;}
 .mrgTop55{ margin-top:55px;}
+
+
+.bxsliderTv video { width: 100%; height: auto;}
+.bxsliderbasic video{ width: 100%; height: auto;}
