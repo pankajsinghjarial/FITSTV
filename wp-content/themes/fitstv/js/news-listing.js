@@ -1,9 +1,8 @@
 $(document).ready(function(){
-	var isload = true;
 	$('button.loadmore').click(function(){
 		var category = $(this).attr('data-category');
-		page = 0;
 		var limit = $('#'+category+'-limit').val();
+		var page = $('#'+category+'-page').val();
 		$('.'+category+'-loadMore').show();
 		data = {};
 		data['action'] = 'loadMorePost';
@@ -21,18 +20,25 @@ $(document).ready(function(){
 				var posts = $.parseJSON(response);
 				html = '';
 				$(posts.data).each(function(index,post){
-					html += '<li class="item"><img src="'+post.image+'" width="306" height="212" alt="'+post.title+'">';
+					html += '<li class="tabSlide"><img src="'+post.image+'" width="288" height="148" alt="'+post.title+'">';
 					if(post.attachment_type == 1){
 						html += '<figure class="icnPlay"><img src="'+templateUrl+'/images/transPlay.png" width="69" height="69" alt="Play"></figure>';
 					}
-					html += '<h4>Cross Fit Workouts</h4><section class="blackTrans"><span>'+post.date+'</span><h3>'+post.title+'</h3><span>'+post.excerpt+'<a href="'+post.link+'">Read More</a></span></section></li>';
+					html += '<section>'+post.title+'- <span>'+post.excerpt+'</span></section><div class="news_ret"><ul>';
+					for($i=1;$i<=5;$i++){
+						if($i<=post.rating){
+							html += '<li><a href="javascript:void(0);"><img src="'+templateUrl+'/images/star-active.png" width="16" height="16" alt="Star"></a></li>';
+						}else{
+							html += '<li><a href="javascript:void(0);"><img src="'+templateUrl+'/images/star.png" width="16" height="16" alt="Star"></a></li>';
+						}
+					}
+					html += '</ul></div></li>';
 				});
-				$('ul.videos-data li.item').remove();
-				$('ul.videos-data').append(html);
+				$('ul.data-'+category).append(html);
 				page = parseInt(page) + 1;
-				$('#videos-page').val(page);		
-				$('#videos-totalpage').val(posts.count);		
-				$('.videos-loadMore').hide();
+				$('#'+category+'-page').val(page);		
+				$('#'+category+'-totalpage').val(posts.count);		
+				$('.'+category+'-loadMore').hide();
 			}
 		});
 	});

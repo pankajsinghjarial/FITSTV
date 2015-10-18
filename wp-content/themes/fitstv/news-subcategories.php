@@ -237,7 +237,7 @@ function showCategory($category){
 	</ul>
 	<div class="clear"></div>
 	<div class="<?php echo $category;?>-loadMore loadMore displayNone"><img alt="load more" src="<?php echo get_template_directory_uri();?>/images/loader.gif"></div>
-	<button class="loadmore" data-category="<?php echo $category;?>" class="btn btn-default">Load More</button>
+	<center><button class="loadmore" data-category="<?php echo $category;?>" class="btn btn-default">Load More</button></center>
 <?php
 	subCategory($category);
 }
