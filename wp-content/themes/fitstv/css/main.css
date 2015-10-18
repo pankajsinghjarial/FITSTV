@@ -306,10 +306,10 @@ header nav li.twitter{ background-position: -123px 0;}
 			Episodes Page
 **************************************/
 .epsid.cateG.tabColumnsR{ width: 100%;}
-.epsid.tabColumnsR.cateG .item{margin: 20px 16px 17px 0;}
-.epsid.tabColumnsR.cateG .item:nth-child(2n){margin: 20px 16px 17px 0;}
+.epsid.tabColumnsR.cateG .item{margin: 20px 12px 17px 0;}
+/*.epsid.tabColumnsR.cateG .item:nth-child(2n){margin: 20px 16px 17px 0;}
 .epsid.tabColumnsR.cateG .item:nth-child(4n){margin: 20px 0 16px 0;}
-.epsid.tabColumnsR.cateG .item:nth-child(3n){margin: 20px 17px 17px 0;}
+.epsid.tabColumnsR.cateG .item:nth-child(3n){margin: 20px 17px 17px 0;}*/
 
 .episodesChain h2{ font-size:34px; color:#56c650; float:left; line-height: 34px;}
     .sortColumn{ float:right; }
@@ -457,8 +457,8 @@ header nav li.twitter{ background-position: -123px 0;}
 
 .cateG.tabColumnsR{width: 852px;}
 .tabColumnsR.cateG .item {margin: 0 12px 17px 0;height: auto;}
-.tabColumnsR.cateG .item:nth-child(2n) { margin: 0 12px 17px 0;}
-.tabColumnsR.cateG .item:nth-child(3n) {margin: 0 0 17px;}
+/*.tabColumnsR.cateG .item:nth-child(2n) { margin: 0 12px 17px 0;}
+.tabColumnsR.cateG .item:nth-child(3n) {margin: 0 0 17px;}*/
 .tabColumnsR.cateG .item{width: 275px;}
 .tabColumnsR.cateG .item > img { float: left; height: auto; width: 100%;}
 .tabColumnsR.cateG .item h4 { background: #56c650 none repeat scroll 0 0; color: #fff; float: left; font-size: 12px; margin: 6px 0 0; padding: 3px 8px;

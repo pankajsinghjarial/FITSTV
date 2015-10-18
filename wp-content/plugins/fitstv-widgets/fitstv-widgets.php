@@ -215,9 +215,7 @@ class Home_Episode_Widget extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		$postIds = $instance['homeEpisodes'];
-		//echo "<pre>";
-		//print_r($args); print_r($instance);
-		// die;
+
 		echo '<div class="bxMoveSlider full-w"><ul id="owl-demo">';
 		foreach($postIds as $postId){
 			
@@ -411,11 +409,127 @@ class Home_Side_News_Widget extends WP_Widget {
 
 } 
 
+class Episode_Slider_Widget extends WP_Widget {
+
+	/**
+	 * Register widget with WordPress.
+	 */
+	function __construct() {
+		parent::__construct(
+			'Episode_Slider_Widget', // Base ID
+			__( 'Episode Slider Widget', 'text_domain' ), // Name
+			array( 'description' => __( 'Choose Episodes to display on episode main slider', 'text_domain' ), ) // Args
+		);
+	}
+
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget( $args, $instance ) {
+		$postIds = $instance['topEpisodes'];
+		?>
+		<div class="tvSlider">
+    	<div class="tvSliderIn">
+    	<ul class="bxsliderTv">
+		<?php
+		foreach($postIds as $key=>$postId){
+			$post = get_post($postId);
+			$post_excerpt = $post->post_excerpt;//get_post_meta($postId);
+			$Episode_title = $post->post_title;
+			$Episode_created = $post->post_date;
+			$attachmentType = get_post_meta($postId,'wpcf-attachment-type',true);
+			if($attachmentType == 1){
+				$thumb = getImage(get_post_meta($postId,'wpcf-thumbnail',true),'fitstv-medium');
+			}else{
+				$thumb = getImage(get_post_meta($postId,'wpcf-image',true),'fitstv-medium');
+			}
+			$video_url = get_post_meta($postId,'wpcf-video',true);
+			$video_title = GetAttachmentAttributesByUrl($video_url,'title');
+			$video_description = GetAttachmentAttributesByUrl($video_url,'description');
+		
+		?>	
+			<li>
+				<?php 
+				if($attachmentType == 1){ 
+					displayVideo('episode-slide-'.$key,$thumb,$video_url,745, 416,$video_title,$video_description);
+				}else{ ?>
+					<img src="<?php echo $thumb;?>" width="745" height="416" alt="<?php echo $Episode_title;?>">
+				<?php } ?>
+            </li>
+	<?php		
+		}
+	?>
+	</ul>
+        </div>
+        <div class="slider_contant">
+        	<!--<ul>
+            <li class="yoga"> Category; Yoga</li>
+            <li><span><img src="< ?php echo get_template_directory_uri();?>/images/nav-sep.jpg" width="1" height="7" alt="sep"></span></li>
+            <li class="comments"> 5 Comments</li>
+            </ul>-->
+            <!--<span>August 23, 2011</span>
+          <h2><a href="video-details.html">Episode #89 &ndash; The Fitse Video</a></h2>
+            <p>After an amazing run that spanned more than half a decadeRead <a href="javascript:void(0);">more ></a></p>-->
+            <section><b>Share:</b><img src="<?php echo get_template_directory_uri();?>/images/share-links.png" width="234" height="20" alt="share"></section>
+        </div>
+    </div>
+	<?php
+	}
+
+	/**
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
+	 */
+	public function form( $instance ) {
+		$homeEpisodes = ! empty( $instance['topEpisodes'] ) ? $instance['topEpisodes'] :array();
+		?>
+		<p>
+		<label for="<?php echo $this->get_field_id( 'topEpisodes' ); ?>"><?php _e( 'Select Episodes:' ); ?></label> 
+		</p>
+		<p>
+		<?php generate_multiple_post_select($this->get_field_id( 'topEpisodes' ),$this->get_field_name( 'topEpisodes' ),'episode',$homeEpisodes); ?>
+		</p>
+		<?php
+	}
+
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
+	 */
+	public function update( $new_instance, $old_instance ) {
+		
+		//print_r($new_instance);
+		//print_r($old_instance);
+		//die;
+		$instance = array();
+		//$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+		$instance['topEpisodes'] = $new_instance['topEpisodes'];
+
+		return $instance;
+	}
+
+} 
+
 
 function fitstv_custom_widgets_init(){
 	register_widget( 'News_Top_Widget' );
 	register_widget( 'Video_Top_Widget' );
 	register_widget( 'Home_Episode_Widget' );
+	register_widget( 'Episode_Slider_Widget' );
 	register_widget( 'Home_Side_News_Widget' );
 }
 

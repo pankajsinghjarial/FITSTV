@@ -133,13 +133,13 @@ function fitstv_has_featured_posts() {
  */
 function fitstv_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Primary Sidebar', 'fitstv' ),
-		'id'            => 'sidebar-1',
-		'description'   => __( 'Main sidebar that appears on the left.', 'fitstv' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'name'          => __( 'Episode Page Top Slider', 'fitstv' ),
+		'id'            => 'episode-top',
+		'description'   => __( 'Episode Page Top Slider', 'fitstv' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'News Page Top Area', 'fitstv' ),
@@ -224,6 +224,9 @@ function fitstv_scripts() {
 	}
 	if(is_page('videos')){
 		wp_enqueue_script( 'fitstv-video-listing', get_template_directory_uri() . '/js/video-listing.js' );
+	}
+	if(is_page('episodes')){
+		wp_enqueue_script( 'fitstv-episodes-listing', get_template_directory_uri() . '/js/episodes-listing.js' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'fitstv_scripts' );
@@ -417,11 +420,11 @@ function special_nav_class($classes, $item){
 			$data['attachment_type'] = get_post_meta($post->ID,'wpcf-attachment-type',true);
 			if($data['attachment_type'] == 1){
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-thumbnail',true));
-				if($tab != 'videos')
+				if($tab != 'videos' && $postType == 'video')
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image');
 			}else{
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-image',true));
-				if($tab != 'videos')
+				if($tab != 'videos' && $postType == 'video')
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image');
 			}
 			$data['rating'] = get_post_meta($post->ID,'wpcf-rating',true);
