@@ -186,7 +186,7 @@ header nav li.twitter{ background-position: -123px 0;}
 .news_letter span { float: left; padding: 17px 5px 0 17px; }
 .news_letter .input-group .btn-primary { background-color: #56c650; border: 0 none; border-radius: 0; color: #fff; font-size: 22px; 
 	font-family: 'open_sansbold'; }
-.news_letter .btn.btn-primary { float: right; }
+.news_letter .btn.btn-primary { float: right; width:auto;}
 .news_letter .btn { font-size: 23px; padding: 13px 18px; }
 .input-group input{ width: 62%;font-size:18px; color:#000; height:56px; line-height:56px;}
 
