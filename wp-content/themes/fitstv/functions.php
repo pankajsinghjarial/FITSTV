@@ -274,6 +274,9 @@ function fitstv_scripts() {
 	if(is_page('episodes')){
 		wp_enqueue_script( 'fitstv-episodes-listing', get_template_directory_uri() . '/js/episodes-listing.js' );
 	}
+	if(is_page('news-index')){
+		wp_enqueue_script( 'fitstv-news-listing', get_template_directory_uri() . '/js/news-listing.js' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'fitstv_scripts' );
 
