@@ -243,6 +243,15 @@ function fitstv_widgets_init() {
 		'before_title'  => '',
 		'after_title'   => '',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Episodes on Home page', 'fitstv' ),
+		'id'            => 'home-episodes',
+		'description'   => __( 'Episodes on Home page', 'fitstv' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
 }
 add_action( 'widgets_init', 'fitstv_widgets_init');
 
