@@ -519,3 +519,45 @@ function special_nav_class($classes, $item){
 	}
 add_action('wp_ajax_loadMorePost', 'loadMorePost');
 add_action('wp_ajax_nopriv_loadMorePost', 'loadMorePost');
+
+function fitstv_comment($comment, $args, $depth) {
+	$GLOBALS['comment'] = $comment;
+	extract($args, EXTR_SKIP);
+	$args['style'] = 'div';
+	$args['avatar_size'] = 48;
+	$tag = 'div';
+	$add_below = 'comment';
+?>
+	<div class="full-w comntsCol" id="comment-<?php comment_ID() ?>">
+		<figcaption>
+		<figure><?php echo get_avatar( $comment, $args['avatar_size'] );?></figure>
+		<h4><?php echo get_comment_author( $comment );?> <br> <?php echo get_the_author_meta('description', get_comment($comment)->user_id);?></h4>
+		<p><b>“<?php comment_text();?>”</b></p>
+		</figcaption>
+		<section class="full-w">
+		<span><img src="<?php echo get_template_directory_uri();?>/images/thumb-Lft.png" width="20" height="19" alt="thumb"></span>
+		<span><img src="<?php echo get_template_directory_uri();?>/images/thumb-Rht.png" width="20" height="19" alt="thumb"></span>
+		<!--<strong>4</strong>-->
+		<?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+		</section>
+	</div>
+<?php
+}
+
+add_filter( 'comment_form_default_fields', 'fitstv_comment_form_fields' );
+
+function fitstv_comment_form_fields( $fields ) {
+    unset($fields['author']);
+    unset($fields['email']);
+    unset($fields['url']);
+
+		$fields['author'] = '<div class="form-col">
+						<label>Full name <em>*</em></label> ' .
+		            '<input id="author" name="author" type="text" /></div>';
+					
+		$fields['email']  = '<div class="form-col">
+						<label>E-mail Address <em>*</em></label> ' .
+		            '<input id="email" name="email" type="text" /></div>';
+
+	return $fields;
+}

@@ -17,6 +17,7 @@
  *
  * @package WordPress
  */
+define("OTGS_DISABLE_AUTO_UPDATES", true);
 define('WP_MEMORY_LIMIT', '64M');
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
