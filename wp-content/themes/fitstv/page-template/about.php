@@ -24,67 +24,167 @@ his retirement from producing video content.</p>
 	<div class="inner-w">
       <div class="full-w mrgTop45">
         	<div class="aboutAdd floatLeft">
-            	<h2>Fitse is the No.1Chain of Gyms in, <b>Tampa, US</b></h2>
-                <span>After an amazing run that spanned more than half a decade, Gary Vaynerchuk today announces his 
-retirement from producing video content.</span>
-				<p>After an amazing run that spanned more than half a decade, Gary Vaynerchuk today announces his 
-retirement from producing regular wine video content. After an amazing run that spanned more than half a 
-decade, Gary Vaynerchuk today announces his retirement from producing regular wine video content.</p>
-				<p>After an amazing run that spanned more than half a decade, Gary Vaynerchuk today announces 
-from producing regular wine video content. After an amazing run that spanned more than half a decade, 
-Gary Vaynerchuk today announces his retirement from producing regular wine video content. 
-After an amazing run tha spanned more than half a decade, Gary Vaynerchuk today announces his 
-retirement from producing.</p>
+            	<?php 
+									$args = array(
+									  'name'        => 'about-post-up',
+									  'post_type'   => 'abouts',
+									  'post_status' => 'publish',
+									  'numberposts' => 1
+									);
+									$my_posts = get_posts($args);
+									
+									if( $my_posts ) :
+									  $title =  $my_posts[0]->post_title;
+									  $content =  $my_posts[0]->post_content;
+									  $excerpt = $my_posts[0]->post_excerpt;
+									  $PostId = $my_posts[0]->ID;
+									  $post_permalink = get_permalink($PostId);
+										if(get_post_meta($PostId,'wpcf-attachment-type',true) == 1){
+											
+											$thumb = get_post_meta($PostId,'wpcf-thumbnail',true);
+											$video_url = get_post_meta($PostId,'wpcf-video',true);
+											$video_title = GetAttachmentAttributesByUrl($video_url,'title');
+											$video_description = GetAttachmentAttributesByUrl($video_url,'description');
+											$video_mime_type = GetAttachmentAttributesByUrl($video_url,'mime-type');
+											
+											}else{
+												$thumb = get_post_meta($PostId,'wpcf-image',true);
+											}
+										$thumb = getImage($thumb, 'post-thumbnails');
+										echo $content; wp_reset_postdata();
+									endif;
+									
+									
+                ?>
             </div>
             <div class="aboutAddImg floatRight">
-   		    <figure><img src="<?php echo get_template_directory_uri();?>/images/about-first-add.jpg" width="361" height="243" alt="about add"></figure>
-            <a href="javascript:void(0);" class="playIcn"><img src="<?php echo get_template_directory_uri();?>/images/play.png" width="79" height="79" alt="play"></a>
+            
+   		    <figure>
+            <video width="361" height="243" src="<?php echo  $video_url;?>" type="<?php echo  $video_mime_type;?>" 
+                id="player11" poster="<?php echo $thumb; ?>" 
+                controls="controls" preload="none">
+            </video>
+            </figure>
+            
             </div>
       </div>
       <div class="full-w mrgTop55">
             
             <div class="aboutAddImg floatLeft thumbSliderOut">
+                <?php 
+									$args = array(
+									  'name'        => '',
+									  'post_type'   => 'gallery-about',
+									  'post_status' => 'publish',
+									  'numberposts' => 5
+									);
+									$query_posts = new WP_Query($args);
+									
+									 if ( $query_posts->have_posts() ) : while ( $query_posts->have_posts() ) : $query_posts->the_post(); 
+											//the_content();
+										$excerpts[] = get_the_excerpt();
+										//$image = get_the_post_thumbnail(null);
+										$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
+									    $small_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),array(85,85));
+									    $large_imgs[]  = $image;
+										$small_imgs[]  = $small_image;
+										
+									 endwhile; 
+										wp_reset_postdata();
+									 else : 
+									 _e( 'Sorry, no posts matched your criteria.' );
+									  endif;
+									  echo "<pre>";
+									//print_r($large_imgs);
+									//print_r($small_imgs); die;
+				?>
+                
                 <ul class="thumbSlider">
-                  <li><img src="<?php echo get_template_directory_uri();?>/images/large01.jpg" title="- before and after"></li>
-                  <li><img src="<?php echo get_template_directory_uri();?>/images/large02.jpg" title="- Hiking"></li>
-                  <li><img src="<?php echo get_template_directory_uri();?>/images/large03.jpg" title="- Pool"></li>
-                  <li><img src="<?php echo get_template_directory_uri();?>/images/large04.jpg" title="- Running"></li>
+					<?php foreach ($large_imgs as $key => $li) {?>
+                  <li><img src="<?php echo $li[0];?>" title="<?php echo $excerpts[$key]; ?>"></li>
+                  <?php } ?>
                 </ul>
                 <div id="bx-pager">
-                  <a data-slide-index="0" href=""><img src="<?php echo get_template_directory_uri();?>/images/thumb01.jpg" width="85" height="85" alt="thumb01"></a>
-                  <a data-slide-index="1" href=""><img src="<?php echo get_template_directory_uri();?>/images/thumb02.jpg" width="85" height="85" alt="thumb02"></a>
-                  <a data-slide-index="2" href=""><img src="<?php echo get_template_directory_uri();?>/images/thumb03.jpg" width="85" height="85" alt="thumb03"></a>
-                  <a data-slide-index="3" href=""><img src="<?php echo get_template_directory_uri();?>/images/thumb04.jpg" width="85" height="85" alt="thumb04"></a>
+					<?php foreach ($small_imgs as $key => $si) {?>
+                  <a data-slide-index="<?php echo $key;?>" href=""><img src="<?php echo $si[0];?>" width="85" height="85" alt="thumb01"></a>
+                  <?php } ?>
                 </div>
             </div>
             
         	<div class="aboutAdd floatRight">
-            	<h2>Mike Hansen, <b>CEO-FITSE TV</b></h2>
-                <span>After an amazing run that spanned more than half a decade, Gary Vaynerchuk today announces his 
-retirement from producing video content.</span>
-				<p>After an amazing run that spanned more than half a decade, Gary Vaynerchuk today announces his 
-retirement from producing regular wine video content. After an amazing run that spanned more than half a 
-decade, Gary Vaynerchuk today announces his retirement from producing regular wine video content.</p>
-				<p>After an amazing run that spanned more than half a decade, Gary Vaynerchuk today announces 
-from producing regular wine video content. After an amazing run that spanned more than half a decade, 
-Gary Vaynerchuk today announces his retirement from producing regular wine video content. 
-After an amazing run tha spanned more than half a decade, Gary Vaynerchuk today announces his 
-retirement from producing.</p>
+            	<?php $the_slug =  get_post('mike-hansen-ceo-fitse-tv');
+									$args = array(
+									  'name'        => $the_slug,
+									  'post_type'   => 'post',
+									  'post_status' => 'publish',
+									  'numberposts' => 1
+									);
+									$my_posts = get_posts($args);
+									if( $my_posts ) :
+									  $title =  $my_posts[0]->post_title;
+									  $content =  $my_posts[0]->post_content;
+									  $excerpt = $my_posts[0]->post_excerpt;
+									  $PostId = $my_posts[0]->ID;
+									  
+									  //$content = apply_filters('the_content', $content);
+									  //$content = str_replace(']]>', ']]&gt;', $content);
+										echo $content;
+									  //$thumb = get_the_post_thumbnail ( $PostId , array(139,97));
+									  //print_r($content); die;
+									  wp_reset_postdata();
+									endif;
+									
+									
+                ?>
 				<a href="javascript:void(0);" class="askAQtn">Ask a Question</a>
                 
             </div>
 	  </div>
       <div class="full-w mrgTop45">
         	<div class="aboutAdd floatLeft">
-            	<h2>Lorem Ipsum is  <b>Simply</b></h2>
-                <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </span>
-				<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',</p>
-				<p>it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+				<?php $the_slug =  'about-bottom-post';
+									$args = array(
+									  'name'        => $the_slug,
+									  'post_type'   => 'abouts',
+									  'post_status' => 'publish',
+									  'numberposts' => 1
+									);
+									$my_posts = get_posts($args);
+									if( $my_posts ) :
+									  $title =  $my_posts[0]->post_title;
+									  $content =  $my_posts[0]->post_content;
+									  $excerpt = $my_posts[0]->post_excerpt;
+									  $PostId = $my_posts[0]->ID;
+									  $post_permalink = get_permalink($PostId);
+										if(get_post_meta($PostId,'wpcf-attachment-type',true) == 1){
+											
+											$thumb = get_post_meta($PostId,'wpcf-thumbnail',true);
+											$video_url = get_post_meta($PostId,'wpcf-video',true);
+											$video_title = GetAttachmentAttributesByUrl($video_url,'title');
+											$video_description = GetAttachmentAttributesByUrl($video_url,'description');
+											$video_mime_type = GetAttachmentAttributesByUrl($video_url,'mime-type');
+											
+											}else{
+												$thumb = get_post_meta($PostId,'wpcf-image',true);
+											}
+										$thumb = getImage($thumb, 'post-thumbnails');
+										echo $content;
+											wp_reset_postdata();
+									endif;
+									
+						
+                ?>
             </div>
             <div class="aboutAddImg floatRight">
-   		    <figure><img src="<?php echo get_template_directory_uri();?>/images/about-first-add.jpg" width="361" height="243" alt="about add"></figure>
-            <a href="javascript:void(0);" class="playIcn"><img src="<?php echo get_template_directory_uri();?>/images/play.png" width="79" height="79" alt="play"></a>
+   		    <figure>
+            <video width="361" height="243" src="<?php echo  $video_url;?>" type="<?php echo  $video_mime_type;?>" 
+                id="player11" poster="<?php echo $thumb; ?>" 
+                controls="controls" preload="none">
+            </video>
+            </figure>
+            
             </div>
+            
       </div>                    
     </div>
 </div>
