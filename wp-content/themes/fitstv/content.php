@@ -33,7 +33,7 @@
             <span><?php echo date('M d, Y',strtotime($post->post_date));?></span>
           <h2><a href="video-details.html"><?php the_title(); ?></a></h2>
             <?php the_excerpt(); ?>
-            <section><b>Share:</b><img src="<?php echo get_template_directory_uri();?>/images/share-links.png" width="234" height="20" alt="share"></section>
+            <section><b>Share:</b><?php get_ssb();?></section>
         </div>
     </div>
 <!-- /aboutBanner --></div>
@@ -42,7 +42,7 @@
 	<div class="inner-w">
     	<?php the_content();?>
 
-<section><b>Share:</b><img width="234" height="20" alt="share" src="<?php echo get_template_directory_uri();?>/images/share-links.png"></section>
+<section><b>Share:</b><?php get_ssb();?></section>
 <div class="clear"></div>
 <section><b>Tags:</b>
 <?php the_tags(); ?>

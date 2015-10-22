@@ -51,7 +51,7 @@ class News_Top_Widget extends WP_Widget {
 					<?php echo $post_excerpt;?>
 					<h1><?php echo $post->post_title;?></h1>
 					<a class="spa" href="<?php echo get_permalink($postId);?>">Read more &gt;</a></p>
-					<h6 class="shere"><b>Share:</b><img src="<?php echo get_template_directory_uri();?>/images/share-links.png" width="234" height="20" alt="share"></h6>
+					<h6 class="shere"><b>Share:</b><?php get_ssb();?></h6>
 				</div>
 			</div>
 		</div>
@@ -145,7 +145,7 @@ class Video_Top_Widget extends WP_Widget {
 					<?php echo $post_excerpt;?>
 					<h1><?php echo $post->post_title;?></h1>
 					<a class="spa" href="<?php echo get_permalink($postId);?>">Read more &gt;</a></p>
-					<h6 class="shere"><b>Share:</b><img src="<?php echo get_template_directory_uri();?>/images/share-links.png" width="234" height="20" alt="share"></h6>
+					<h6 class="shere"><b>Share:</b><?php get_ssb();?></h6>
 				</div>
 			</div>
 		</div>
@@ -360,7 +360,7 @@ class Home_Slider_Main_Widget extends WP_Widget {
                     	<span><?php echo date('F d, Y',strtotime($Episode_created));?></span>
                         <h2><a href="<?php $post_permalink; ?>"><?php echo $Episode_title; ?></a></h2>
                         <p><?php echo $post_excerpt;?></p>
-                        <section><b>Share:</b><img src="<?php echo get_template_directory_uri();?>/images/share-links.png" width="234" height="20" alt="share"></section>
+                        <section><b>Share:</b><?php get_ssb();?></section>
                     </div>
                 </li>
 	<?php	
@@ -403,7 +403,7 @@ class Home_Slider_Main_Widget extends WP_Widget {
                     	<span><?php echo date('F d, Y',strtotime($Episode_created));?></span>
                         <h2><a href="<?php $post_permalink; ?>"><?php echo $Episode_title; ?></a></h2>
                         <p><?php echo $post_excerpt;?></p>
-                        <section><b>Share:</b><img src="<?php echo get_template_directory_uri();?>/images/share-links.png" width="234" height="20" alt="share"></section>
+                        <section><b>Share:</b><?php get_ssb();?></section>
                     </div>
                 </li>
 			<?php 
@@ -644,7 +644,7 @@ class Episode_Slider_Widget extends WP_Widget {
             <!--<span>August 23, 2011</span>
           <h2><a href="video-details.html">Episode #89 &ndash; The Fitse Video</a></h2>
             <p>After an amazing run that spanned more than half a decadeRead <a href="javascript:void(0);">more ></a></p>-->
-            <section><b>Share:</b><img src="<?php echo get_template_directory_uri();?>/images/share-links.png" width="234" height="20" alt="share"></section>
+            <section><b>Share:</b><?php get_ssb();?></section>
         </div>
     </div>
 	<?php
