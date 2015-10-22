@@ -229,6 +229,7 @@ header nav li.twitter{ background-position: -123px 0;}
 
 .form-group{ float:left; width:100%;}
 .form-group input{ border:1px solid #c2c2c2; width:90%; padding:0 5%; height:37px; line-height:40px; margin:0 0 5px 0;}
+.form-group textarea{ border:1px solid #c2c2c2; width:90%; padding:0 5%; height:78px; line-height:40px; margin:0 0 5px 0;}
 .form-group select{ border:1px solid #c2c2c2; width:90%; padding:0 5%; height:37px; line-height:40px; margin:0 0 5px 0;}
 .my_modal{ display:none; position: fixed; right: 0; top: 20%; z-index: 999; box-shadow: 0 2px 4px 3px #ccc;}
 
