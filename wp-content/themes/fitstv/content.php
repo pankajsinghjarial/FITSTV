@@ -26,12 +26,21 @@
         </div>
         <div class="slider_contant">
         	<ul>
-            <li class="yoga"> Category; Yoga</li>
-            <li><span><img src="<?php echo get_template_directory_uri();?>/images/nav-sep.jpg" width="1" height="7" alt="sep"></span></li>
-            <li class="comments"> 5 Comments</li>
+            <!--<li class="yoga"> Category; Yoga</li>
+            <li><span><img src="< ?php echo get_template_directory_uri();?>/images/nav-sep.jpg" width="1" height="7" alt="sep"></span></li>-->
+            <li class="comments">
+				<?php 
+					if ( have_comments() ) { 
+						printf( _n( 'One comment', '%1$s comments', get_comments_number(), 'fitstv' ),
+							number_format_i18n( get_comments_number() ) );
+					}else{
+						echo 'No Comments';
+					} 
+				?>
+            </li>
             </ul>
             <span><?php echo date('M d, Y',strtotime($post->post_date));?></span>
-          <h2><a href="video-details.html"><?php the_title(); ?></a></h2>
+          <h2><?php the_title(); ?></h2>
             <?php the_excerpt(); ?>
             <section><b>Share:</b><?php get_ssb();?></section>
         </div>
@@ -44,8 +53,20 @@
 
 <section><b>Share:</b><?php get_ssb();?></section>
 <div class="clear"></div>
-<section><b>Tags:</b>
-<?php the_tags(); ?>
+<section>
+<?php the_tags('<b>Tags:</b>'); ?>
+<?php 
+	$nextPost =  get_next_post();
+	if($nextPost){ ?>
+		<input type="hidden" id="nextPost" value="<?php echo $nextPost->guid;?>"/>
+	<?php }
+?>
+<?php 
+	$prevPost =  get_previous_post();
+	if($prevPost){ ?>
+		<input type="hidden" id="prevPost" value="<?php echo $prevPost->guid;?>"/>
+	<?php }
+?>
 </section>
 
 
@@ -72,7 +93,7 @@
 					<?php else: ?>
 						<img src="<?php echo getImage(get_post_meta(get_the_ID(),'wpcf-image',true));?>" width="210" height="149" alt="<?php echo $post->post_title; ?>">
 					<?php endif; ?>
-					<section><?php the_title();?> 
+					<section><a href="<?php echo get_permalink();?>"><?php the_title();?></a> 
 					<span><?php echo (strlen($post->post_excerpt)>20)?substr($post->post_excerpt,0,20).'...':$post->post_excerpt;?></span>
 					</section>
 					<div class="news_ret">

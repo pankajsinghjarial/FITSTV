@@ -21,7 +21,7 @@ get_header(); ?>
     	<div class="videoLeft">
             <h2>Videos</h2>
             
-            <section class="rightCol">
+<!--section class="rightCol">
                 <a href="javascript:void(0);" title="Recent" class="active">Recent</a>
                 <a href="javascript:void(0);" title="Alphabetical">Alphabetical</a>
                 <a href="javascript:void(0);" title="Highest Rating">Highest Rating</a>
@@ -29,8 +29,8 @@ get_header(); ?>
             
             <div class="searchBar">
                 <input type="text" placeholder="Search Bar">
-                <button><img src="<?php echo get_template_directory_uri();?>/images/searchbtn.png" width="40" height="40" alt="Search"></button>
-            </div>
+                <button><img src="< ?php echo get_template_directory_uri();?>/images/searchbtn.png" width="40" height="40" alt="Search"></button>
+            </div>-->
         	
             <?php if ( is_active_sidebar( 'home-slider-news' ) ) {
 				dynamic_sidebar( 'home-slider-news' ); 

@@ -32,21 +32,25 @@ if ( post_password_required() ) {
 				?>
 			</div>
         <?php } ?>
-        <div class="contactForm videoFrom">
+        
+		<div class="contactForm videoFrom">
 			<h2>Leave a Comment</h2>
-			<?php
-				$comments_args = array(
-						// change the title of send button 
-						'label_submit'=>'Submit',
-						// change the title of the reply section
-						'title_reply'=>'Write a Reply or Comment',
-						// remove "Text or HTML to be displayed after the set of comment fields"
-						'comment_notes_after' => '',
-						// redefine your own textarea (the comment body)
-						'comment_field' => '<div class="form-col"><label>Message <em>*</em></label><textarea id="comment" name="comment"></textarea></div>',
-				);
-			?>
-			<?php comment_form($comments_args); ?> 
-        </div>
+			<?php if ( comments_open() ) { ?>
+				<?php
+					$comments_args = array(
+							// change the title of send button 
+							'label_submit'=>'Submit',
+							// change the title of the reply section
+							'title_reply'=>'Write a Reply or Comment',
+							// remove "Text or HTML to be displayed after the set of comment fields"
+							'comment_notes_after' => '',
+							// redefine your own textarea (the comment body)
+							'comment_field' => '<div class="form-col"><label>Message <em>*</em></label><textarea id="comment" name="comment"></textarea></div>',
+					);
+					comment_form($comments_args); 
+				}else{ ?>
+					<p class="no-comments"><?php _e( 'Comments are closed for this post.', 'fitstv' ); ?></p>
+				<?php } ?>
+		</div>
     </div>	
 <!-- /commentsSec --></div>

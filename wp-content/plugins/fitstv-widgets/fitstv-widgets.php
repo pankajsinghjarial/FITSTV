@@ -335,7 +335,7 @@ class Home_Slider_Main_Widget extends WP_Widget {
 			$post_excerpt = $post->post_excerpt;//get_post_meta($postId);
 			$Episode_title = $post->post_title;
 			$Episode_created = $post->post_date;
-			$post_permalink = get_permalink($postId);
+			echo $post_permalink = get_permalink($postId);
 			if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1){
 				
 				$thumb = get_post_meta($postId,'wpcf-thumbnail',true);
@@ -358,7 +358,7 @@ class Home_Slider_Main_Widget extends WP_Widget {
                     </video>
                     <div class="slider_contant">
                     	<span><?php echo date('F d, Y',strtotime($Episode_created));?></span>
-                        <h2><a href="<?php $post_permalink; ?>"><?php echo $Episode_title; ?></a></h2>
+                        <h2><a href="<?php echo $post_permalink; ?>"><?php echo $Episode_title; ?></a></h2>
                         <p><?php echo $post_excerpt;?></p>
                         <section><b>Share:</b><?php get_ssb();?></section>
                     </div>
@@ -401,7 +401,7 @@ class Home_Slider_Main_Widget extends WP_Widget {
                     </video>
                     <div class="slider_contant">
                     	<span><?php echo date('F d, Y',strtotime($Episode_created));?></span>
-                        <h2><a href="<?php $post_permalink; ?>"><?php echo $Episode_title; ?></a></h2>
+                        <h2><a href="<?php echo $post_permalink; ?>"><?php echo $Episode_title; ?></a></h2>
                         <p><?php echo $post_excerpt;?></p>
                         <section><b>Share:</b><?php get_ssb();?></section>
                     </div>
@@ -513,7 +513,7 @@ class Home_Side_News_Widget extends WP_Widget {
             <div class="rece_data">
                	<div class="rece_left"><img src="<?php echo $thumb; ?>" width="54" height="48" alt="pic1"></div>
                      <div class="rece_right">
-                      	<h4><?php echo $Episode_title;?></h4>
+                      	<h4><a href="<?php echo get_permalink($postId); ?>"><?php echo $Episode_title;?></a></h4>
                      </div>
                      <p><?php echo (strlen($post->post_excerpt)>20)?substr($post->post_excerpt,0,40).'...':$post->post_excerpt;?><a href="<?php ?>">Read More<span><img src="<?php echo get_template_directory_uri();?>/images/arrow.png" width="10" height="10" alt="Arrow"></span></a></p>
                  </div>
@@ -524,7 +524,7 @@ class Home_Side_News_Widget extends WP_Widget {
 		
 		echo '</ul>
                  <div class="view_data">
-                       	<a href="#">View All<span class="big"><img src="'.get_template_directory_uri().'/images/arrow.png" width="10" height="10" alt="Arrow"></span></a>
+                       	<a href="'.get_permalink( get_page_by_path( 'news-index' ) ).'">View All<span class="big"><img src="'.get_template_directory_uri().'/images/arrow.png" width="10" height="10" alt="Arrow"></span></a>
                  </div>
                </div>
           </div>';
@@ -620,12 +620,12 @@ class Episode_Slider_Widget extends WP_Widget {
 			$video_url = get_post_meta($postId,'wpcf-video',true);
 			$video_title = GetAttachmentAttributesByUrl($video_url,'title');
 			$video_description = GetAttachmentAttributesByUrl($video_url,'description');
-			
+			$video_mime_type = GetAttachmentAttributesByUrl($video_url,'mime-type');
 		?>	
 			<li>
 				<?php 
 				if($attachmentType == 1){ 
-					displayVideo('episode-slide-'.$key,$thumb,$video_url,745, 416,$video_title,$video_description);
+					displayVideo('episode-slide-'.$key,$thumb,$video_url,745, 416,$video_title,$video_description,$video_mime_type);
 				}else{ ?>
 					<img src="<?php echo $thumb;?>" width="745" height="416" alt="<?php echo $Episode_title;?>">
 				<?php } ?>
@@ -741,7 +741,7 @@ class Home_Slider_News_Widget extends WP_Widget {
 		?>	
 		
 		<li class="slide"><img src="<?php echo $thumb;?>" width="201" height="149" alt="news01">
-                    <section><?php echo $Episode_title ?> 
+                    <section><a title="<?php echo $Episode_title ?>" href="<?php echo get_permalink($post->ID);?>"><?php echo $Episode_title ?></a> 
                     <span><?php echo (strlen($post->post_excerpt)>20)?substr($post->post_excerpt,0,20).'...':$post->post_excerpt;?></span>
                     </section>
                     <div class="news_ret">
@@ -865,7 +865,7 @@ class Home_Slider_Reviews_Widget extends WP_Widget {
 		
 		
 		<li class="slide"><img src="<?php echo $thumb;?>" width="201" height="149" alt="news01">
-                    <section><?php echo $Episode_title ?> 
+                    <section><a title="<?php echo $Episode_title ?>" href="<?php echo get_permalink($post->ID);?>"><?php echo $Episode_title ?></a> 
                     <span><?php echo (strlen($post->post_excerpt)>20)?substr($post->post_excerpt,0,20).'...':$post->post_excerpt;?></span>
                     </section>
                     <div class="news_ret">
@@ -990,7 +990,7 @@ class Home_Slider_Workouts_Widget extends WP_Widget {
 		
 		
 		<li class="slide"><img src="<?php echo $thumb;?>" width="201" height="149" alt="news01">
-                    <section><?php echo $Episode_title ?> 
+                    <section><a title="<?php echo $Episode_title ?>" href="<?php echo get_permalink($post->ID);?>"><?php echo $Episode_title ?></a> 
                     <span><?php echo (strlen($post->post_excerpt)>20)?substr($post->post_excerpt,0,20).'...':$post->post_excerpt;?></span>
                     </section>
                     <div class="news_ret">
