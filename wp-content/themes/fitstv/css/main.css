@@ -517,3 +517,7 @@ header nav li.twitter{ background-position: -123px 0;}
 
 ul.categories li.active{font-weight:bold;}
 .displayNone{ display:none; }
+
+
+.breking_news_data .shere span{padding:0px;}
+.simplesocialbuttons {clear:none;width: 380px;}
