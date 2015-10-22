@@ -521,4 +521,5 @@ ul.categories li.active{font-weight:bold;}
 
 
 .breking_news_data .shere span{padding:0px;}
-.simplesocialbuttons {clear:none;width: 380px;}
+.simplesocialbuttons ,.videoDetails div.simplesocialbuttons{clear:none;width: 380px; margin:0px;}
+.simplesocialbutton {width: 105px !important;}
