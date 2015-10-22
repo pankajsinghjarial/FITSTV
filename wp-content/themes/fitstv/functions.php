@@ -288,6 +288,9 @@ function fitstv_scripts() {
 	if(is_page('news-index')){
 		wp_enqueue_script( 'fitstv-news-listing', get_template_directory_uri() . '/js/news-listing.js' );
 	}
+	if(is_single()){
+		wp_enqueue_script( 'fitstv-single', get_template_directory_uri() . '/js/single.js' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'fitstv_scripts' );
 
@@ -376,7 +379,7 @@ endif;
  * $title           Title of Video
  * $description     Description of video
  */
-function displayVideo($divId = "myPlayer",$thumbnailPath = '',$videoPath = '',$width = 1024, $height = 360,$title = '',$description = ''){ 
+function displayJWVideo($divId = "myPlayer",$thumbnailPath = '',$videoPath = '',$width = 1024, $height = 360,$title = '',$description = ''){ 
     echo '<div id="'.$divId.'">Loading the player...</div>
     <script type="text/javascript">
     var playerInstance = jwplayer("'.$divId.'");
@@ -390,6 +393,12 @@ function displayVideo($divId = "myPlayer",$thumbnailPath = '',$videoPath = '',$w
     });
     </script>';
 }
+function displayVideo($divId = "player1",$thumbnailPath = '',$videoPath = '',$width = '100%', $height = '600',$title = '',$description = '',$mime_type){ ?>
+	<video width="<?php echo $width; ?>" height="<?php echo $height;?>" src="<?php echo $videoPath;?>" type="<?php echo $mime_type;?>" id="<?php echo $divId;?>" poster="<?php echo $thumbnailPath;?>" 
+		controls="controls" preload="none">
+	</video>
+<? }
+
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 function special_nav_class($classes, $item){
      if( in_array('current-menu-item', $classes) ){
