@@ -27,7 +27,7 @@ if (wResize < 767) {
 
 /*pop-up*/
 
-	if($('.wpcf7-response-output').text().length >0)
+	if($('#wpcf7-f88-o1 .wpcf7-response-output').text().length >0)
 	{
 			$('.my_modal').fadeIn('slow');
 	}else{
@@ -53,6 +53,13 @@ if (wResize < 767) {
 		$(".sideNav ul").slideToggle();	
 	});
 	
+	
+	if($('#wpcf7-f117-o2 .wpcf7-response-output').text().length >0)
+	{
+			$('.askAQtnPop, .overlayBg').fadeIn('slow');
+	}else{
+			$('.askAQtnPop, .overlayBg').fadeOut('slow');	
+	}
 /*Ask a Question*/
 	$('.askAQtn').click(function(){
 		$('.askAQtnPop, .overlayBg').fadeIn('slow');
