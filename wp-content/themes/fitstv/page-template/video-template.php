@@ -38,7 +38,7 @@ get_header(); ?>
           <ul>
             <li class="cl1" data-type="videos"><a href="#tabs-1"><span>Videos</span> </a></li>
             <li class="cl2" data-type="on-demand"><a href="#tabs-2"><span>On Demand</span> </a></li>
-            <li class="cl8" data-type="news"><a href="#tabs-3"><span>News</span> </a></li>
+            <li class="cl8" data-type="news"><a href="#tabs-3"><span>Interviews</span> </a></li>
             <li class="cl9" data-type="reviews"><a href="#tabs-4"><span>Reviews</span> </a></li>
             <li class="cl5" data-type="workouts"><a href="#tabs-5"><span>Workouts</span> </a></li>
           </ul>
@@ -209,7 +209,7 @@ get_header(); ?>
 							array(
 								'taxonomy' => 'videotype',
 								'field' => 'category_nicename',
-								'terms' => getCatergoryID('videotype','news'),
+								'terms' => getCatergoryID('videotype','interviews'),
 							)
 						)
 					);

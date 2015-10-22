@@ -87,10 +87,11 @@
             <ul>
                 <li><span class="fo1">Copyright © 2015</span><span class="fo2"> All Rights Reserved<i class="lll"></i> Fitse.tv</span> </li>
                 <li><a href="https://www.facebook.com/FitseTV#"><img src="<?php echo get_template_directory_uri();?>/images/fb.png" alt="FB"></a></li>
-                <li><a href="https://www.pinterest.com/FitseTV/"><img src="<?php echo get_template_directory_uri();?>/images/pin_icon.png" alt=""/></a></li>
-                <li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/in_icon.png" alt=""/></a></li>
-                <li><a href="https://instagram.com/fitsetv/"><img src="<?php echo get_template_directory_uri();?>/images/in2_icom.png" alt=""/></a></li>
                 <li><a href="https://twitter.com/fitsetv"><img src="<?php echo get_template_directory_uri();?>/images/twitter.png" alt=""/></a></li>
+                <li><a href="https://www.pinterest.com/FitseTV/"><img src="<?php echo get_template_directory_uri();?>/images/pin_icon.png" alt=""/></a></li>
+              
+                <li><a href="https://instagram.com/fitsetv/"><img src="<?php echo get_template_directory_uri();?>/images/in2_icom.png" alt=""/></a></li>
+                
             </ul>
         </div>
     </div>

@@ -46,7 +46,7 @@ if (wResize < 767) {
 	});
 	
 	$(".my_modal_open").click(function(){
-		$("nav").hide();	
+		//$("nav").hide();	
 	});
 	
 	$(".sideNav h4").click(function(){
