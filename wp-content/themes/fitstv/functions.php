@@ -217,9 +217,9 @@ function fitstv_widgets_init() {
 		'after_title'   => '',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'About the CEO', 'fitstv' ),
-		'id'            => 'home-about-ceo',
-		'description'   => __( 'About the CEO', 'fitstv' ),
+		'name'          => __( 'About Page Top Heading', 'fitstv' ),
+		'id'            => 'about-page-top-heading',
+		'description'   => __( 'About page top heading', 'fitstv' ),
 		'before_widget' => '',
 		'after_widget'  => '',
 		'before_title'  => '',

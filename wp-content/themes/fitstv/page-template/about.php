@@ -14,9 +14,18 @@ get_header(); ?>
 <div class="aboutBanner full-w">
 	<figure><img src="<?php echo get_template_directory_uri();?>/images/about-bg.jpg" width="1440" height="554" alt="About"></figure>
     <div class="aboutTxt">
-    <h1>Discover Your Fit</h1>
-    <p>After an amazing run that spanned more than half a decade, Gary Vaynerchuk today announces
-his retirement from producing video content.</p>
+    
+
+	<?php 
+	if(is_active_sidebar('about-page-top-heading')){
+		
+		dynamic_sidebar('about-page-top-heading');
+		
+	}
+	
+	
+	?>
+
 	</div>
 <!-- /aboutBanner --></div>
 
@@ -73,18 +82,20 @@ his retirement from producing video content.</p>
             <div class="aboutAddImg floatLeft thumbSliderOut">
                 <?php 
 									$args = array(
-									  'name'        => '',
+									  
 									  'post_type'   => 'gallery-about',
 									  'post_status' => 'publish',
-									  'numberposts' => 5
+									  'numberposts' => 5,
+									  'order'=>'ASC'
 									);
 									$query_posts = new WP_Query($args);
 									
 									 if ( $query_posts->have_posts() ) : while ( $query_posts->have_posts() ) : $query_posts->the_post(); 
 											//the_content();
 										$excerpts[] = get_the_excerpt();
-										//$image = get_the_post_thumbnail(null);
-										$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
+										$th = get_post_thumbnail_id( $post->ID );
+										//echo $th;
+										$image = wp_get_attachment_url( $th);
 									    $small_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ),array(85,85));
 									    $large_imgs[]  = $image;
 										$small_imgs[]  = $small_image;
@@ -94,14 +105,14 @@ his retirement from producing video content.</p>
 									 else : 
 									 _e( 'Sorry, no posts matched your criteria.' );
 									  endif;
-									  echo "<pre>";
+									 // echo "<pre>";
 									//print_r($large_imgs);
 									//print_r($small_imgs); die;
 				?>
                 
                 <ul class="thumbSlider">
 					<?php foreach ($large_imgs as $key => $li) {?>
-                  <li><img src="<?php echo $li[0];?>" title="<?php echo $excerpts[$key]; ?>"></li>
+                  <li><img src="<?php echo $li;?>" title="<?php echo $excerpts[$key]; ?>"></li>
                   <?php } ?>
                 </ul>
                 <div id="bx-pager">
@@ -188,6 +199,13 @@ his retirement from producing video content.</p>
       </div>                    
     </div>
 </div>
-
+<div class="popup_info askAQtnPop" style="display: none;">
+                  <button class="close my_modal_close" type="button"><span aria-hidden="true">×</span></button>
+                  <div class="pop_con">
+                        <p>Ask a Question</p>
+                        <?php  echo do_shortcode('[contact-form-7 id="117" title="Contact Form for Contact Query"]');?>
+                    </div>         
+                </div>
 <?php
 get_footer();
+
