@@ -22,7 +22,7 @@ get_template_part('news','subcategories');?>
 <div class="episodesChain full-w">
 	<div class="inner-w">
     
-   		<h2>NEWS</h2>
+   		<h2 class="news-margin">NEWS</h2>
         <!--<section class="sortColumn">
         <span>Sort By:</span>
         <select>

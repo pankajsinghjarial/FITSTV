@@ -37,19 +37,20 @@ class News_Top_Widget extends WP_Widget {
 		$video_url = get_post_meta($postId,'wpcf-video',true);
 		$video_title = GetAttachmentAttributesByUrl($video_url,'title');
 		$video_description = GetAttachmentAttributesByUrl($video_url,'description');
+		$video_mime_type = GetAttachmentAttributesByUrl($video_url,'mime-type');
 		?>
 		<div class="breking_news">
 			<div class="newsLft">
 				<div class="breking_news_img breaking_news_img_padding">
-				<?php  displayVideo('breking_news_img',$thumb, $video_url, 394 , 222, $video_title, $video_description);?>
+				<?php  displayVideo('breking_news_img',$thumb, $video_url, 394 , 222, $video_title, $video_description,$video_mime_type);?>
 				</div>
 				
 			</div>
 			<div class="newsRht">
 				<div class="breking_news_data">
 					<span><?php echo date('M d, Y',strtotime($post->post_date));?></span>
-					<?php echo $post_excerpt;?>
 					<h1><?php echo $post->post_title;?></h1>
+					<p><?php echo $post_excerpt;?></p>
 					<a class="spa" href="<?php echo get_permalink($postId);?>">Read more &gt;</a></p>
 					<h6 class="shere"><b>Share:</b><?php get_ssb();?></h6>
 				</div>
@@ -126,24 +127,24 @@ class Video_Top_Widget extends WP_Widget {
 		$postId = $instance['topVideo'];
 		$post = get_post($postId);
 		$post_excerpt = $post->post_excerpt;//get_post_meta($postId);
-		$thumb = get_post_meta($postId,'wpcf-thumbnail',true);
+		$thumb = getImage(get_post_meta($postId,'wpcf-thumbnail',true),'fitstv-tv-thumb');
 		$video_url = get_post_meta($postId,'wpcf-video',true);
 		$video_title = GetAttachmentAttributesByUrl($video_url,'title');
 		$video_description = GetAttachmentAttributesByUrl($video_url,'description');
-		
+		$video_mime_type = GetAttachmentAttributesByUrl($video_url,'mime-type');
 		?>
 		<div class="breking_news">
 			<div class="newsLft">
 				<div class="breking_news_img breaking_news_img_padding">
-				<?php  displayVideo('breking_news_img',$thumb, $video_url, 394 , 222, $video_title, $video_description);?>
+				<?php  displayVideo('breking_news_img',$thumb, $video_url, 394 , 222, $video_title, $video_description,$video_mime_type);?>
 				</div>
 				</div>
 				
 			<div class="newsRht">
 				<div class="breking_news_data">
 					<span><?php echo date('M d, Y',strtotime($post->post_date));?></span>
-					<?php echo $post_excerpt;?>
 					<h1><?php echo $post->post_title;?></h1>
+					<p><?php echo $post_excerpt;?></p>
 					<a class="spa" href="<?php echo get_permalink($postId);?>">Read more &gt;</a></p>
 					<h6 class="shere"><b>Share:</b><?php get_ssb();?></h6>
 				</div>
@@ -234,6 +235,7 @@ class Home_Episode_Widget extends WP_Widget {
 						$video_url = get_post_meta($postId,'wpcf-video',true);
 						$video_title = GetAttachmentAttributesByUrl($video_url,'title');
 						$video_description = GetAttachmentAttributesByUrl($video_url,'description');
+						$video_mime_type = GetAttachmentAttributesByUrl($video_url,'mime-type');
 						$thumb = getImage($thumb, 'fitstv-image');
 					?>	
 						<li class="item">
@@ -335,7 +337,7 @@ class Home_Slider_Main_Widget extends WP_Widget {
 			$post_excerpt = $post->post_excerpt;//get_post_meta($postId);
 			$Episode_title = $post->post_title;
 			$Episode_created = $post->post_date;
-			echo $post_permalink = get_permalink($postId);
+			$post_permalink = get_permalink($postId);
 			if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1){
 				
 				$thumb = get_post_meta($postId,'wpcf-thumbnail',true);

@@ -185,7 +185,7 @@
 			}
 ?>			
 
-<ul class="fetched_tweets <?php echo $class;?>">
+<ul class="socialAreaSliderIn">
 			<?php
 			
 			$tweets_count 			= $wpltf_wdgt_tweets_cnt; 		
@@ -280,14 +280,16 @@
 			}
 			if($tweets) : ?>
 			    <?php foreach($tweets as $t) : ?>
-			        <li class="tweets_avatar">
+			        <li>    
+                <figcaption>
+                <figure>
 			        	<?php
-			        	echo '<div class="tweet_wrap"><div class="wdtf-user-card ltr">';
+			        	echo '';
 			        		if ($showAvatar){
 			        			
 			        			echo '<img ';
-			        			echo 'width="45px" height="45px"';
-			        			echo 'src="'.$t['image'].'" alt="Tweet Avatar" class="';
+			        			echo 'width="90" height="90"';
+			        			echo 'src="'.$t['image'].'" alt="Fitse TV" class="';
 		        				echo ($border_rad_avatar) ? 'circular':'';
 			        			echo '"/>';
 			        		}
@@ -295,23 +297,16 @@
 			        	
 			        		if($disp_screen_name!='false')
 			        		{
-			        			echo '<div class="wdtf-screen-name">';
-			        			echo "<span class=\"screen_name\">{$t['name']}</span><br>";
-			        			echo "<a href=\"https://twitter.com/{$screen_name}\" target=\"_blank\" dir=\"ltr\">@{$screen_name}</a></div>";
+			        			
+			        			echo "<span>
+                <strong>{$t['name']}</strong><br>";
+			        			echo "<a href=\"https://twitter.com/{$screen_name}\" target=\"_blank\" dir=\"ltr\">@{$screen_name}</a></span>
+                </figcaption>";
 			        			
 			        		}
-			        	echo '<div class="clear"></div></div>';	
-			        	?>
-			       		<div class="tweet_data">
-			        	<?php echo $t['text']; ?>
-			        	</div>
-			            <br/>
-			            <div class="clear"></div>
-			            <div class="times">
-			            <em>
-			            
-						<a href="http://www.twitter.com/<?php echo $screen_name; ?>" target="_blank" title="Follow <?php echo $name; ?> on Twitter [Opens new window]">
-							<?php
+			        	echo '<div class="clear"></div>';	
+			        	?><em>
+			        	<?php
 								if($cache_transient == "true"){
 									$timeDisplay = twitter_time_diff($t['time'], current_time('timestamp'));
 								}else{
@@ -322,11 +317,13 @@
 								}
 								printf(__('%1$s%2$s'), $timeDisplay, $displayAgo);
 
-							?>
-							</a>
-			            </em>
-			            </div>
-						<?php if($twitterIntents == "true"){
+							?></em>
+			        	
+			       		<p>
+			        	<?php echo $t['text']; ?>
+			        	</p>
+			            </li>
+						<?php if($twitterIntents == "true"){/*
 						?>       
 <div class="tweets-intent-data">
 <?php if($t['favourite_count']!=0 || $t['retweet_count']!=0){?>
@@ -359,17 +356,22 @@
   <li><a href="http://twitter.com/intent/favorite?tweet_id=<?php echo $t['tweet_id']; ?>" data-lang="en" class="favorite" title="Favorite" target="_blank"><span aria-hidden="true" data-icon="&#xf005;" <?php echo ($color_intents) ? 'style="color:'.$color_intents.';"' :''; ?>></span></a></li>
 </ul>
     </div>
-						<?php } ?>
-						<div class="clear"></div>
-</div><div class="clear"></div>
+						<?php */ } ?>
+						
 			        </li>
 			    <?php endforeach; ?>
-
+				
 			<?php else : ?>
 			    <li>Waiting for twitter.com...Try reloading the page again </li>
 			<?php endif; ?>
 			</ul>
-			
+			<div class="clear"></div>
+			<figure class="sTweets">
+			<a href="https://twitter.com/fitsetv" class="twitter-follow-button" data-show-count="false">Follow @fitsetv</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-via="fitsetv">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			</figure>
 			<?php
 			if(isset($wpltf_wdgt_slide_style) && $wpltf_wdgt_slide_style=='slider'){
 				wp_register_script('ticker_script',plugins_url( '/js/jquery.newsTicker.js' , dirname(__FILE__) )); 
@@ -383,7 +385,7 @@ wp_print_scripts('ticker_script');
 
        
 		}
-			echo $after_widget;
+			//echo $after_widget;
 		}
 		
 

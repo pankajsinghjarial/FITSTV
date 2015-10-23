@@ -46,7 +46,7 @@ if (wResize < 767) {
 	});
 	
 	$(".my_modal_open").click(function(){
-		$("nav").hide();	
+		//$("nav").hide();	
 	});
 	
 	$(".sideNav h4").click(function(){
@@ -215,10 +215,33 @@ $('.thumbSlider').bxSlider({
  }
  
 
- 
+$('#btn-subscribe').on('click',function(){
+	if($('.msg').length){
+		$('.msg').remove();
+	}
+	var email = $('#subscribe-email').val();
+	var $this = $(this);
+	if(validateEmail(email)){
+		var data = {};
+		data['email'] = email;
+		data['action'] = 'sendEmail';
+		$.ajax({
+			url:ajaxurl,
+			type:"POST",
+			data:data,
+			success: function(response){
+				if(parseInt(response)){
+					$('#subscribe-email').val('');
+					$this.after('<font style="clear:both;float:left;" class="msg" color="white">Mail Sent Successfully.</font>');
+				}
+			}
+		});
+	}else{
+		$(this).after('<font style="clear:both;float:left;" class="msg" color="red">Please enter valid email.</font>');
+	}
+});
  
 });
-
 
 $(document).ready(function(){
 	var submitIcon = $('.searchbox-icon');
@@ -259,4 +282,8 @@ function buttonUp(){
 			$('.searchbox-input').val('');
 			$('.searchbox-icon').css('display','block');
 		}
+}
+function validateEmail(email) {
+    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    return re.test(email);
 }

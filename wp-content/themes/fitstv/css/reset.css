@@ -14,7 +14,7 @@ a:hover, a:active{outline:none;}
 .clickable, input[type=button], input[type=submit], button{cursor:pointer;}
 button, input, select, textarea{margin:0;}
 button{width:auto;overflow:visible;}
-body{color:#686868; font-family: 'open_sansregular'; font-size:14px; height:100%; background:#fff;}
+body{color:#686868; font-family: 'open_sansregular'; font-size:14px; height:100%; background:#fff; overflow-x: hidden;}
 html{font-size:100%; height:100%;}
 .clear{clear:both;}
 p{ color:#636363; line-height:22px;}

@@ -393,7 +393,7 @@ function displayJWVideo($divId = "myPlayer",$thumbnailPath = '',$videoPath = '',
     });
     </script>';
 }
-function displayVideo($divId = "player1",$thumbnailPath = '',$videoPath = '',$width = '100%', $height = '600',$title = '',$description = '',$mime_type){ ?>
+function displayVideo($divId = "player1",$thumbnailPath = '',$videoPath = '',$width = '100%', $height = '600',$title = '',$description = '',$mime_type = ""){ ?>
 	<video width="<?php echo $width; ?>" height="<?php echo $height;?>" src="<?php echo $videoPath;?>" type="<?php echo $mime_type;?>" id="<?php echo $divId;?>" poster="<?php echo $thumbnailPath;?>" 
 		controls="controls" preload="none">
 	</video>
@@ -570,3 +570,16 @@ function fitstv_comment_form_fields( $fields ) {
 
 	return $fields;
 }
+function sendEmail(){
+	$subject = "Fitse.tv :  News Subscription";
+	$message = "Hi User,<br/><br/>Thanks for subscribing our newsletter<br/>You will soon receive updates from Fitse.tv<br/><br/>--<br/>Thanks</br/>Fitse.tv";
+	$headers = 'From: My Name <info@fitse.tv>' . "\r\n";
+	if(wp_mail( $_REQUEST['email'], $subject, $message, $headers )){
+		echo 1;
+	}else{
+		echo 0;
+	}
+	die;
+}
+add_action('wp_ajax_sendEmail', 'sendEmail');
+add_action('wp_ajax_nopriv_sendEmail', 'sendEmail');

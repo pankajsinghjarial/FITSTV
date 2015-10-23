@@ -24,7 +24,7 @@ his retirement from producing video content.</p>
     	<div class="contactForm">
 			<?php echo do_shortcode('[contact-form-7 id="30" title="Contact Us"]');?>
         </div>
-        <section class="contactMap"><img src="<?php echo get_template_directory_uri();?>/images/map.png" alt="map" width="516" height="491"></section>                
+        <section class="contactMap"><a href="https://www.google.com/maps/place/Tampa,+Florida/"><img src="http://maps.google.com/maps/api/staticmap?center=27.9505750,-82.4571776&zoom=16&size=516x491&maptype=roadmap&sensor=false&language=&markers=color:red|label:none|27.9505750,-82.4571776" title="tampa florida || Powered by MapsEasy.com" width="516" height="491" style="border:1px solid #CECECE;"></a></section>                
    	    
   </div>
 </div>

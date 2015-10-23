@@ -10,7 +10,7 @@
     .epsid.tabColumnsR.cateG .item:nth-child(4n){margin: 20px 16px 17px 0;}
     .newsRht{width: 65%;}
     .cateG.tabColumnsR { width: 79%;}
-    .tabColumnsR.cateG .item:nth-child(3n){ margin: 0 12px 17px 0;}
+    .tabColumnsR.cateG .item:nth-child(3n){ margin: 20px 16px 17px 0;}
     .icnPlay{left: 50%; margin: -34px 0 0 -34px; position: absolute; top: 50%;}
     .tabColumnsR.cateG .item{ width: 30%;}
     .homeOutr{height: 744px;}
@@ -117,6 +117,7 @@
 		Ipad - Portrait 
 ******************************/
 @media only screen and (min-width:768px) and (max-width:1023px){
+    .bxsliderbasic video{ height: 432px;}
      .aboutAdd{width: 100%;}
      .aboutAddImg.floatRight { display: block; float: none; margin: 25px auto auto; width: 425px;}
      .thumbSliderOut { float: none; margin: auto; width: 382px;}
@@ -193,7 +194,7 @@
 .desk{ display: none;} 
 .mob{ display: block;}
 .mobView{ display: block;}
-
+.socialAreaSlider figcaption figure { float: left; margin: 0 0 0 50px;}
 .searchbox-open { width: 59%;}    
 .bxMoveSlider{ display:none;} 
 .my_modal_open{ display:none;}
@@ -204,9 +205,9 @@ header .searchIcn { position: absolute; right: 60px; top: 21px;}
 .boxCol h3{ font-size:34px;}
 header nav{display: none;}
 .popup_data{ display: block; position: relative; right: auto; top: 30px;}	
-.homeOutr{height:371px;}
+.homeOutr{height:auto;}
 .homeSlider h1{ font-size: 26px;padding: 160px 0 0;line-height: 26px;}
-.homeSlider li{height: 430px;}
+.homeSlider li{height: auto;}
 .tvSlider .slider_contant{margin: auto 3% 20px; width: 94%;}
 .playIcn > img { height: auto; width: 50px;}
 .homeSlider .bx-default-pager{bottom: 10px; left: 50%; margin-left: -28px;width: 65px;}

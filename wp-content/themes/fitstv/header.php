@@ -76,11 +76,12 @@ if (wResize < 767) {
 							</form>
 							</div>
 							</li>
-							<li class="facebook socialIcns"><a href="https://www.facebook.com/FitseTV#">Facebook</a></li>
-							<li class="pinterset socialIcns"><a href="https://www.pinterest.com/FitseTV/">Pinterset</a></li>
-							<li class="linkedin socialIcns"><a href="javascript:void(0);">Linkedin</a></li>
-							<li class="book socialIcns"><a href="https://instagram.com/fitsetv/">Book</a></li>
-							<li class="twitter socialIcns"><a href="https://twitter.com/fitsetv">Twitter</a></li>
+							<li class="facebook socialIcns"><a target="_blank" href="https://www.facebook.com/FitseTV#">Facebook</a></li>
+							<li class="twitter socialIcns"><a target="_blank" href="https://twitter.com/fitsetv">Twitter</a></li>
+							<li class="pinterset socialIcns"><a target="_blank" href="https://www.pinterest.com/FitseTV/">Pinterset</a></li>
+							<li class="linkedin socialIcns"><a target="_blank" href="javascript:void(0);">Linkedin</a></li>
+							
+							
 						</ul>
 						</nav>
 					</header>
