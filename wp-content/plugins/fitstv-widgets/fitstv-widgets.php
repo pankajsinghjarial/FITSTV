@@ -787,7 +787,7 @@ class Home_Slider_News_Widget extends WP_Widget {
 		<label for="<?php echo $this->get_field_id( 'homeSliderNews' ); ?>"><?php _e( 'Select Episodes:' ); ?></label> 
 		</p>
 		<p>
-		<?php generate_multiple_postype_category_select($this->get_field_id( 'homeSliderNews' ),$this->get_field_name( 'homeSliderNews' ),'video','news',$homeSliderNews); ?>
+		<?php generate_multiple_postype_category_select($this->get_field_id( 'homeSliderNews' ),$this->get_field_name( 'homeSliderNews' ),'video','interviews',$homeSliderNews); ?>
 		</p>
 		<?php
 	}
