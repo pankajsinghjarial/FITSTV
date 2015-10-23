@@ -69,19 +69,19 @@ if (wResize < 767) {
 							<?php wp_nav_menu( array( 'container' => '', 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ,'before' => '','after' => '','link_before' => '','link_after' => '','items_wrap' => '%3$s','depth' => 0,	'walker' => '') ); ?>
 							<li class="searchIcn">
 							<div id="sb-search" class="sb-search">
-							<form class="searchbox">
-								<input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
+							<form class="searchbox" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+								<input type="search" placeholder="Search......" name="s" class="searchbox-input" onkeyup="buttonUp();" required>
+								<input type="hidden" name="type" value="all" />
 								<input type="submit" class="searchbox-submit" value="">
 								<span class="searchbox-icon">GO</span>
 							</form>
 							</div>
 							</li>
 							<li class="facebook socialIcns"><a target="_blank" href="https://www.facebook.com/FitseTV#">Facebook</a></li>
-							<li class="twitter socialIcns"><a target="_blank" href="https://twitter.com/fitsetv">Twitter</a></li>
 							<li class="pinterset socialIcns"><a target="_blank" href="https://www.pinterest.com/FitseTV/">Pinterset</a></li>
 							<li class="linkedin socialIcns"><a target="_blank" href="javascript:void(0);">Linkedin</a></li>
-							
-							
+							<li class="book socialIcns"><a target="_blank" href="https://instagram.com/fitsetv/">Book</a></li>
+							<li class="twitter socialIcns"><a target="_blank" href="https://twitter.com/fitsetv">Twitter</a></li>
 						</ul>
 						</nav>
 					</header>

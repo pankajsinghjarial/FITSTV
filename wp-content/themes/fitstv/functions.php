@@ -548,6 +548,11 @@ add_action('wp_ajax_nopriv_loadMorePost', 'loadMorePost');
 		);
 		$args['s'] = $search;
 		$args['post_type'] = $_REQUEST['type'];
+		if($_REQUEST['type'] == 'all'){
+			$args['post_type'] = array('video','news','episode');
+		}else{
+			$args['post_type'] = $_REQUEST['type'];
+		}
 		$lastposts = get_posts( $args );
 		unset($args['posts_per_page']);
 		unset($args['offset']);

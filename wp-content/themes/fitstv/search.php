@@ -39,7 +39,11 @@ get_header(); ?>
 						$args['s'] = get_search_query();
 						$args['post_type'] = 'video';
 						if(isset($_REQUEST['type'])){
-							$args['post_type'] = $_REQUEST['type'];
+							if($_REQUEST['type'] == 'all'){
+								$args['post_type'] = array('video','news','episode');
+							}else{
+								$args['post_type'] = $_REQUEST['type'];
+							}
 						}
 						$lastposts = get_posts( $args );
 						if(count($lastposts)){
