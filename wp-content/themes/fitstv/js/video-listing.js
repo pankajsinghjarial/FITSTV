@@ -33,14 +33,27 @@ $(document).ready(function(){
 								if(post.attachment_type == 1){
 									html += '<figure class="icnPlay"><img src="'+templateUrl+'/images/transPlay.png" width="69" height="69" alt="Play"></figure>';
 								}
-								html += '<h4>Cross Fit Workouts</h4><section class="blackTrans"><span>'+post.date+'</span><h3>'+post.title+'</h3><span>'+post.excerpt+'<a href="'+post.link+'">Read More</a></span></section></li>';
+								html += '<h4>Cross Fit Workouts</h4><section class="blackTrans"><span>'+post.date+'</span><h3>'+post.title+'</h3>';
+								if(parseInt(post.when)){
+									html += '<span>Coming soon ...</span>';
+								}else{
+									html += '<span>'+post.excerpt+'<a href="'+post.link+'">Read More</a></span>';
+								}
+								html += '</section></li>';
 							});
 						}else{
 							html = '';
 							$(posts.data).each(function(index,post){
-								html += '<li class="tabSlide"><img src="'+post.image+'" width="288" height="148" alt="'+post.title+'">';
+								html += '<li class="tabSlide">';
+								if(!parseInt(post.when)){
+									html += '<a title="'+post.title+'" href="'+post.link+'">';
+								}
+								html +='<img src="'+post.image+'" width="288" height="148" alt="'+post.title+'">';
 								if(post.attachment_type == 1){
 									html += '<figure class="icnPlay"><img src="'+templateUrl+'/images/transPlay.png" width="69" height="69" alt="Play"></figure>';
+								}
+								if(!parseInt(post.when)){
+									html += '</a>';
 								}
 								html += '<section>'+post.title+'- <span>'+post.excerpt+'</span></section><div class="news_ret"><ul>';
 								for($i=1;$i<=5;$i++){
@@ -90,7 +103,13 @@ $(document).ready(function(){
 					if(post.attachment_type == 1){
 						html += '<figure class="icnPlay"><img src="'+templateUrl+'/images/transPlay.png" width="69" height="69" alt="Play"></figure>';
 					}
-					html += '<h4>Cross Fit Workouts</h4><section class="blackTrans"><span>'+post.date+'</span><h3>'+post.title+'</h3><span>'+post.excerpt+'<a href="'+post.link+'">Read More</a></span></section></li>';
+					html += '<h4>Cross Fit Workouts</h4><section class="blackTrans"><span>'+post.date+'</span><h3>'+post.title+'</h3>';
+					if(parseInt(post.when)){
+						html += '<span>Coming soon ...</span>';
+					}else{
+						html += '<span>'+post.excerpt+'<a href="'+post.link+'">Read More</a></span>';
+					}
+					html += '</section></li>';
 				});
 				$('ul.videos-data li.item').remove();
 				$('ul.videos-data').append(html);

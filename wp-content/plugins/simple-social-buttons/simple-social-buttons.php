@@ -529,8 +529,11 @@ class SimpleSocialButtonsPR_Admin extends SimpleSocialButtonsPR {
 			return;
 	
 		// Verify this came from the our screen and with proper authorization
-		if ( !wp_verify_nonce( $_POST['ssb_noncename'], plugin_basename( __FILE__ ) ) )
-			return;
+		if(isset($_POST['ssb_noncename'])){
+			if ( !wp_verify_nonce( $_POST['ssb_noncename'], plugin_basename( __FILE__ ) ) ){
+				return;
+			}
+		}
 	
 		// Check permissions
 		if ( 'page' == $_POST['post_type'] ) {

@@ -431,6 +431,7 @@ header nav li.twitter{ background-position: -123px 0;}
 
 
 .sortTabber h3{ font-size:28px; color:#333333; line-height: 34px;float: left;width: 100%; padding: 10px 0 16px;}
+.sortTabbers h3{ font-size:28px; color:#333333; line-height: 34px;float: left;width: 100%; padding: 10px 0 16px;}
 .tabColumnsL{ width:500px; float:left;margin: 0 20px 0 0;}
 .tabColumnsR{ width:630px; float:left;}
 

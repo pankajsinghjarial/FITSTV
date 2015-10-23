@@ -25,16 +25,19 @@ get_header(); ?>
                 <a href="javascript:void(0);" title="Recent" class="active">Recent</a>
                 <a href="javascript:void(0);" title="Alphabetical">Alphabetical</a>
                 <a href="javascript:void(0);" title="Highest Rating">Highest Rating</a>
-            </section>
+            </section>-->
             
-            <div class="searchBar">
-                <input type="text" placeholder="Search Bar">
-                <button><img src="< ?php echo get_template_directory_uri();?>/images/searchbtn.png" width="40" height="40" alt="Search"></button>
-            </div>-->
+    	<div class="searchBar">
+			<form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<input type="text" placeholder="Search Bar" name="s" id="s">
+				<input type="hidden" name="type" value="video" onkeyup="javascript:if(event.keyCode == 13){$('#searchform').submit();}">
+				<button onclick="javascript:$('#searchform').submit();"><img width="40" height="40" alt="Search" src="<?php echo get_template_directory_uri(); ?>/images/searchbtn.png"></button>
+            </form>
+        </div>
         	
-            <?php if ( is_active_sidebar( 'home-slider-news' ) ) {
-				dynamic_sidebar( 'home-slider-news' ); 
-			  }
+		<?php if ( is_active_sidebar( 'home-slider-news' ) ) {
+			dynamic_sidebar( 'home-slider-news' ); 
+		  }
 		?>
 		<?php if ( is_active_sidebar( 'home-slider-reviews' ) ) {
 				dynamic_sidebar( 'home-slider-reviews' ); 

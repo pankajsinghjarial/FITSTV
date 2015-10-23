@@ -291,6 +291,9 @@ function fitstv_scripts() {
 	if(is_single()){
 		wp_enqueue_script( 'fitstv-single', get_template_directory_uri() . '/js/single.js' );
 	}
+	if(is_search()){
+		wp_enqueue_script( 'fitstv-search', get_template_directory_uri() . '/js/search.js' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'fitstv_scripts' );
 
@@ -513,6 +516,10 @@ function special_nav_class($classes, $item){
 				if(($tab != 'videos' && $postType == 'video') || $postType == 'news' && $tab != 'sub-category')
 				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image');
 			}
+			$data['when'] = 0;
+			if(get_post_meta($post->ID,'wpcf-when',true)){
+				$data['when'] = 1;
+			}
 			$data['rating'] = get_post_meta($post->ID,'wpcf-rating',true);
 			$wordLimit = 20;
 			if($postType == 'news' && $tab == 'sub-category'){
@@ -529,6 +536,52 @@ function special_nav_class($classes, $item){
 add_action('wp_ajax_loadMorePost', 'loadMorePost');
 add_action('wp_ajax_nopriv_loadMorePost', 'loadMorePost');
 
+	function loadMoreSearch(){
+		$postType = $_REQUEST['type'];
+		$page = $_REQUEST['page'];
+		$limit = $_REQUEST['limit'];
+		$search = $_REQUEST['search'];
+		$offset = $limit*($page);
+		$args = array( 
+			'posts_per_page' => $limit,
+			'offset' => $offset
+		);
+		$args['s'] = $search;
+		$args['post_type'] = $_REQUEST['type'];
+		$lastposts = get_posts( $args );
+		unset($args['posts_per_page']);
+		unset($args['offset']);
+		$the_query = new WP_Query( $args );
+		$totalPosts = $the_query->found_posts;
+		$totalPages = ceil($totalPosts/$limit);
+		$response = array();
+		foreach($lastposts as $post){
+			$data = array();
+			$data['id'] = $post->ID;
+			$data['title'] = $post->post_title;
+			$data['date'] = date('M d, Y',strtotime($post->post_date));
+			$data['attachment_type'] = get_post_meta($post->ID,'wpcf-attachment-type',true);
+			if($data['attachment_type'] == 1){
+				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-thumbnail',true));
+			}else{
+				$data['image'] = getImage(get_post_meta($post->ID,'wpcf-image',true));
+			}
+			$data['when'] = 0;
+			if(get_post_meta($post->ID,'wpcf-when',true)){
+				$data['when'] = 1;
+			}
+			$data['rating'] = get_post_meta($post->ID,'wpcf-rating',true);
+			$wordLimit = 20;
+			$data['excerpt'] = (strlen($post->post_excerpt)>$wordLimit)?substr($post->post_excerpt,0,$wordLimit).'...':$post->post_excerpt;
+			$data['link'] = get_permalink($post->ID);
+			$response['data'][] = $data;
+		}
+		$response['count'] = $totalPages;
+		echo json_encode($response);
+		die;
+	}
+add_action('wp_ajax_loadMoreSearch', 'loadMoreSearch');
+add_action('wp_ajax_nopriv_loadMoreSearch', 'loadMoreSearch');
 function fitstv_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
 	extract($args, EXTR_SKIP);

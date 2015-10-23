@@ -28,11 +28,14 @@ get_template_part('episode','type');?>
         <option>Test 2</option>
         <option>Test 3</option>
         </select>
-        </section>
+        </section>-->
     	<div class="searchBar">
-            <input type="text" placeholder="Search Bar">
-            <button><img width="40" height="40" alt="Search" src="< ?php echo get_template_directory_uri();?>/images/searchbtn.png"></button>
-        </div>-->
+			<form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<input type="text" placeholder="Search Bar" name="s" id="s">
+				<input type="hidden" name="type" value="episode" onkeyup="javascript:if(event.keyCode == 13){$('#searchform').submit();}">
+				<button onclick="javascript:$('#searchform').submit();"><img width="40" height="40" alt="Search" src="<?php echo get_template_directory_uri(); ?>/images/searchbtn.png"></button>
+            </form>
+        </div>
         
         <div class="sortTabber full-w">
           <ul>

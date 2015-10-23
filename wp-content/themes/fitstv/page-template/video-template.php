@@ -28,11 +28,14 @@ get_header(); ?>
         <option>Test 2</option>
         <option>Test 3</option>
         </select>
-        </section>
+        </section>-->
     	<div class="searchBar">
-            <input type="text" placeholder="Search Bar">
-            <button><img width="40" height="40" alt="Search" src="<?php echo get_template_directory_uri();?>/images/searchbtn.png"></button>
-        </div>-->
+			<form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<input type="text" placeholder="Search Bar" name="s" id="s">
+				<input type="hidden" name="type" value="video" onkeyup="javascript:if(event.keyCode == 13){$('#searchform').submit();}">
+				<button onclick="javascript:$('#searchform').submit();"><img width="40" height="40" alt="Search" src="<?php echo get_template_directory_uri(); ?>/images/searchbtn.png"></button>
+            </form>
+        </div>
         
         <div class="sortTabber full-w">
           <ul>
@@ -68,7 +71,7 @@ get_header(); ?>
             	<ul class="categories">
 					<?php 
 						foreach($categories as $category){ ?>
-							<li data-term="<?php echo $category->slug;?>" class="<?php if($category->slug=='featured'){echo "active";} ?>"><a href="javascript:void(0);"><?php echo $category->cat_name;?></a></li>
+							<li data-term="<?php echo $category->slug; ?>" class="<?php if($category->slug=='featured'){echo "active";} ?>"><a href="javascript:void(0);"><?php echo $category->cat_name; ?></a></li>
 						<? } ?>
                 </ul>
             </section>
@@ -96,25 +99,27 @@ get_header(); ?>
 					$totalPage = ceil($totalPosts/$limit);
 					?>
 					<input type="hidden" id="videos-page" value="1" />
-					<input type="hidden" id="videos-totalpage" value="<?php echo $totalPage;?>"/>
-					<input type="hidden" id="videos-limit" value="<?php echo $limit;?>"/>
+					<input type="hidden" id="videos-totalpage" value="<?php echo $totalPage; ?>"/>
+					<input type="hidden" id="videos-limit" value="<?php echo $limit; ?>"/>
 					<?php
 					foreach ( $lastposts as $post ) :
-					  setup_postdata( $post );?>
+					  setup_postdata( $post ); ?>
 						<li class="item">
 							<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
-								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true));?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
+								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true)); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
 								<figure class="icnPlay">
-									<img src="<?php echo get_template_directory_uri();?>/images/transPlay.png" width="69" height="69" alt="Play">
+									<img src="<?php echo get_template_directory_uri(); ?>/images/transPlay.png" width="69" height="69" alt="Play">
 								</figure>
 							<?php else: ?>
-								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true));?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
+								<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true)); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
 							<?php endif; ?>
 							<h4>Cross Fit Workouts</h4>
 							<section class="blackTrans">
-							<span><?php echo date('M d, Y',strtotime($post->post_date));?></span>
+							<span><?php echo date('M d, Y',strtotime($post->post_date)); ?></span>
 							<h3><?php the_title(); ?></h3>
-							<span><?php echo (strlen($post->post_excerpt)>20)?substr($post->post_excerpt,0,20).'...':$post->post_excerpt;?><a href="<?php the_permalink(); ?>">Read More</a></span>
+							<?if(get_post_meta($post->ID,'wpcf-when',true)){ echo '<span>Coming soon ...</span>';}else{ ?>
+								<span><?php echo (strlen($post->post_excerpt)>20)?substr($post->post_excerpt,0,20).'...':$post->post_excerpt; ?><a href="<?php the_permalink(); ?>">Read More</a></span>
+							<? } ?>
 							</section>
 						</li>
 					<?php endforeach; 
@@ -127,7 +132,7 @@ get_header(); ?>
 				?>
             </ul>
             <div class="clear"></div>
-            <div class="videos-loadMore loadMore displayNone"><img alt="load more" src="<?php echo get_template_directory_uri();?>/images/loader.gif"></div>
+            <div class="videos-loadMore loadMore displayNone"><img alt="load more" src="<?php echo get_template_directory_uri(); ?>/images/loader.gif"></div>
             </section>
           </div>
           <div id="tabs-2">
@@ -154,38 +159,47 @@ get_header(); ?>
 					$totalPage = ceil($totalPosts/$limit);
 					?>
 					<input type="hidden" id="on-demand-page" value="1" />
-					<input type="hidden" id="on-demand-totalpage" value="<?php echo $totalPage;?>"/>
-					<input type="hidden" id="on-demand-limit" value="<?php echo $limit;?>"/>
+					<input type="hidden" id="on-demand-totalpage" value="<?php echo $totalPage; ?>"/>
+					<input type="hidden" id="on-demand-limit" value="<?php echo $limit; ?>"/>
 					<?php
 					foreach ( $lastposts as $post ) :
-					  setup_postdata( $post );?>
+					  setup_postdata( $post ); ?>
 						<li class="tabSlide">
-								<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
-									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image');?>" width="306" height="212" alt="<?php echo $post->post_title;?>">
-									<figure class="icnPlay">
-										<img src="<?php echo get_template_directory_uri();?>/images/transPlay.png" width="69" height="69" alt="Play">
-									</figure>
-								<?php else: ?>
-									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image');?>" width="306" height="212" alt="<?php echo $post->post_title;?>">
-								<?php endif; ?>
-						<section><?php the_title(); ?> -  
-						<span><?php echo (strlen($post->post_excerpt)>25)?substr($post->post_excerpt,0,25).'...':$post->post_excerpt;?></span>
-						</section>
-						<div class="news_ret">
-							<ul>
-								<?php 
-									$rating = get_post_meta($post->ID,'wpcf-rating',true);
-									for($i=1;$i<=5;$i++){
-										if($i<=$rating){ ?>
-											<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-										<?php }else{ ?>
-											<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-										<?php
+							<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
+								<?php if(get_post_meta($post->ID,'wpcf-when',true)){ ?>
+									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
+								<?php }else{ ?>
+									<a href="<?php echo get_the_permalink($post->ID); ?>">
+									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>"></a>
+								<?php } ?>
+								<figure class="icnPlay">
+									<img src="<?php echo get_template_directory_uri(); ?>/images/transPlay.png" width="69" height="69" alt="Play">
+								</figure>
+							<?php else: ?>
+								<?php if(get_post_meta($post->ID,'wpcf-when',true)){ ?>
+									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
+								<?php }else{ ?>
+									<a href="<?php echo get_the_permalink($post->ID); ?>"><img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>"></a>
+								<?php } ?>
+							<?php endif; ?>
+							<section><?php the_title(); ?> -  
+								<span><?php if(get_post_meta($post->ID,'wpcf-when',true)){echo "Coming soon ...";}else{ ?><?php echo (strlen($post->post_excerpt)>25)?substr($post->post_excerpt,0,25).'...':$post->post_excerpt; } ?></span>
+							</section>
+							<div class="news_ret">
+								<ul>
+									<?php 
+										$rating = get_post_meta($post->ID,'wpcf-rating',true);
+										for($i=1;$i<=5;$i++){
+											if($i<=$rating){ ?>
+												<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri(); ?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
+											<?php }else{ ?>
+												<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri(); ?>/images/star.png" width="16" height="16" alt="Star"></a></li>
+											<?php
+											}
 										}
-									}
-								?>							
-							</ul>
-						</div>
+									?>							
+								</ul>
+							</div>
 						</li>
 					<?php endforeach; 
 						wp_reset_postdata();
@@ -197,7 +211,7 @@ get_header(); ?>
 				?>
              </ul> 
 			<div class="clear"></div>
-            <div class="on-demand-loadMore loadMore displayNone"><img alt="load more" src="<?php echo get_template_directory_uri();?>/images/loader.gif"></div>
+            <div class="on-demand-loadMore loadMore displayNone"><img alt="load more" src="<?php echo get_template_directory_uri(); ?>/images/loader.gif"></div>
           </div>
           <div id="tabs-3">
             <ul class="news-data">
@@ -223,38 +237,47 @@ get_header(); ?>
 					$totalPage = ceil($totalPosts/$limit);
 					?>
 					<input type="hidden" id="news-page" value="1" />
-					<input type="hidden" id="news-totalpage" value="<?php echo $totalPage;?>"/>
-					<input type="hidden" id="news-limit" value="<?php echo $limit;?>"/>
+					<input type="hidden" id="news-totalpage" value="<?php echo $totalPage; ?>"/>
+					<input type="hidden" id="news-limit" value="<?php echo $limit; ?>"/>
 					<?php
 					foreach ( $lastposts as $post ) :
-					  setup_postdata( $post );?>
+					  setup_postdata( $post ); ?>
 						<li class="tabSlide">
-								<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
-									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image');?>" width="306" height="212" alt="new01">
-									<figure class="icnPlay">
-										<img src="<?php echo get_template_directory_uri();?>/images/transPlay.png" width="69" height="69" alt="Play">
-									</figure>
-								<?php else: ?>
-									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image');?>" width="306" height="212" alt="new01">
-								<?php endif; ?>
-						<section><?php the_title(); ?> -  
-						<span><?php echo (strlen($post->post_excerpt)>25)?substr($post->post_excerpt,0,25).'...':$post->post_excerpt;?></span>
-						</section>
-						<div class="news_ret">
-							<ul>
-								<?php 
-									$rating = get_post_meta($post->ID,'wpcf-rating',true);
-									for($i=1;$i<=5;$i++){
-										if($i<=$rating){ ?>
-											<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-										<?php }else{ ?>
-											<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-										<?php
+							<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
+								<?php if(get_post_meta($post->ID,'wpcf-when',true)){ ?>
+									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
+								<?php }else{ ?>
+									<a href="<?php echo get_the_permalink($post->ID); ?>">
+									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>"></a>
+								<?php } ?>
+								<figure class="icnPlay">
+									<img src="<?php echo get_template_directory_uri(); ?>/images/transPlay.png" width="69" height="69" alt="Play">
+								</figure>
+							<?php else: ?>
+								<?php if(get_post_meta($post->ID,'wpcf-when',true)){ ?>
+									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
+								<?php }else{ ?>
+									<a href="<?php echo get_the_permalink($post->ID); ?>"><img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>"></a>
+								<?php } ?>
+							<?php endif; ?>
+							<section><?php the_title(); ?> -  
+								<span><?php if(get_post_meta($post->ID,'wpcf-when',true)){echo "Coming soon ...";}else{ ?><?php echo (strlen($post->post_excerpt)>25)?substr($post->post_excerpt,0,25).'...':$post->post_excerpt; } ?></span>
+							</section>
+							<div class="news_ret">
+								<ul>
+									<?php 
+										$rating = get_post_meta($post->ID,'wpcf-rating',true);
+										for($i=1;$i<=5;$i++){
+											if($i<=$rating){ ?>
+												<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri(); ?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
+											<?php }else{ ?>
+												<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri(); ?>/images/star.png" width="16" height="16" alt="Star"></a></li>
+											<?php
+											}
 										}
-									}
-								?>							
-							</ul>
-						</div>
+									?>							
+								</ul>
+							</div>
 						</li>
 					<?php endforeach; 
 					wp_reset_postdata();
@@ -266,7 +289,7 @@ get_header(); ?>
 				?>
             </ul> 
 			<div class="clear"></div>
-            <div class="news-loadMore loadMore displayNone"><img alt="load more" src="<?php echo get_template_directory_uri();?>/images/loader.gif"></div>
+            <div class="news-loadMore loadMore displayNone"><img alt="load more" src="<?php echo get_template_directory_uri(); ?>/images/loader.gif"></div>
           </div>
           <div id="tabs-4">
 			<ul class="reviews-data">
@@ -292,38 +315,47 @@ get_header(); ?>
 					$totalPage = ceil($totalPosts/$limit);
 					?>
 					<input type="hidden" id="reviews-page" value="1" />
-					<input type="hidden" id="reviews-totalpage" value="<?php echo $totalPage;?>"/>
-					<input type="hidden" id="reviews-limit" value="<?php echo $limit;?>"/>
+					<input type="hidden" id="reviews-totalpage" value="<?php echo $totalPage; ?>"/>
+					<input type="hidden" id="reviews-limit" value="<?php echo $limit; ?>"/>
 					<?php
 					foreach ( $lastposts as $post ) :
-					  setup_postdata( $post );?>
+					  setup_postdata( $post ); ?>
 						<li class="tabSlide">
-								<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
-									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image');?>" width="306" height="212" alt="new01">
-									<figure class="icnPlay">
-										<img src="<?php echo get_template_directory_uri();?>/images/transPlay.png" width="69" height="69" alt="Play">
-									</figure>
-								<?php else: ?>
-									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image');?>" width="306" height="212" alt="new01">
-								<?php endif; ?>
-						<section><?php the_title(); ?> -  
-						<span><?php echo (strlen($post->post_excerpt)>25)?substr($post->post_excerpt,0,25).'...':$post->post_excerpt;?></span>
-						</section>
-						<div class="news_ret">
-							<ul>
-								<?php 
-									$rating = get_post_meta($post->ID,'wpcf-rating',true);
-									for($i=1;$i<=5;$i++){
-										if($i<=$rating){ ?>
-											<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-										<?php }else{ ?>
-											<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-										<?php
+							<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
+								<?php if(get_post_meta($post->ID,'wpcf-when',true)){ ?>
+									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
+								<?php }else{ ?>
+									<a href="<?php echo get_the_permalink($post->ID); ?>">
+									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>"></a>
+								<?php } ?>
+								<figure class="icnPlay">
+									<img src="<?php echo get_template_directory_uri(); ?>/images/transPlay.png" width="69" height="69" alt="Play">
+								</figure>
+							<?php else: ?>
+								<?php if(get_post_meta($post->ID,'wpcf-when',true)){ ?>
+									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
+								<?php }else{ ?>
+									<a href="<?php echo get_the_permalink($post->ID); ?>"><img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>"></a>
+								<?php } ?>
+							<?php endif; ?>
+							<section><?php the_title(); ?> -  
+								<span><?php if(get_post_meta($post->ID,'wpcf-when',true)){echo "Coming soon ...";}else{ ?><?php echo (strlen($post->post_excerpt)>25)?substr($post->post_excerpt,0,25).'...':$post->post_excerpt; } ?></span>
+							</section>
+							<div class="news_ret">
+								<ul>
+									<?php 
+										$rating = get_post_meta($post->ID,'wpcf-rating',true);
+										for($i=1;$i<=5;$i++){
+											if($i<=$rating){ ?>
+												<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri(); ?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
+											<?php }else{ ?>
+												<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri(); ?>/images/star.png" width="16" height="16" alt="Star"></a></li>
+											<?php
+											}
 										}
-									}
-								?>							
-							</ul>
-						</div>
+									?>							
+								</ul>
+							</div>
 						</li>
 					<?php endforeach; 
 					wp_reset_postdata();
@@ -335,7 +367,7 @@ get_header(); ?>
 				?>
 			</ul> 
 			<div class="clear"></div>
-            <div class="reviews-loadMore loadMore displayNone"><img alt="load more" src="<?php echo get_template_directory_uri();?>/images/loader.gif"></div>
+            <div class="reviews-loadMore loadMore displayNone"><img alt="load more" src="<?php echo get_template_directory_uri(); ?>/images/loader.gif"></div>
           </div>
           <div id="tabs-5">
 			<ul class="workouts-data">
@@ -361,38 +393,47 @@ get_header(); ?>
 					$totalPage = ceil($totalPosts/$limit);
 					?>
 					<input type="hidden" id="workouts-page" value="1" />
-					<input type="hidden" id="workouts-totalpage" value="<?php echo $totalPage;?>"/>
-					<input type="hidden" id="workouts-limit" value="<?php echo $limit;?>"/>
+					<input type="hidden" id="workouts-totalpage" value="<?php echo $totalPage; ?>"/>
+					<input type="hidden" id="workouts-limit" value="<?php echo $limit; ?>"/>
 					<?php
 					foreach ( $lastposts as $post ) :
-					  setup_postdata( $post );?>
+					  setup_postdata( $post ); ?>
 						<li class="tabSlide">
-								<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
-									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image');?>" width="306" height="212" alt="new01">
-									<figure class="icnPlay">
-										<img src="<?php echo get_template_directory_uri();?>/images/transPlay.png" width="69" height="69" alt="Play">
-									</figure>
-								<?php else: ?>
-									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image');?>" width="306" height="212" alt="new01">
-								<?php endif; ?>
-						<section><?php the_title(); ?> -  
-						<span><?php echo (strlen($post->post_excerpt)>25)?substr($post->post_excerpt,0,25).'...':$post->post_excerpt;?></span>
-						</section>
-						<div class="news_ret">
-							<ul>
-								<?php 
-									$rating = get_post_meta($post->ID,'wpcf-rating',true);
-									for($i=1;$i<=5;$i++){
-										if($i<=$rating){ ?>
-											<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
-										<?php }else{ ?>
-											<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri();?>/images/star.png" width="16" height="16" alt="Star"></a></li>
-										<?php
+							<?php if(get_post_meta($post->ID,'wpcf-attachment-type',true) == 1): ?>
+								<?php if(get_post_meta($post->ID,'wpcf-when',true)){ ?>
+									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
+								<?php }else{ ?>
+									<a href="<?php echo get_the_permalink($post->ID); ?>">
+									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-thumbnail',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>"></a>
+								<?php } ?>
+								<figure class="icnPlay">
+									<img src="<?php echo get_template_directory_uri(); ?>/images/transPlay.png" width="69" height="69" alt="Play">
+								</figure>
+							<?php else: ?>
+								<?php if(get_post_meta($post->ID,'wpcf-when',true)){ ?>
+									<img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>">
+								<?php }else{ ?>
+									<a href="<?php echo get_the_permalink($post->ID); ?>"><img src="<?php echo getImage(get_post_meta($post->ID,'wpcf-image',true),'fitstv-image'); ?>" width="306" height="212" alt="<?php echo $post->post_title; ?>"></a>
+								<?php } ?>
+							<?php endif; ?>
+							<section><?php the_title(); ?> -  
+								<span><?php if(get_post_meta($post->ID,'wpcf-when',true)){echo "Coming soon ...";}else{ ?><?php echo (strlen($post->post_excerpt)>25)?substr($post->post_excerpt,0,25).'...':$post->post_excerpt; } ?></span>
+							</section>
+							<div class="news_ret">
+								<ul>
+									<?php 
+										$rating = get_post_meta($post->ID,'wpcf-rating',true);
+										for($i=1;$i<=5;$i++){
+											if($i<=$rating){ ?>
+												<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri(); ?>/images/star-active.png" width="16" height="16" alt="Star"></a></li>
+											<?php }else{ ?>
+												<li><a href="javascript:void(0);"><img src="<?php echo get_template_directory_uri(); ?>/images/star.png" width="16" height="16" alt="Star"></a></li>
+											<?php
+											}
 										}
-									}
-								?>							
-							</ul>
-						</div>
+									?>							
+								</ul>
+							</div>
 						</li>
 					<?php endforeach; 
 					wp_reset_postdata();
@@ -404,7 +445,7 @@ get_header(); ?>
 				?>
 			</ul> 
 			<div class="clear"></div>
-            <div class="workouts-loadMore loadMore displayNone"><img alt="load more" src="<?php echo get_template_directory_uri();?>/images/loader.gif"></div>
+            <div class="workouts-loadMore loadMore displayNone"><img alt="load more" src="<?php echo get_template_directory_uri(); ?>/images/loader.gif"></div>
           </div>
           <div class="clear"></div>   
         </div>                  
